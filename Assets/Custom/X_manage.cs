@@ -4,47 +4,84 @@ using UnityEngine;
 
 public class X_manage : MonoBehaviour
 {
+    public List<Node> enters;
+    public List<Node> intersection;
     public bool detect;
-    public List<Transform> enters;
-    public List<Transform> exits;
+    public float detectDist;
+    public int state;
+    public List<bool> stateGroup;
     // Start is called before the first frame update
     void Start()
     {
-
     }
-    private float count;
-    private Collider[] near;
-    public float nearDist;
-    void OnDrawGizmosSelected()
+    void OnDrawGizmos()
     {
-        count += Time.deltaTime;
-        Gizmos.DrawWireSphere(transform.position, nearDist);
-        if (count>30f && detect)
-        {
+        Gizmos.DrawWireSphere(transform.position, detectDist);
+        if (detect) {
+            Collider[] c;
             enters.Clear();
-            exits.Clear();
-            near = Physics.OverlapSphere(transform.position, nearDist);
-            foreach (Collider c in near) {
-                if (c.transform.GetSiblingIndex() == 0) enters.Add(c.transform);
-                else exits.Add(c.transform); 
+            intersection.Clear();
+            int lm = 1 << 9;
+            c = Physics.OverlapSphere(transform.GetChild(transform.childCount - 1).position, detectDist,lm);
+            foreach (Collider i in c)
+            {
+                Node n;
+                bool cond1 = i.transform.parent.name[0] != 'X';
+                bool cond2 = i.transform.GetSiblingIndex() != 0;
+                if ((n = i.transform.parent.GetComponent<Node>()) && cond2 && cond1) enters.Add(n);
             }
-            Debug.Log("getting nearby nodes...");
+            foreach (Node n in transform.GetComponentsInChildren<Node>()) intersection.Add(n);
             detect = false;
         }
-        if (enters.Count == exits.Count) {
-            for (int i = 0; i < enters.Count; i++) {
-                Gizmos.DrawLine(enters[i].position, exits[i].position);
+        
+    }
+    void FixedUpdate() {
+        switch(state){
+            case 1:
+                for (int i = 0; i < enters.Count; i++)
+                {
+                    enters[i].exitOn = stateGroup[i];
+
+                }
+                break;
+            case 2:
+                for (int i = 0; i < enters.Count; i++)
+                {
+                    enters[i].exitOn = !stateGroup[i];
+
+                }
+                break;
+            case 3:
+                for (int i = 0; i < enters.Count; i++)
+                {
+                    enters[i].exitOn = true;
+
+                }
+                break;
+            default:
+                for (int i = 0; i < enters.Count; i++)
+                {
+                    enters[i].exitOn = false;
+
+                }
+                break;
+        }
+        foreach (Node n in enters)
+        {
+            foreach (Node m in n.exits)
+            {
+                m.stop = !n.exitOn;
+            }
+        }
+        foreach (Node n in enters) {
+            //n.exitOn = false;
+        }
+        foreach (Node n in intersection) { 
+            if (n.occupied>0 && !n.stop) {
+                foreach (Node m in n.conflicts) {
+                    m.stop = true;
+                }
             }
         }
     }
-    public Transform enter2exit(Transform enterFrom) {
-        int enteri = enters.FindIndex(t =>t==enterFrom);
-        List<Transform> temp = exits;
-        temp.RemoveAt(enteri);
-        return temp[Random.Range(0, temp.Count)];
-    }
-    private bool isMatch(Transform t1, Transform t2) {
-        return t1 == t2; 
-    }
-
 }
