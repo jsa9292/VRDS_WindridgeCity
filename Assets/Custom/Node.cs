@@ -9,6 +9,7 @@ public class Node : MonoBehaviour
     public float radius;
     public Color color1;
     public Color color2;
+    public Color color3;
     public List<Node> exits;
     public List<Node> conflicts;
     public bool exitOn = true;
@@ -19,6 +20,7 @@ public class Node : MonoBehaviour
     public bool EqHeight = true;
     public float drawSensitivity;
     public int occupied;
+    public bool stoping;
     public bool stop;
     public bool cleanLists;
 
@@ -176,7 +178,8 @@ public class Node : MonoBehaviour
         //Function to turn the move positions on or off
         if (showCurves && roadMovePositions != null)
         {
-          Gizmos.color = color2;
+            if (occupied == 0) Gizmos.color = color2;
+            else Gizmos.color = color3;
           for(int i = 0; i<roadMovePositions.Count-1; i++)
            {
                 Gizmos.DrawLine(roadMovePositions[i], roadMovePositions[i + 1]);

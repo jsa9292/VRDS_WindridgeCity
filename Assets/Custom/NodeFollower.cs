@@ -17,7 +17,7 @@ public class NodeFollower : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        Destroy(transform.GetComponent<Collider>());   
+        //Destroy(transform.GetComponent<Collider>());   
     }
     //void OnDrawGizmos()
     //{
@@ -48,12 +48,8 @@ public class NodeFollower : MonoBehaviour
     void FixedUpdate()
     {
         if (node.stop) return;
-
-        int layerMask = 1 << 5;
-        layerMask = ~layerMask;
-
-        RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.forward, out hit, safeDist, layerMask))
+RaycastHit hit;
+        if (Physics.Raycast(transform.position, transform.forward, out hit, safeDist))
         {
             Debug.DrawRay(transform.position, transform.forward * hit.distance, Color.red);
             return;
@@ -79,13 +75,6 @@ public class NodeFollower : MonoBehaviour
             if (posI == node.roadMovePositions.Count - 1 && node.exits.Count != 0)
             {
                 node.occupied--;
-                if (node.occupied == 0)
-                {
-                    foreach (Node n in node.conflicts)
-                    {
-                        n.stop = false;
-                    }
-                }
                 node = node.exits[UnityEngine.Random.Range(0, node.exits.Count)];
                 posI = 0;
                 node.occupied++;

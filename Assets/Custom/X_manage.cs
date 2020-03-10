@@ -66,18 +66,37 @@ public class X_manage : MonoBehaviour
                 }
                 break;
         }
-        foreach (Node n in enters)
+        //foreach (Node n in enters)
+        //{
+        //    foreach (Node m in n.exits)
+        //    {
+        //        m.stop = !n.exitOn;
+        //    }
+        //}
+        //foreach (Node n in enters) {
+        //    //n.exitOn = false;
+        //}
+
+        foreach (Node n in intersection)
         {
-            foreach (Node m in n.exits)
+            if (n.occupied > 0)
             {
-                m.stop = !n.exitOn;
+                n.stoping = true;
+            }
+            else if (n.occupied == 0) {
+                n.stoping = false;
             }
         }
-        foreach (Node n in enters) {
-            //n.exitOn = false;
+        foreach (Node n in intersection) {
+            if (!n.stoping)
+            {
+                foreach (Node m in n.conflicts) {
+                    m.stop = false;
+                }
+            }
         }
-        foreach (Node n in intersection) { 
-            if (n.occupied>0 && !n.stop) {
+        foreach (Node n in intersection) {
+            if (n.stoping && !n.stop) {
                 foreach (Node m in n.conflicts) {
                     m.stop = true;
                 }

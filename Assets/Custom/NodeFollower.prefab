@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6682945397249142889}
   - component: {fileID: 79553978058985491}
   - component: {fileID: 4792164046581813582}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: NodeFollower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106,7 +106,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   node: {fileID: 0}
-  nodeT: {fileID: 0}
+  posI: 0
+  targetPos: {x: 0, y: 0, z: 0}
+  dist2node: 0
   speed: 0
   safeDist: 0
   stopDist: 0
