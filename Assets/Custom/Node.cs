@@ -23,6 +23,7 @@ public class Node : MonoBehaviour
     public bool stoping;
     public bool stop;
     public bool cleanLists;
+    public bool isIntersectionNode = false;
 
     //Curvature Production
     public List<Vector3> roadMovePositions; //A node follower will access the nodes move positions, the cubes will be registerd into this position list also
@@ -76,7 +77,7 @@ public class Node : MonoBehaviour
 
         }
         //adding subnodes
-        
+
         //smoothing
         for (int j = 0; j < smoothCount; j++)
         {
@@ -86,7 +87,7 @@ public class Node : MonoBehaviour
             }
         }
         roadMovePositions.Add(nodeB.position);
-        
+
     }
     void OnDrawGizmosSelected() {
         Gizmos.color = color1;
@@ -173,6 +174,7 @@ public class Node : MonoBehaviour
     }
     void OnDrawGizmos()    {
 
+        /* Makes it so that we can see which paths are turned off */
         if (stop) return;
 
         //Function to turn the move positions on or off

@@ -17,38 +17,53 @@ public class NodeFollower : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        //Destroy(transform.GetComponent<Collider>());   
+        //Destroy(transform.GetComponent<Collider>());
     }
-    //void OnDrawGizmos()
-    //{
-    //    Gizmos.DrawWireSphere(transform.position, detectDist);
-    //    if (detect)
-    //    {
-    //        Collider[] c;
-    //        c = Physics.OverlapSphere(transform.position, detectDist);
-    //        foreach (Collider i in c)
-    //        {
-    //            Node n;
-    //            try
-    //            {
-    //                if (n = i.transform.parent.GetComponent<Node>())
-    //                {
-    //                    node = n;
-    //                    nodeT = i.transform;
-    //                    node.occupied++;
-    //                }
-    //            }
-    //            catch (Exception e) { }
-    //        }
-    //        detect = false;
-    //    }
-    //}
+
+    public void GOorWAIT()
+    {
+      if (node.isIntersectionNode)
+      {
+        foreach(Node n in node.conflicts)
+        {
+          if(n.occupied > 0)
+          {
+            /* If the occupied road is stopped than we can still go */
+            if(n.stop)
+            {
+              continue;
+            }
+            /* If the road that is one of our conflicts is not stopped and it is occupied than we should stop */
+            else
+            {
+              /* We stop if our conflicts have cars on them */
+              node.stop = true;
+              /* We break so that it is not reset by another node in conflicts that has no occupants */
+              return;
+            }
+          }
+        }
+        /* If no nodes have conflicts than turn the node back on and exit */
+        node.stop = false;
+        return;
+      }
+      /* If it is just a normal road node than we do not need to do anything */
+      else
+      {
+        return;
+      }
+    }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        if(node.stop)
+        {
+          GOorWAIT();
+        }
         if (node.stop) return;
-RaycastHit hit;
+
+        RaycastHit hit;
         if (Physics.Raycast(transform.position, transform.forward, out hit, safeDist))
         {
             Debug.DrawRay(transform.position, transform.forward * hit.distance, Color.red);
@@ -58,10 +73,11 @@ RaycastHit hit;
         {
             Debug.DrawRay(transform.position, transform.forward * safeDist, Color.blue);
         }
+
         targetPos = node.roadMovePositions[posI];
         dist2node = Vector3.Distance(transform.position, targetPos);
         //Quaternion lookAt = Quaternion.FromToRotation(transform.forward, (nodeT.position - transform.position));
-        
+
         if (dist2node > stopDist)
         {
             //  Quaternion.RotateTowards(transform.rotation, lookAt, steering);
@@ -78,9 +94,10 @@ RaycastHit hit;
                 node = node.exits[UnityEngine.Random.Range(0, node.exits.Count)];
                 posI = 0;
                 node.occupied++;
+                GOorWAIT();
             }
             else if (node.exits.Count == 0) return;
         }
-        
+
     }
 }

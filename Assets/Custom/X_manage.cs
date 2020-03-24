@@ -33,10 +33,11 @@ public class X_manage : MonoBehaviour
             foreach (Node n in transform.GetComponentsInChildren<Node>()) intersection.Add(n);
             detect = false;
         }
-        
+
     }
     void FixedUpdate() {
         switch(state){
+            /* Vertical or horizontal */
             case 1:
                 for (int i = 0; i < enters.Count; i++)
                 {
@@ -44,20 +45,21 @@ public class X_manage : MonoBehaviour
 
                 }
                 break;
+            /* Vertical or horizontal */
             case 2:
                 for (int i = 0; i < enters.Count; i++)
                 {
                     enters[i].exitOn = !stateGroup[i];
-
                 }
                 break;
+            /* All directions are open, 4 way stop, whichever car gets there first should get there first */
             case 3:
                 for (int i = 0; i < enters.Count; i++)
                 {
                     enters[i].exitOn = true;
-
                 }
                 break;
+            /* Closes all ways */
             default:
                 for (int i = 0; i < enters.Count; i++)
                 {
@@ -66,41 +68,6 @@ public class X_manage : MonoBehaviour
                 }
                 break;
         }
-        //foreach (Node n in enters)
-        //{
-        //    foreach (Node m in n.exits)
-        //    {
-        //        m.stop = !n.exitOn;
-        //    }
-        //}
-        //foreach (Node n in enters) {
-        //    //n.exitOn = false;
-        //}
 
-        foreach (Node n in intersection)
-        {
-            if (n.occupied > 0)
-            {
-                n.stoping = true;
-            }
-            else if (n.occupied == 0) {
-                n.stoping = false;
-            }
-        }
-        foreach (Node n in intersection) {
-            if (!n.stoping)
-            {
-                foreach (Node m in n.conflicts) {
-                    m.stop = false;
-                }
-            }
-        }
-        foreach (Node n in intersection) {
-            if (n.stoping && !n.stop) {
-                foreach (Node m in n.conflicts) {
-                    m.stop = true;
-                }
-            }
-        }
     }
 }
