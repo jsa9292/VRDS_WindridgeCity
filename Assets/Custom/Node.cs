@@ -10,6 +10,7 @@ public class Node : MonoBehaviour
     public Color color1;
     public Color color2;
     public Color color3;
+    public Color color4;
     public List<Node> exits;
     public List<Node> conflicts;
     public bool exitOn = true;
@@ -38,7 +39,8 @@ public class Node : MonoBehaviour
     public void Awake() {
         for (int i = 0; i < transform.childCount; i++)
         {
-            Destroy(transform.GetChild(i).GetComponent<Collider>());
+            //Destroy(transform.GetChild(i).GetComponent<Collider>());
+            transform.GetChild(i).GetComponent<Collider>().enabled = false;
             transform.GetChild(i).GetComponent<MeshRenderer>().enabled = false;
         }
     }
@@ -72,8 +74,8 @@ public class Node : MonoBehaviour
                     oldPos = newPos;
                 }
             }
-            nodeA = NextNode(nodeA);
-            nodeB = NextNode(nodeB);
+            nodeA = NextNodeT(nodeA);
+            nodeB = NextNodeT(nodeB);
 
         }
         //adding subnodes
@@ -95,7 +97,7 @@ public class Node : MonoBehaviour
         {
             Transform currentNode = transform.GetChild(i);
             Gizmos.DrawLine(currentNode.position, currentNode.position + currentNode.up);
-            Gizmos.DrawLine(currentNode.position, NextNode(currentNode).position);
+            Gizmos.DrawLine(currentNode.position, NextNodeT(currentNode).position);
         }
         if (reverse)
         {
@@ -175,13 +177,14 @@ public class Node : MonoBehaviour
     void OnDrawGizmos()    {
 
         /* Makes it so that we can see which paths are turned off */
-        if (stop) return;
+        //if (stop) return;
 
         //Function to turn the move positions on or off
         if (showCurves && roadMovePositions != null)
         {
-            if (occupied == 0) Gizmos.color = color2;
-            else Gizmos.color = color3;
+            if (stop) Gizmos.color = color3;
+            else if (occupied == 0) Gizmos.color = color2;
+            else Gizmos.color = color4;
           for(int i = 0; i<roadMovePositions.Count-1; i++)
            {
                 Gizmos.DrawLine(roadMovePositions[i], roadMovePositions[i + 1]);
@@ -191,7 +194,7 @@ public class Node : MonoBehaviour
 
 
     }
-    public Transform NextNode(Transform nodeTnow)
+    public Transform NextNodeT(Transform nodeTnow)
     {
         if (stop) return nodeTnow;
         if (nodeTnow.transform.parent != transform) return transform.GetChild(0);

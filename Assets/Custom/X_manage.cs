@@ -13,6 +13,9 @@ public class X_manage : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        foreach (Node n in intersection) {
+            n.isIntersectionNode = true;
+        }
     }
     void OnDrawGizmos()
     {
@@ -35,8 +38,13 @@ public class X_manage : MonoBehaviour
         }
 
     }
-    void FixedUpdate() {
-        switch(state){
+
+
+    private int xI;
+    void FixedUpdate()
+    {
+        switch (state)
+        {
             /* Vertical or horizontal */
             case 1:
                 for (int i = 0; i < enters.Count; i++)
@@ -56,18 +64,28 @@ public class X_manage : MonoBehaviour
             case 3:
                 for (int i = 0; i < enters.Count; i++)
                 {
-                    enters[i].exitOn = true;
+                    enters[i].exitOn = false;
                 }
                 break;
             /* Closes all ways */
             default:
-                for (int i = 0; i < enters.Count; i++)
-                {
-                    enters[i].exitOn = false;
-
-                }
-                break;
+                return;
         }
+        // This enforces nodefollowers to waitfor execution of rest of X_manage script before allowed to switch to intersection node
+        // The problem was 1, nodefollowers switched node before checking if it was available,
+        // then the multiple instances of nodefollowers switched to intersection node before conflicts were updated.
+        // instead of updating conflict for each switch which increases operations count,
+        // shutting down allows reducing the operation count
+        enters[xI].exitOn = true;
+        xI++;
+        if (xI >= enters.Count) xI = 0;
 
+        //for each intersection, if any of the conflict is occupied, it is disabled. 
+        foreach (Node n in intersection) {
+            n.stop = false;
+            foreach (Node m in n.conflicts) {
+                n.stop = n.stop || (m.occupied > 0);
+            }
+        }
     }
 }
