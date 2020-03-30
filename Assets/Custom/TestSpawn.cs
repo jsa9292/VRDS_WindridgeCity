@@ -16,16 +16,17 @@ public class TestSpawn : MonoBehaviour
     }
     void Spawn()
     {
+        Transform spawnT;
+        GameObject spawnee;
+        NodeFollower nf;
         for (int i = 0; i < transform.childCount; i++)
         {
-            Transform spawnT = transform.GetChild(i).GetChild(0);
-            GameObject spawnee = Instantiate(spawnThis, spawnT.position, spawnT.rotation);
-            NodeFollower nf = spawnee.GetComponent<NodeFollower>();
-            nf.node = spawnT.parent.GetComponent<Node>();
-            nf.node.occupied++;
-            nf.speed = speed;
-            nf.stopDist = stopDist;
-            nf.safeDist = safeDist;
+            spawnT = transform.GetChild(i).GetChild(0);
+            spawnee = Instantiate(spawnThis, spawnT.position, spawnT.rotation);
+            if (nf = spawnee.GetComponent<NodeFollower>())
+            {
+                nf.Setup(spawnT.parent.GetComponent<Node>(), speed, stopDist, safeDist);
+            }
         }
     }
     // Update is called once per frame
