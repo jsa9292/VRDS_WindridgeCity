@@ -24,6 +24,12 @@ public class X_manage : MonoBehaviour
             Collider[] c;
             enters.Clear();
             intersection.Clear();
+            foreach (Node n in transform.GetComponentsInChildren<Node>())
+            {
+                intersection.Add(n);
+                n.EqHeight = true;
+            }
+
             int lm = 1 << 9;
             c = Physics.OverlapSphere(transform.GetChild(transform.childCount - 1).position, detectDist,lm);
             foreach (Collider i in c)
@@ -33,7 +39,13 @@ public class X_manage : MonoBehaviour
                 bool cond2 = i.transform.GetSiblingIndex() != 0;
                 if ((n = i.transform.parent.GetComponent<Node>()) && cond2 && cond1) enters.Add(n);
             }
-            foreach (Node n in transform.GetComponentsInChildren<Node>()) intersection.Add(n);
+            foreach (Node n in enters) {
+                n.exitOn = true;
+                n.detectNodes = true;
+            }
+            foreach (Node n in intersection) {
+                n.detectNodes = true;
+            }
             detect = false;
         }
 

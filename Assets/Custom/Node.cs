@@ -109,11 +109,7 @@ public class Node : MonoBehaviour
             roadMovePositions.Clear();
             destroyCurves = false;
         }
-        if (createCurves)
-        {
-            createCurves = false;
-            CreateCurves();
-        }
+        
         if (detectCars)
         {
             Collider[] c;
@@ -133,23 +129,32 @@ public class Node : MonoBehaviour
             }
             detectCars = false;
         }
-        if (detectNodes)
-        {
-            Collider[] c;
-            exits.Clear();
-            int lm = 1 << 9;
-            c = Physics.OverlapSphere(transform.GetChild(transform.childCount - 1).position, detectDist,lm);
-            foreach (Collider i in c)
-            {
-                Node n;
-                if ((n = i.transform.parent.GetComponent<Node>()) && (i.transform.parent != transform))
-                {
-                    i.transform.position = transform.GetChild(transform.childCount - 1).position;
-                    if(i.transform.parent.name[0] != 'X')exits.Add(n);
-                }
-            }
-            detectNodes = false;
+        
+    }
+    void OnDrawGizmos()    {
+        /* Makes it so that we can see which paths are turned off */
+        //if (stop) return;
 
+        //Function to turn the move positions on or off
+        if (showCurves && roadMovePositions != null)
+        {
+            if (stop) Gizmos.color = color3;
+            else if (occupied == 0) Gizmos.color = color2;
+            else Gizmos.color = color4;
+            for (int i = 0; i < roadMovePositions.Count - 1; i++)
+            {
+                Gizmos.DrawLine(roadMovePositions[i], roadMovePositions[i + 1]);
+                Gizmos.DrawLine(roadMovePositions[i + 1], roadMovePositions[i + 1] + Vector3.up * .5f + Vector3.up * 1.5f * i / roadMovePositions.Count);
+            }
+        }
+        if (showCurves && (roadMovePositions == null || roadMovePositions.Count==0)) {
+            Gizmos.color = color1;
+            for (int i = 0; i < transform.childCount; i++)
+            {
+                Transform currentNode = transform.GetChild(i);
+                Gizmos.DrawLine(currentNode.position, currentNode.position + currentNode.up);
+                Gizmos.DrawLine(currentNode.position, NextNodeT(currentNode).position);
+            }
         }
         if (EqHeight)
         {
@@ -160,7 +165,7 @@ public class Node : MonoBehaviour
             {
                 Vector3 p = transform.GetChild(i).position;
                 RaycastHit hit;
-                if (Physics.Raycast(transform.GetChild(i).position + Vector3.up * 10000f, -Vector3.up, out hit,20000f,lm))
+                if (Physics.Raycast(transform.GetChild(i).position + Vector3.up * 10000f, -Vector3.up, out hit, 20000f, lm))
                 {
                     transform.GetChild(i).position = hit.point + Vector3.up * 1f;
                     //Debug.DrawLine(transform.GetChild(i).position + Vector3.up * 10000f,hit.point);
@@ -168,28 +173,39 @@ public class Node : MonoBehaviour
             }
             EqHeight = false;
         }
-        if (cleanLists) {
+        if (cleanLists)
+        {
             exits.RemoveAll(node => node == null);
             conflicts.RemoveAll(node => node == null);
             cleanLists = false;
         }
-    }
-    void OnDrawGizmos()    {
-
-        /* Makes it so that we can see which paths are turned off */
-        //if (stop) return;
-
-        //Function to turn the move positions on or off
-        if (showCurves && roadMovePositions != null)
+        if (detectNodes)
         {
-            if (stop) Gizmos.color = color3;
-            else if (occupied == 0) Gizmos.color = color2;
-            else Gizmos.color = color4;
-          for(int i = 0; i<roadMovePositions.Count-1; i++)
-           {
-                Gizmos.DrawLine(roadMovePositions[i], roadMovePositions[i + 1]);
-                Gizmos.DrawLine(roadMovePositions[i+1], roadMovePositions[i+1]+ Vector3.up*.5f +Vector3.up*1.5f*i/ roadMovePositions.Count);
-           }
+            Collider[] c;
+            exits.Clear();
+            int lm = 1 << 9;
+            c = Physics.OverlapSphere(transform.GetChild(transform.childCount - 1).position, detectDist, lm);
+            foreach (Collider i in c)
+            {
+                Node n;
+                if ((n = i.transform.parent.GetComponent<Node>()) && (i.transform.parent != transform))
+                {
+                    i.transform.position = transform.GetChild(transform.childCount - 1).position;
+                    if (transform.name[0] == 'X' && i.transform.parent.name[0] == 'X') continue;
+                    else exits.Add(n);
+                }
+            }
+            foreach (Node n in exits) {
+                n.createCurves = true;
+            }
+            createCurves = true;
+            detectNodes = false;
+
+        }
+        if (createCurves)
+        {
+            createCurves = false;
+            CreateCurves();
         }
 
 
