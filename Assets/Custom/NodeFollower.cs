@@ -12,6 +12,10 @@ public class NodeFollower : MonoBehaviour
     public float dist2node;
     public float speed;
     public float safeDist;
+    public float waitTime;
+    public bool waiting = false;
+    private float waitStart = -1f;
+    private float waited;
     //public float steering;
 
     public float stopDist;
@@ -21,12 +25,13 @@ public class NodeFollower : MonoBehaviour
         //Destroy(transform.GetComponent<Collider>());
 
     }
-    public void Setup(Node nd, float spd, float stpDist, float sfDist) {
+    public void Setup(Node nd, float spd, float stpDist, float sfDist, float wTime) {
         node = nd;
         node.occupied++;
         speed = spd;
         stopDist = stpDist;
         safeDist = sfDist;
+        waitTime = wTime;
         if (node.exits.Count != 0)
         {
             nextNode = node.exits[UnityEngine.Random.Range(0, node.exits.Count)];
@@ -87,16 +92,32 @@ public class NodeFollower : MonoBehaviour
         else if (dist2node <= stopDist)
         {
             if (posI < node.roadMovePositions.Count - 1) posI++;
-            if (posI == node.roadMovePositions.Count - 1 &&  node.exitOn)
+            if (posI == node.roadMovePositions.Count - 1)
             {
                 if (nextNode == null) return;
-                if (nextNode.stop) return;
-                //GOorWAIT();
+                if (!node.exitOn) return;
+                if (nextNode.stop)
+                {
+                    if (!waiting)
+                    {
+                        waitStart = Time.realtimeSinceStartup;
+                        waiting = true;
+                    }
+                    else if (waiting && Time.realtimeSinceStartup - waitStart > waitTime)
+                    {
+                        waitStart = -1;
+                        nextNode = node.exits[UnityEngine.Random.Range(0, node.exits.Count)];
+                        waiting = false;
+                    }
+                    return;
+                }
+                waiting = false;
                 node.occupied--;
                 node = nextNode;
                 posI = 0;
                 node.occupied++;
-                if (node.exits.Count>0) {
+                if (node.exits.Count > 0)
+                {
                     nextNode = node.exits[UnityEngine.Random.Range(0, node.exits.Count)];
                 }
             }
