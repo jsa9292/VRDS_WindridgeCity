@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.Animations;
 
 public class NodeFollower : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class NodeFollower : MonoBehaviour
     public Node nextNode;
     public int posI;
     public Vector3 targetPos;
+    public Vector3 targetDir;
     public float dist2node;
     public float speed;
     public float safeDist;
@@ -16,7 +18,7 @@ public class NodeFollower : MonoBehaviour
     public bool waiting = false;
     private float waitStart = -1f;
     private float waited;
-    //public float steering;
+    public float steering;
 
     public float stopDist;
     // Start is called before the first frame update
@@ -39,28 +41,33 @@ public class NodeFollower : MonoBehaviour
         else {
             nextNode = null;
         }
+        posI = 0;
+        transform.position = node.roadMovePositions[0];
+        targetPos = node.roadMovePositions[1];
+        transform.LookAt(targetPos);
+        //Debug.Log(targetDir);
     }
-    public void GOorWAIT()
-    {
-        foreach(Node n in node.conflicts)
-        {
-            /* If the occupied road is stopped than we can still go */
-            if(n.occupied>0)
-            {
-                node.stop = true;
-            }
-            /* If the road that is one of our conflicts is not stopped and it is occupied than we should stop */
-            else
-            {
-              /* We stop if our conflicts have cars on them */
-              /* We break so that it is not reset by another node in conflicts that has no occupants */
-              return;
-            }
-        }
-        /* If no nodes have conflicts than turn the node back on and exit */
-        node.stop = false;
-        return;
-    }
+    //public void GOorWAIT()
+    //{
+    //    foreach(Node n in node.conflicts)
+    //    {
+    //        /* If the occupied road is stopped than we can still go */
+    //        if(n.occupied>0)
+    //        {
+    //            node.stop = true;
+    //        }
+    //        /* If the road that is one of our conflicts is not stopped and it is occupied than we should stop */
+    //        else
+    //        {
+    //          /* We stop if our conflicts have cars on them */
+    //          /* We break so that it is not reset by another node in conflicts that has no occupants */
+    //          return;
+    //        }
+    //    }
+    //    /* If no nodes have conflicts than turn the node back on and exit */
+    //    node.stop = false;
+    //    return;
+    //}
 
     // Update is called once per frame
     void FixedUpdate()
@@ -78,17 +85,18 @@ public class NodeFollower : MonoBehaviour
             Debug.DrawRay(transform.position, transform.forward * safeDist, Color.blue);
         }
 
-        targetPos = node.roadMovePositions[posI];
+        //get the distance
         dist2node = Vector3.Distance(transform.position, targetPos);
-        //Quaternion lookAt = Quaternion.FromToRotation(transform.forward, (nodeT.position - transform.position));
-
         if (dist2node > stopDist)
         {
-            //  Quaternion.RotateTowards(transform.rotation, lookAt, steering);
-            transform.LookAt(targetPos);
+            //rotate
+            //targetDir = Vector3.RotateTowards(transform.forward, targetPos-transform.position, steering, 0.0f);
+            //transform.rotation = Quaternion.LookRotation(targetDir);
+            //move forth
             transform.position += transform.forward* speed;
 
         }
+        //get the next node
         else if (dist2node <= stopDist)
         {
             if (posI < node.roadMovePositions.Count - 1) posI++;
@@ -105,7 +113,7 @@ public class NodeFollower : MonoBehaviour
                     }
                     else if (waiting && Time.realtimeSinceStartup - waitStart > waitTime)
                     {
-                        waitStart = -1;
+                        waitStart = -1f;
                         nextNode = node.exits[UnityEngine.Random.Range(0, node.exits.Count)];
                         waiting = false;
                     }
@@ -120,8 +128,12 @@ public class NodeFollower : MonoBehaviour
                 {
                     nextNode = node.exits[UnityEngine.Random.Range(0, node.exits.Count)];
                 }
+
             }
-            else return;
+
+            targetPos = node.roadMovePositions[posI];
+            //targetDir = targetPos - transform.position;
+            transform.LookAt(targetPos);
         }
 
     }
