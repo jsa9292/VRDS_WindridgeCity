@@ -9,6 +9,7 @@ public class TestSpawn : MonoBehaviour
     public float speed;
     public float stopDist;
     public float safeDist;
+    public float waitTime;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,10 +23,10 @@ public class TestSpawn : MonoBehaviour
         for (int i = 0; i < transform.childCount; i++)
         {
             spawnT = transform.GetChild(i).GetChild(0);
-            spawnee = Instantiate(spawnThis, spawnT.position, spawnT.rotation);
+            spawnee = Instantiate(spawnThis);
             if (nf = spawnee.GetComponent<NodeFollower>())
             {
-                nf.Setup(spawnT.parent.GetComponent<Node>(), speed, stopDist, safeDist);
+                nf.Setup(spawnT.parent.GetComponent<Node>(), speed, stopDist, safeDist, waitTime);
             }
         }
     }
