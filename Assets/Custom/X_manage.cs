@@ -10,6 +10,8 @@ public class X_manage : MonoBehaviour
     public float detectDist;
     public int state;
     public List<bool> stateGroup;
+    public bool trafficLight;
+    public List<GameObject> tLobjects; 
     // Start is called before the first frame update
     void Start()
     {
@@ -96,7 +98,7 @@ public class X_manage : MonoBehaviour
         foreach (Node n in intersection) {
             n.stop = false;
             foreach (Node m in n.conflicts) {
-                n.stop = n.stop || (m.occupied > 0);
+                n.stop = n.stop || (m.occupied > 0)||n.exitOn;
             }
         }
     }
