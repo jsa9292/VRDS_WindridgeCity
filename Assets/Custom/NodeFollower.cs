@@ -74,10 +74,8 @@ public class NodeFollower : MonoBehaviour
     {
         if (node.stop) return;
 
-        int lm = 0 << 5;
-        lm = ~lm;
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.forward, out hit, safeDist,lm))
+        if (Physics.Raycast(transform.position, transform.forward, out hit, safeDist))
         {
             Debug.DrawRay(transform.position, transform.forward * hit.distance, Color.red);
             return;
@@ -92,11 +90,10 @@ public class NodeFollower : MonoBehaviour
         if (dist2node > stopDist)
         {
             //rotate
-            //float d_angle = Vector3.Angle(transform.forward, targetPos - transform.position);
-            //if (d_angle>0.01f) targetDir = Vector3.RotateTowards(transform.forward, targetPos-transform.position, d_angle*steering, 0.0f);
+            //targetDir = Vector3.RotateTowards(transform.forward, targetPos-transform.position, steering, 0.0f);
             //transform.rotation = Quaternion.LookRotation(targetDir);
             //move forth
-            transform.position = Vector3.MoveTowards(transform.position, targetPos, speed);
+            transform.position += transform.forward* speed;
 
         }
         //get the next node
@@ -134,7 +131,7 @@ public class NodeFollower : MonoBehaviour
 
             }
 
-            targetPos = node.roadMovePositions[posI+1];
+            targetPos = node.roadMovePositions[posI];
             //targetDir = targetPos - transform.position;
             transform.LookAt(targetPos);
         }

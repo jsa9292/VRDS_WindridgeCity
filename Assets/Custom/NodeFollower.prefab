@@ -50,7 +50,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2435569061045753531}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -112,11 +112,11 @@ MonoBehaviour:
   targetPos: {x: 0, y: 0, z: 0}
   targetDir: {x: 0, y: 0, z: 0}
   dist2node: 0
-  speed: 0.1
+  speed: 0
   safeDist: 0
   waitTime: 0
   waiting: 0
-  steering: 0.003
+  steering: 0.01
   stopDist: 0
 --- !u!114 &7390704188426102844
 MonoBehaviour:
@@ -130,5 +130,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b56ce639aef3ea84a8cf5afb111ac384, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  car: {fileID: 6817871462917917963, guid: f29bee6db59cb614392923dfa2557106, type: 3}
-  spawnOffset: {x: -0.5, y: -0.3, z: 0}
+  tm: {fileID: 0}
+  spawnOffset: 0

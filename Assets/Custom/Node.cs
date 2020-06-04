@@ -26,6 +26,7 @@ public class Node : MonoBehaviour
     public bool stop;
     public bool cleanLists;
     public bool isIntersectionNode = false;
+
     //Curvature Production
     public List<Vector3> roadMovePositions; //A node follower will access the nodes move positions, the cubes will be registerd into this position list also
     public bool createCurves; //check in order to add better curvature to a road
@@ -137,12 +138,7 @@ public class Node : MonoBehaviour
         //Function to turn the move positions on or off
         if (showCurves && roadMovePositions != null)
         {
-            foreach (Node e in exits)
-            {
-                e.stop = !exitOn;
-            }
             if (stop) Gizmos.color = color3;
-            
             else if (occupied == 0) Gizmos.color = color2;
             else Gizmos.color = color4;
             for (int i = 0; i < roadMovePositions.Count - 1; i++)
