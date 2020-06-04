@@ -4,50 +4,41 @@ using UnityEngine;
 
 public class CarAI : MonoBehaviour
 {
-    public NodeFollower nf;
-    private Transform nfT;
-    public float speed;
-    public float steering;
-    public float stayDist;
-    public float stopDist;
-    public float brakePower;
-    public float recSpeed;
-
-    public Transform[] wheelGraphics;
-    private Rigidbody rb;
+    public NodeFollower nf; //nodefollower its following
+    private Transform nfT; //transform object of the nodefollower
+    public float speed; //speed of following nodefollower
+    public float steering; //rot rate of the car graphics
+    public float stopDist; //distance from node follower to converge. will accelerate/decelearate to this position. will back off if too close.
+    //private Vector3 lookingAt; //vector dedicated for quaternion rotation. 
+    public Vector3 Offset;//offsetfrom the nfT;
+    public float wheelConst; //wheel graphics rot rate 
+    public Transform[] wheelGraphics; // wheel graphics objects
+    private Vector3 targetPos; //final position for car to follow;
+    private float distance; // distance to targetPos
+    private Vector3 posNoise; // noise to targetPos
+    public float NoiseLevel; // noise magnitude;
     // Start is called before the first frame update
     void Start()
     {
         nfT = nf.transform;
-        rb = transform.GetComponent<Rigidbody>();
+        posNoise = new Vector3(Random.Range(-1, 1), 0, Random.Range(-1, 1));
+        //rb = transform.GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (nfT == null) return;
-        float dist2nf = Vector3.Distance(transform.position, nfT.position);
-        //Quaternion lookAt = Quaternion.FromToRotation(transform.forward, (nfT.position - transform.position));
-        //float ang2nf = Vector3.SignedAngle(nf.transform.position,transform.position);
-
-        if (dist2nf > stopDist)
+        targetPos = nfT.position + Offset + posNoise* NoiseLevel;
+        distance = Vector3.Distance(transform.position, targetPos);
+        //lookingAt = Vector3.RotateTowards(transform.forward, nfT.forward, steering, 0.0f);
+        //transform.rotation = Quaternion.LookRotation(lookingAt);
+        transform.LookAt(targetPos);
+        float speedFinal = (distance - stopDist) * speed;
+        transform.position += transform.forward * speedFinal;//Vector3.MoveTowards(transform.position, nfT.position, (distance - stopDist) * speed);// nfT.position + transform.forward * posOffSet.x + transform.up*posOffSet.y;
+        foreach (Transform t in wheelGraphics)
         {
-            //Quaternion.RotateTowards(transform.rotation, lookAt, steering);
-            //rb.MoveRotation(rb.rotation*Quaternion.Euler(ang2nf*steering));
-            transform.LookAt(nfT);
-            rb.MovePosition(transform.position + transform.forward * (dist2nf-stopDist)*speed);
-            //float steer = Mathf.Clamp(ang2nf, -steering, steering);
-            //float motor = Mathf.Clamp((dist2nf - stayDist)/stayDist,0,1);
-            //rb.drag = -Mathf.Tan(Mathf.Clamp(dist2nf,0,Mathf.PI/2)+ Mathf.PI / 4);
-           
-            //Vector3 pos;
-            //Quaternion quat;
-            //for (int i = 0; i < 4; i++)
-            //{
-                //wheelGraphics[i].SetPositionAndRotation(pos, quat);
-            //}
+
+            t.localEulerAngles += Vector3.right * distance * wheelConst;
         }
-        else if (dist2nf <= stopDist) {
-        }
-     }
+    }
 }
