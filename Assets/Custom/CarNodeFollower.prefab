@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4792164046581813582}
   - component: {fileID: 7390704188426102844}
   m_Layer: 5
-  m_Name: NodeFollower
+  m_Name: CarNodeFollower
   m_TagString: Follower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -130,5 +130,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b56ce639aef3ea84a8cf5afb111ac384, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  car: {fileID: 6817871462917917963, guid: f29bee6db59cb614392923dfa2557106, type: 3}
+  cars:
+  - {fileID: 6909315201666663945, guid: e62e0693517435e41909746eaa55916c, type: 3}
+  - {fileID: 1814150744460790561, guid: b1198b68916ca964786a9f4f8bee00cd, type: 3}
+  - {fileID: 4659801262484053296, guid: 910e8e63ae05c174dbb5454d822ab3e3, type: 3}
+  - {fileID: 8232901641488393086, guid: 5ef6151d9599a3e45a44df8fdeb43e7b, type: 3}
+  - {fileID: 1111122724901319150, guid: 1943b745c95f87e4dbd3e9cc548ab500, type: 3}
+  - {fileID: 5780052801542476551, guid: 3b1637ddf27e1b9448c7c91a217564f5, type: 3}
+  - {fileID: 8870141130267171481, guid: a987b06be7ac2ce41967918b5554cc57, type: 3}
+  - {fileID: 1220423127816896814, guid: 699860e45fcfdfa4bb16053fa4cfdbf8, type: 3}
+  - {fileID: 6817871462917917963, guid: f29bee6db59cb614392923dfa2557106, type: 3}
+  - {fileID: 5001391328788216172, guid: faa9f60053204bd4aaf88c9030c3fe05, type: 3}
+  - {fileID: 729630889052653581, guid: 156b7e5af07028c42a56b56398e23f95, type: 3}
+  - {fileID: 8416383762448425047, guid: 7c0935e959135024e9016f5da30be5db, type: 3}
+  - {fileID: 7624884903045088708, guid: e3433bb3f90589443957348ff4e19f2e, type: 3}
+  - {fileID: 7624884903045088708, guid: b64e01e5eed54e048aae56572f01fc1b, type: 3}
+  - {fileID: 7624884903045088708, guid: f25eaef5e6031cc4ba5dc5a2058a0c53, type: 3}
+  - {fileID: 7624884903045088708, guid: 647476327959e4e4bb8ff55e53dc4a58, type: 3}
+  - {fileID: 9166644411460394390, guid: 4dba18d75589631438323cb25d70c011, type: 3}
+  - {fileID: 9166644411460394390, guid: 47335692025b1354cbc49b5bc079634a, type: 3}
+  - {fileID: 9166644411460394390, guid: 3b858e6869361d64da84723f50012986, type: 3}
+  - {fileID: 9166644411460394390, guid: ed3f9148b556d1a41866026ee38ba992, type: 3}
   spawnOffset: {x: -0.5, y: -0.3, z: 0}

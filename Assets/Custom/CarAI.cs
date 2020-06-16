@@ -17,18 +17,22 @@ public class CarAI : MonoBehaviour
     private float distance; // distance to targetPos
     private Vector3 posNoise; // noise to targetPos
     public float NoiseLevel; // noise magnitude;
+    public bool signalLeft;
+    public bool signalRight;
+    public bool signalStop;
     // Start is called before the first frame update
     void Start()
     {
         nfT = nf.transform;
         posNoise = new Vector3(Random.Range(-1, 1), 0, Random.Range(-1, 1));
+        posNoise *= NoiseLevel;
         //rb = transform.GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        targetPos = nfT.position + Offset + posNoise* NoiseLevel;
+        targetPos = nfT.position + Offset + posNoise;
         distance = Vector3.Distance(transform.position, targetPos);
         //lookingAt = Vector3.RotateTowards(transform.forward, nfT.forward, steering, 0.0f);
         //transform.rotation = Quaternion.LookRotation(lookingAt);

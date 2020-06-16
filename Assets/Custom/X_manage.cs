@@ -4,14 +4,9 @@ using UnityEngine;
 
 public class X_manage : MonoBehaviour
 {
-    public List<Node> enters;
-    public List<Node> intersection;
-    public bool detect;
+    public bool detect; //pickup Node from children
     public float detectDist;
-    public int state;
-    public List<bool> stateGroup;
-    public bool trafficLight;
-    public List<GameObject> tLobjects; 
+    public bool detectLights; //pickup MaterialChanger from LightGroupParents 
     // Start is called before the first frame update
     void Start()
     {
@@ -50,40 +45,98 @@ public class X_manage : MonoBehaviour
             }
             detect = false;
         }
-
+        if (detectLights)
+        {
+            LightGroup1 = LightGroupParents[0].GetComponentsInChildren<MaterialChanger>();
+            LightGroup2 = LightGroupParents[1].GetComponentsInChildren<MaterialChanger>();
+            LightGroup3 = LightGroupParents[2].GetComponentsInChildren<MaterialChanger>();
+            //LightGroup4 = LightGroupParents[3].GetComponentsInChildren<MaterialChanger>();
+        }
     }
 
 
+    public List<Node> enters;
+    public List<Node> intersection;
     private int xI;
+    private int prev_state;
+    public List<bool> stateGroup;//pairs enters into binary groups
+    public int state;
+    //only supports binary states with wait inbetween
+    public bool trafficLight; //boolean to control light groups
+    public float signalDur;
+    public float pauseDur;
+    public List<GameObject> LightGroupParents;//gameobject parents for lights
+    public MaterialChanger[] LightGroup1;
+    public MaterialChanger[] LightGroup2;
+    public MaterialChanger[] LightGroup3; //this is yellow light group
     void FixedUpdate()
     {
-        switch (state)
+        //if(Time.realtimeSinceStartup >)
+        if (state != prev_state)
         {
-            /* Vertical or horizontal */
-            case 1:
-                for (int i = 0; i < enters.Count; i++)
-                {
-                    enters[i].exitOn = stateGroup[i];
-
-                }
-                break;
-            /* Vertical or horizontal */
-            case 2:
-                for (int i = 0; i < enters.Count; i++)
-                {
-                    enters[i].exitOn = !stateGroup[i];
-                }
-                break;
-            /* All directions are open, 4 way stop, whichever car gets there first should get there first */
-            case 3:
-                for (int i = 0; i < enters.Count; i++)
-                {
-                    enters[i].exitOn = false;
-                }
-                break;
-            /* Closes all ways */
-            default:
-                return;
+            foreach (MaterialChanger m in LightGroup1)
+            {
+                m.Switch(false);
+            }
+            foreach (MaterialChanger m in LightGroup2)
+            {
+                m.Switch(false);
+            }
+            foreach (MaterialChanger m in LightGroup3)
+            {
+                m.Switch(false);
+            }
+            switch (state)
+            {
+                /* Vertical or horizontal */
+                case 1:
+                    for (int i = 0; i < enters.Count; i++)
+                    {
+                        enters[i].exitOn = stateGroup[i];
+                    }
+                    if (trafficLight)
+                    {
+                        foreach (MaterialChanger m in LightGroup1)
+                        {
+                            m.Switch(true);
+                        }
+                    }
+                    prev_state = 1;
+                    break;
+                /* Vertical or horizontal */
+                case 2:
+                    for (int i = 0; i < enters.Count; i++)
+                    {
+                        enters[i].exitOn = !stateGroup[i];
+                    }
+                    if (trafficLight)
+                    {
+                        foreach (MaterialChanger m in LightGroup2)
+                        {
+                            m.Switch(true);
+                        }
+                    }
+                    prev_state = 2;
+                    break;
+                /* All directions are open, 4 way stop, whichever car gets there first should get there first */
+                case 3:
+                    if (trafficLight)
+                    {
+                        foreach (MaterialChanger m in LightGroup3)
+                        {
+                            m.Switch(true);
+                        }
+                    }
+                    prev_state = 3;
+                    return;
+                /* Closes all ways */
+                default:
+                    for (int i = 0; i < enters.Count; i++)
+                    {
+                        enters[i].exitOn = false;
+                    }
+                    break;
+            }
         }
         // This enforces nodefollowers to waitfor execution of rest of X_manage script before allowed to switch to intersection node
         // The problem was 1, nodefollowers switched node before checking if it was available,
@@ -98,7 +151,7 @@ public class X_manage : MonoBehaviour
         foreach (Node n in intersection) {
             n.stop = false;
             foreach (Node m in n.conflicts) {
-                n.stop = n.stop || (m.occupied > 0)||n.exitOn;
+                n.stop = n.stop || (m.occupied > 0);
             }
         }
     }

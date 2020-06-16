@@ -19,8 +19,9 @@ public class NodeFollower : MonoBehaviour
     private float waitStart = -1f;
     private float waited;
     public float steering;
-
     public float stopDist;
+    public float movement;
+    private Vector3 prev_pos;
     // Start is called before the first frame update
     void Awake()
     {
@@ -72,7 +73,11 @@ public class NodeFollower : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (node.stop) return;
+        if (node.stop)
+        {
+            movement = 0f;
+            return;
+        }
 
         int lm = 0 << 5;
         lm = ~lm;
@@ -96,6 +101,8 @@ public class NodeFollower : MonoBehaviour
             //if (d_angle>0.01f) targetDir = Vector3.RotateTowards(transform.forward, targetPos-transform.position, d_angle*steering, 0.0f);
             //transform.rotation = Quaternion.LookRotation(targetDir);
             //move forth
+            movement = Vector3.Distance(transform.position, prev_pos);
+            prev_pos = transform.position;
             transform.position = Vector3.MoveTowards(transform.position, targetPos, speed);
 
         }
@@ -133,7 +140,6 @@ public class NodeFollower : MonoBehaviour
                 }
 
             }
-
             targetPos = node.roadMovePositions[posI+1];
             //targetDir = targetPos - transform.position;
             transform.LookAt(targetPos);

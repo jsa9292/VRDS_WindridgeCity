@@ -40,8 +40,7 @@ public class Node : MonoBehaviour
         for (int i = 0; i < transform.childCount; i++)
         {
             //Destroy(transform.GetChild(i).GetComponent<Collider>());
-            transform.GetChild(i).GetComponent<Collider>().enabled = false;
-            transform.GetChild(i).GetComponent<MeshRenderer>().enabled = false;
+            transform.GetChild(i).gameObject.SetActive(false);
         }
     }
     void CreateCurves()
@@ -137,10 +136,6 @@ public class Node : MonoBehaviour
         //Function to turn the move positions on or off
         if (showCurves && roadMovePositions != null)
         {
-            foreach (Node e in exits)
-            {
-                e.stop = !exitOn;
-            }
             if (stop) Gizmos.color = color3;
             
             else if (occupied == 0) Gizmos.color = color2;
