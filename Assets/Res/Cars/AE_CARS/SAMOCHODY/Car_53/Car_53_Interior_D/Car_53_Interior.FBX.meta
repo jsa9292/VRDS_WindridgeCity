@@ -1,14 +1,78 @@
 fileFormatVersion: 2
-guid: 47d5b08d13c7ab745b2436bfc3fc6860
+guid: 93c0237689828124dab95e00d058f506
+labels:
+- Car
+- Sports
+- Vehicle
+- Race
+- Racer
+- Lowpoly
+- Lod
+- Hardsurface
+- Wheels
+- Auto
+- Automobile
+- Game
+- Mobile
+- Ride
+- Chase
+- Run
+- Fast
+- Interior
 ModelImporter:
   serializedVersion: 26
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: //RootNode
+  - first:
+      1: 100002
+    second: Car_53_Interior_D
+  - first:
+      1: 100004
+    second: Steering_wheel
+  - first:
+      4: 400000
+    second: //RootNode
+  - first:
+      4: 400002
+    second: Car_53_Interior_D
+  - first:
+      4: 400004
+    second: Steering_wheel
+  - first:
+      23: 2300000
+    second: //RootNode
+  - first:
+      23: 2300002
+    second: Car_53_Interior_D
+  - first:
+      23: 2300004
+    second: Steering_wheel
+  - first:
+      33: 3300000
+    second: //RootNode
+  - first:
+      33: 3300002
+    second: Car_53_Interior_D
+  - first:
+      33: 3300004
+    second: Steering_wheel
+  - first:
+      43: 4300000
+    second: Car_53_Interior_D
+  - first:
+      43: 4300002
+    second: Steering_wheel
+  - first:
+      95: 9500000
+    second: //RootNode
   externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -31,7 +95,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 0
+    isReadable: 1
   meshes:
     lODScreenPercentages: []
     globalScale: 1
@@ -39,10 +103,10 @@ ModelImporter:
     addColliders: 0
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1
-    importVisibility: 1
+    importVisibility: 0
     importBlendShapes: 1
-    importCameras: 1
-    importLights: 1
+    importCameras: 0
+    importLights: 0
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
@@ -53,18 +117,18 @@ ModelImporter:
     maxBonesPerVertex: 4
     minBoneWeight: 0.001
     meshOptimizationFlags: -1
-    indexFormat: 0
+    indexFormat: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
-    useFileScale: 1
+    useFileScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
-    tangentImportMode: 3
-    normalCalculationMode: 4
-    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    tangentImportMode: 4
+    normalCalculationMode: 0
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
   referencedClips: []
@@ -85,7 +149,7 @@ ModelImporter:
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
-    skeletonHasParents: 1
+    skeletonHasParents: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 0
   humanoidOversampling: 1
