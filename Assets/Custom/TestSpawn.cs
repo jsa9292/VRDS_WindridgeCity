@@ -28,7 +28,6 @@ public class TestSpawn : MonoBehaviour
             {
                 nf.Setup(spawnT.parent.GetComponent<Node>(), speed, stopDist, safeDist, waitTime);
             }
-            spawnee.transform.position = nf.node.roadMovePositions[0];
         }
     }
     // Update is called once per frame

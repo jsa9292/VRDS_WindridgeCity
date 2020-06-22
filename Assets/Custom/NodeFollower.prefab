@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6682945397249142889}
   - component: {fileID: 79553978058985491}
   - component: {fileID: 4792164046581813582}
+  - component: {fileID: 7390704188426102844}
   m_Layer: 5
   m_Name: NodeFollower
   m_TagString: Follower
@@ -27,13 +28,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2435569061045753531}
-  m_LocalRotation: {x: -0, y: 0.86602443, z: -0, w: 0.5000017}
-  m_LocalPosition: {x: 414.93, y: 342.82, z: -199.39}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 120.00001, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1763208514168853751
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -106,9 +107,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   node: {fileID: 0}
+  nextNode: {fileID: 0}
   posI: 0
   targetPos: {x: 0, y: 0, z: 0}
+  targetDir: {x: 0, y: 0, z: 0}
   dist2node: 0
   speed: 0
   safeDist: 0
+  waitTime: 0
+  waiting: 0
+  steering: 0.01
   stopDist: 0
+--- !u!114 &7390704188426102844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2435569061045753531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b56ce639aef3ea84a8cf5afb111ac384, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tm: {fileID: 0}
+  spawnOffset: 0

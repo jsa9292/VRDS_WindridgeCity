@@ -19,13 +19,13 @@ public class Node : MonoBehaviour
     public bool detectCars;
     public float detectDist = 1f;
     public bool EqHeight = true;
+    public float heightTo = 1f;
     public float drawSensitivity;
     public int occupied;
     public bool stoping;
     public bool stop;
     public bool cleanLists;
     public bool isIntersectionNode = false;
-
     //Curvature Production
     public List<Vector3> roadMovePositions; //A node follower will access the nodes move positions, the cubes will be registerd into this position list also
     public bool createCurves; //check in order to add better curvature to a road
@@ -40,8 +40,7 @@ public class Node : MonoBehaviour
         for (int i = 0; i < transform.childCount; i++)
         {
             //Destroy(transform.GetChild(i).GetComponent<Collider>());
-            transform.GetChild(i).GetComponent<Collider>().enabled = false;
-            transform.GetChild(i).GetComponent<MeshRenderer>().enabled = false;
+            transform.GetChild(i).gameObject.SetActive(false);
         }
     }
     void CreateCurves()
@@ -89,7 +88,10 @@ public class Node : MonoBehaviour
             }
         }
         roadMovePositions.Add(nodeB.position);
-
+        if (reverse)
+        {
+            roadMovePositions.Reverse();
+        }
     }
     void OnDrawGizmosSelected() {
         Gizmos.color = color1;
@@ -99,11 +101,7 @@ public class Node : MonoBehaviour
             Gizmos.DrawLine(currentNode.position, currentNode.position + currentNode.up);
             Gizmos.DrawLine(currentNode.position, NextNodeT(currentNode).position);
         }
-        if (reverse)
-        {
-            roadMovePositions.Reverse();
-            reverse = false;
-        }
+        
         if (destroyCurves)
         {
             roadMovePositions.Clear();
@@ -139,6 +137,7 @@ public class Node : MonoBehaviour
         if (showCurves && roadMovePositions != null)
         {
             if (stop) Gizmos.color = color3;
+            
             else if (occupied == 0) Gizmos.color = color2;
             else Gizmos.color = color4;
             for (int i = 0; i < roadMovePositions.Count - 1; i++)
@@ -167,7 +166,7 @@ public class Node : MonoBehaviour
                 RaycastHit hit;
                 if (Physics.Raycast(transform.GetChild(i).position + Vector3.up * 10000f, -Vector3.up, out hit, 20000f, lm))
                 {
-                    transform.GetChild(i).position = hit.point + Vector3.up * 1f;
+                    transform.GetChild(i).position = hit.point + Vector3.up * heightTo;
                     //Debug.DrawLine(transform.GetChild(i).position + Vector3.up * 10000f,hit.point);
                 }
             }
