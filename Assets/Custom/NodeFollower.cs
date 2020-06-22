@@ -9,6 +9,7 @@ public class NodeFollower : MonoBehaviour
     public Node node;
     public Node nextNode;
     public int posI;
+    private int maxRPI;
     public Vector3 targetPos;
     public Vector3 targetDir;
     public float dist2node;
@@ -22,6 +23,9 @@ public class NodeFollower : MonoBehaviour
     public float stopDist;
     public float movement;
     private Vector3 prev_pos;
+    public bool signalStop;
+    public bool signalLeft;
+    public bool signalRight;
     // Start is called before the first frame update
     void Awake()
     {
@@ -43,9 +47,12 @@ public class NodeFollower : MonoBehaviour
             nextNode = null;
         }
         posI = 0;
+        maxRPI = node.roadMovePositions.Count;
         transform.position = node.roadMovePositions[0];
         targetPos = node.roadMovePositions[1];
         transform.LookAt(targetPos);
+        targetDir = targetPos - transform.position;
+        dist2node = targetDir.magnitude;
         //Debug.Log(targetDir);
     }
     //public void GOorWAIT()
@@ -73,9 +80,14 @@ public class NodeFollower : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        signalLeft = false;
+        signalRight = false;
+        signalStop = false;
+        
         if (node.stop)
         {
             movement = 0f;
+            signalStop = true;
             return;
         }
 
@@ -85,6 +97,7 @@ public class NodeFollower : MonoBehaviour
         if (Physics.Raycast(transform.position, transform.forward, out hit, safeDist,lm))
         {
             Debug.DrawRay(transform.position, transform.forward * hit.distance, Color.red);
+            signalStop = true;
             return;
         }
         else
@@ -93,27 +106,37 @@ public class NodeFollower : MonoBehaviour
         }
 
         //get the distance
-        dist2node = Vector3.Distance(transform.position, targetPos);
+        targetDir = targetPos - transform.position;
+        dist2node = targetDir.magnitude; 
+        movement = Vector3.Distance(transform.position, prev_pos);
+        prev_pos = transform.position;
+
         if (dist2node > stopDist)
         {
             //rotate
-            //float d_angle = Vector3.Angle(transform.forward, targetPos - transform.position);
-            //if (d_angle>0.01f) targetDir = Vector3.RotateTowards(transform.forward, targetPos-transform.position, d_angle*steering, 0.0f);
-            //transform.rotation = Quaternion.LookRotation(targetDir);
+            float d_angle = Vector3.Angle(transform.forward, targetDir);
+            if (d_angle>0.01f) targetDir = Vector3.RotateTowards(transform.forward, targetPos-transform.position, d_angle*steering, 0.0f);
+            transform.rotation = Quaternion.LookRotation(targetDir);
             //move forth
-            movement = Vector3.Distance(transform.position, prev_pos);
-            prev_pos = transform.position;
-            transform.position = Vector3.MoveTowards(transform.position, targetPos, speed);
+             transform.position = Vector3.MoveTowards(transform.position, targetPos, speed);
 
         }
         //get the next node
         else if (dist2node <= stopDist)
         {
-            if (posI < node.roadMovePositions.Count - 1) posI++;
-            if (posI == node.roadMovePositions.Count - 1)
+            if (posI < maxRPI - 1) posI++;
+            if (posI == maxRPI - 1)
             {
-                if (nextNode == null) return;
-                if (!node.exitOn) return;
+                if (nextNode == null)
+                {
+                    signalStop = true;
+                    return;
+                }
+                if (!node.exitOn)
+                {
+                    signalStop = true;
+                    return;
+                }
                 if (nextNode.stop)
                 {
                     if (!waiting)
@@ -127,23 +150,31 @@ public class NodeFollower : MonoBehaviour
                         nextNode = node.exits[UnityEngine.Random.Range(0, node.exits.Count)];
                         waiting = false;
                     }
+                    signalStop = true;
                     return;
                 }
                 waiting = false;
                 node.occupied--;
                 node = nextNode;
                 posI = 0;
+                maxRPI = node.roadMovePositions.Count;
                 node.occupied++;
                 if (node.exits.Count > 0)
                 {
                     nextNode = node.exits[UnityEngine.Random.Range(0, node.exits.Count)];
                 }
+                else nextNode = node;
 
             }
             targetPos = node.roadMovePositions[posI+1];
-            //targetDir = targetPos - transform.position;
-            transform.LookAt(targetPos);
+            
+            //transform.LookAt(targetPos);
         }
-
+        if (maxRPI - posI < 20)
+        {
+            if (nextNode == null) return;
+            signalLeft = nextNode.leftTurn || node.leftTurn;
+            signalRight = nextNode.rightTurn || node.rightTurn;
+        }
     }
 }

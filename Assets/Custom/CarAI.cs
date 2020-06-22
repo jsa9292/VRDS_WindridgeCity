@@ -20,12 +20,21 @@ public class CarAI : MonoBehaviour
     public bool signalLeft;
     public bool signalRight;
     public bool signalStop;
+    public GameObject stopParent;
+    public GameObject leftParent;
+    public GameObject rightParent;
+    public LensFlare[] stopFlares;
+    public LensFlare[] leftFlares;
+    public LensFlare[] rightFlares;
     // Start is called before the first frame update
     void Start()
     {
         nfT = nf.transform;
         posNoise = new Vector3(Random.Range(-1, 1), 0, Random.Range(-1, 1));
         posNoise *= NoiseLevel;
+        stopFlares = stopParent.GetComponentsInChildren<LensFlare>();
+        leftFlares = leftParent.GetComponentsInChildren<LensFlare>();
+        rightFlares = rightParent.GetComponentsInChildren<LensFlare>();
         //rb = transform.GetComponent<Rigidbody>();
     }
 
@@ -44,5 +53,6 @@ public class CarAI : MonoBehaviour
 
             t.localEulerAngles += Vector3.right * distance * wheelConst;
         }
+
     }
 }

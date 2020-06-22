@@ -36,6 +36,8 @@ public class Node : MonoBehaviour
     public float minDist;
     //MAX_dist - variable for later
     public int smoothCount;
+    public bool leftTurn = false;
+    public bool rightTurn = false;
     public void Awake() {
         for (int i = 0; i < transform.childCount; i++)
         {
