@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 356429480382978631}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.02, z: -0.21}
+  m_LocalPosition: {x: 0, y: -0.02, z: 0.79}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3855535631006352383}
@@ -549,7 +549,7 @@ GameObject:
   - component: {fileID: 3865406350169232206}
   - component: {fileID: 8416595651947367026}
   m_Layer: 0
-  m_Name: Point Light (13)
+  m_Name: bLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -578,9 +578,9 @@ LensFlare:
   m_GameObject: {fileID: 1181865668002172997}
   m_Enabled: 1
   m_Flare: {fileID: 12100000, guid: f8c989b26ef04a340807f924b2472c46, type: 2}
-  m_Color: {r: 1, g: 0, b: 0, a: 0}
-  m_Brightness: 0.76
-  m_FadeSpeed: 3
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Brightness: 4.28
+  m_FadeSpeed: 5.82
   m_IgnoreLayers:
     serializedVersion: 2
     m_Bits: 6
@@ -596,7 +596,7 @@ GameObject:
   - component: {fileID: 7689827959340412984}
   - component: {fileID: 4211147333402462097}
   m_Layer: 0
-  m_Name: Point Light (6)
+  m_Name: sLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -625,9 +625,9 @@ LensFlare:
   m_GameObject: {fileID: 1219147814379923919}
   m_Enabled: 1
   m_Flare: {fileID: 12100000, guid: f8c989b26ef04a340807f924b2472c46, type: 2}
-  m_Color: {r: 1, g: 0.6627451, b: 0, a: 1}
-  m_Brightness: 1
-  m_FadeSpeed: 3
+  m_Color: {r: 1, g: 0.45808098, b: 0, a: 1}
+  m_Brightness: 4.28
+  m_FadeSpeed: 5.82
   m_IgnoreLayers:
     serializedVersion: 2
     m_Bits: 6
@@ -643,7 +643,7 @@ GameObject:
   - component: {fileID: 1313977965085167538}
   - component: {fileID: 1313977965085167537}
   m_Layer: 0
-  m_Name: Point Light (3)
+  m_Name: hLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -674,13 +674,13 @@ Light:
   serializedVersion: 9
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1.33
-  m_Range: 6.08
-  m_SpotAngle: 32
+  m_Intensity: 10.89
+  m_Range: 10.04
+  m_SpotAngle: 59
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -708,12 +708,12 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 12100000, guid: 54fbbf098d116effa00081aba8ad6659, type: 2}
-  m_RenderMode: 0
+  m_RenderMode: 2
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 0
   m_RenderingLayerMask: 1
-  m_Lightmapping: 2
+  m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -734,7 +734,7 @@ GameObject:
   - component: {fileID: 1313977965623716675}
   - component: {fileID: 1313977965623716674}
   m_Layer: 0
-  m_Name: Point Light (2)
+  m_Name: hLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -765,13 +765,13 @@ Light:
   serializedVersion: 9
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1.33
-  m_Range: 6.08
-  m_SpotAngle: 32
+  m_Intensity: 10.89
+  m_Range: 10.04
+  m_SpotAngle: 59
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -799,12 +799,12 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 12100000, guid: 54fbbf098d116effa00081aba8ad6659, type: 2}
-  m_RenderMode: 0
+  m_RenderMode: 2
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 0
   m_RenderingLayerMask: 1
-  m_Lightmapping: 2
+  m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -1059,7 +1059,7 @@ GameObject:
   - component: {fileID: 9099165229472059019}
   - component: {fileID: 8998292361484613536}
   m_Layer: 0
-  m_Name: Point Light (9)
+  m_Name: bLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1088,9 +1088,9 @@ LensFlare:
   m_GameObject: {fileID: 2530045312411663834}
   m_Enabled: 1
   m_Flare: {fileID: 12100000, guid: f8c989b26ef04a340807f924b2472c46, type: 2}
-  m_Color: {r: 1, g: 0, b: 0, a: 0}
-  m_Brightness: 0.76
-  m_FadeSpeed: 3
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Brightness: 4.28
+  m_FadeSpeed: 5.82
   m_IgnoreLayers:
     serializedVersion: 2
     m_Bits: 6
@@ -1106,7 +1106,7 @@ GameObject:
   - component: {fileID: 8840067289076772205}
   - component: {fileID: 933540187430481820}
   m_Layer: 0
-  m_Name: Point Light (12)
+  m_Name: bLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1135,9 +1135,9 @@ LensFlare:
   m_GameObject: {fileID: 2822493299084987314}
   m_Enabled: 1
   m_Flare: {fileID: 12100000, guid: f8c989b26ef04a340807f924b2472c46, type: 2}
-  m_Color: {r: 1, g: 0, b: 0, a: 0}
-  m_Brightness: 0.76
-  m_FadeSpeed: 3
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Brightness: 4.28
+  m_FadeSpeed: 5.82
   m_IgnoreLayers:
     serializedVersion: 2
     m_Bits: 6
@@ -1153,7 +1153,7 @@ GameObject:
   - component: {fileID: 8534070468638550347}
   - component: {fileID: 527233048634776027}
   m_Layer: 0
-  m_Name: Point Light (10)
+  m_Name: bLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1182,9 +1182,9 @@ LensFlare:
   m_GameObject: {fileID: 2951570308175345340}
   m_Enabled: 1
   m_Flare: {fileID: 12100000, guid: f8c989b26ef04a340807f924b2472c46, type: 2}
-  m_Color: {r: 1, g: 0, b: 0, a: 0}
-  m_Brightness: 0.76
-  m_FadeSpeed: 3
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Brightness: 4.28
+  m_FadeSpeed: 5.82
   m_IgnoreLayers:
     serializedVersion: 2
     m_Bits: 6
@@ -1463,7 +1463,7 @@ GameObject:
   - component: {fileID: 5612502257608598278}
   - component: {fileID: 4738898828088351873}
   m_Layer: 0
-  m_Name: Point Light (11)
+  m_Name: bLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1492,9 +1492,9 @@ LensFlare:
   m_GameObject: {fileID: 3697309567679028308}
   m_Enabled: 1
   m_Flare: {fileID: 12100000, guid: f8c989b26ef04a340807f924b2472c46, type: 2}
-  m_Color: {r: 1, g: 0, b: 0, a: 0}
-  m_Brightness: 0.76
-  m_FadeSpeed: 3
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Brightness: 4.28
+  m_FadeSpeed: 5.82
   m_IgnoreLayers:
     serializedVersion: 2
     m_Bits: 6
@@ -1510,7 +1510,7 @@ GameObject:
   - component: {fileID: 3495484128809683908}
   - component: {fileID: 4523954993026711414}
   m_Layer: 0
-  m_Name: Point Light (3)
+  m_Name: sLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1539,9 +1539,9 @@ LensFlare:
   m_GameObject: {fileID: 3780253725055191415}
   m_Enabled: 1
   m_Flare: {fileID: 12100000, guid: f8c989b26ef04a340807f924b2472c46, type: 2}
-  m_Color: {r: 1, g: 0.6627451, b: 0, a: 1}
-  m_Brightness: 1
-  m_FadeSpeed: 1
+  m_Color: {r: 1, g: 0.45808098, b: 0, a: 1}
+  m_Brightness: 4.28
+  m_FadeSpeed: 5.82
   m_IgnoreLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1635,7 +1635,7 @@ GameObject:
   - component: {fileID: 3876489035613517172}
   - component: {fileID: 6058867581357025180}
   m_Layer: 0
-  m_Name: Point Light (1)
+  m_Name: hLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1666,13 +1666,13 @@ Light:
   serializedVersion: 9
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1.33
-  m_Range: 6.08
-  m_SpotAngle: 32
+  m_Intensity: 10.89
+  m_Range: 10.04
+  m_SpotAngle: 59
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -1700,12 +1700,12 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 12100000, guid: 54fbbf098d116effa00081aba8ad6659, type: 2}
-  m_RenderMode: 0
+  m_RenderMode: 2
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 0
   m_RenderingLayerMask: 1
-  m_Lightmapping: 2
+  m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -1992,7 +1992,7 @@ GameObject:
   - component: {fileID: 5704441369939498050}
   - component: {fileID: 2638871524498008840}
   m_Layer: 0
-  m_Name: Point Light (8)
+  m_Name: bLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2021,9 +2021,9 @@ LensFlare:
   m_GameObject: {fileID: 4837514215957958992}
   m_Enabled: 1
   m_Flare: {fileID: 12100000, guid: f8c989b26ef04a340807f924b2472c46, type: 2}
-  m_Color: {r: 1, g: 0, b: 0, a: 0}
-  m_Brightness: 0.76
-  m_FadeSpeed: 3
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Brightness: 4.28
+  m_FadeSpeed: 5.82
   m_IgnoreLayers:
     serializedVersion: 2
     m_Bits: 6
@@ -2208,7 +2208,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5698991731786059296}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5280112654303513449}
@@ -2407,7 +2407,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6541056453588575517}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.02, z: -0.21}
+  m_LocalPosition: {x: 0, y: -0.02, z: 0.79}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 9011681013958333488}
@@ -2588,7 +2588,7 @@ GameObject:
   - component: {fileID: 7252992850105568253}
   - component: {fileID: 3602703585745424537}
   m_Layer: 0
-  m_Name: Point Light
+  m_Name: hLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2619,13 +2619,13 @@ Light:
   serializedVersion: 9
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1.33
-  m_Range: 6.08
-  m_SpotAngle: 32
+  m_Intensity: 10.89
+  m_Range: 10.04
+  m_SpotAngle: 59
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -2653,12 +2653,12 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 12100000, guid: 54fbbf098d116effa00081aba8ad6659, type: 2}
-  m_RenderMode: 0
+  m_RenderMode: 2
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 0
   m_RenderingLayerMask: 1
-  m_Lightmapping: 2
+  m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -3326,7 +3326,7 @@ GameObject:
   - component: {fileID: 2780130812975529562}
   - component: {fileID: 3306930330997476451}
   m_Layer: 0
-  m_Name: Point Light (2)
+  m_Name: sLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3355,9 +3355,9 @@ LensFlare:
   m_GameObject: {fileID: 8331621933570657836}
   m_Enabled: 1
   m_Flare: {fileID: 12100000, guid: f8c989b26ef04a340807f924b2472c46, type: 2}
-  m_Color: {r: 1, g: 0.6627451, b: 0, a: 1}
-  m_Brightness: 1
-  m_FadeSpeed: 1
+  m_Color: {r: 1, g: 0.45808098, b: 0, a: 1}
+  m_Brightness: 4.28
+  m_FadeSpeed: 5.82
   m_IgnoreLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -3373,7 +3373,7 @@ GameObject:
   - component: {fileID: 920209355268127550}
   - component: {fileID: 3584019595895575968}
   m_Layer: 0
-  m_Name: Point Light (7)
+  m_Name: sLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3402,9 +3402,9 @@ LensFlare:
   m_GameObject: {fileID: 8581534184419116214}
   m_Enabled: 1
   m_Flare: {fileID: 12100000, guid: f8c989b26ef04a340807f924b2472c46, type: 2}
-  m_Color: {r: 1, g: 0.6627451, b: 0, a: 1}
-  m_Brightness: 1
-  m_FadeSpeed: 3
+  m_Color: {r: 1, g: 0.45808098, b: 0, a: 1}
+  m_Brightness: 4.28
+  m_FadeSpeed: 5.82
   m_IgnoreLayers:
     serializedVersion: 2
     m_Bits: 6

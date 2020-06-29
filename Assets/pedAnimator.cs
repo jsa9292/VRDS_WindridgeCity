@@ -4,18 +4,11 @@ using UnityEngine;
 
 public class pedAnimator : MonoBehaviour
 {
-    public GameObject model;
-    public AnimationClip idle;
-    public AnimationClip Walking;
+    public Animator anim;
+    public float offset;
     // Start is called before the first frame update
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        anim.SetFloat("offset", offset);
     }
 }
