@@ -114,7 +114,8 @@ public class NodeFollower : MonoBehaviour
         if (dist2node > stopDist)
         {
             //rotate
-            float d_angle = Vector3.Angle(transform.forward, targetDir);
+            float d_angle = Vector3.Angle(transform.forward, targetDir); // gets the difference angle
+			// limits rotation
             if (d_angle>0.01f) targetDir = Vector3.RotateTowards(transform.forward, targetPos-transform.position, d_angle*steering, 0.0f);
             transform.rotation = Quaternion.LookRotation(targetDir);
             //move forth
@@ -125,7 +126,7 @@ public class NodeFollower : MonoBehaviour
         else if (dist2node <= stopDist)
         {
             if (posI < maxRPI - 1) posI++;
-            if (posI == maxRPI - 1)
+            if (posI >= maxRPI - 1)
             {
                 if (nextNode == null)
                 {
@@ -156,7 +157,7 @@ public class NodeFollower : MonoBehaviour
                 waiting = false;
                 node.occupied--;
                 node = nextNode;
-                posI = 0;
+                posI = 1;
                 maxRPI = node.roadMovePositions.Count;
                 node.occupied++;
                 if (node.exits.Count > 0)
@@ -166,7 +167,7 @@ public class NodeFollower : MonoBehaviour
                 else nextNode = node;
 
             }
-            targetPos = node.roadMovePositions[posI+1];
+            targetPos = node.roadMovePositions[posI];
             
             //transform.LookAt(targetPos);
         }

@@ -165,7 +165,7 @@ namespace UnityStandardAssets.Vehicles.Car
 			GearChanging();
 
 			AddDownForce();
-			CheckForWheelSpin();
+			//CheckForWheelSpin();
 			TractionControl();
 		}
 		private void ApplyDrive(float accel, float footbrake)
