@@ -61,12 +61,12 @@ public class CarAI : MonoBehaviour
         foreach (Light l in leftFlares)
         {
             l.enabled = nf.signalLeft;
-            l.intensity = Mathf.Sin(Time.realtimeSinceStartup* frequency) * magnitude + magnitude/2f;
+            if (l.enabled) l.intensity = Mathf.Sin(Time.realtimeSinceStartup* frequency) * magnitude + magnitude/2f;
         }
         foreach (Light l in rightFlares)
         {
             l.enabled = nf.signalRight;
-            l.intensity = Mathf.Sin(Time.realtimeSinceStartup* frequency) * magnitude + magnitude/2f;
+            if (l.enabled) l.intensity = Mathf.Sin(Time.realtimeSinceStartup* frequency) * magnitude + magnitude/2f;
         }
         foreach (Light l in stopFlares)
         {

@@ -94,7 +94,7 @@ public class NodeFollower : MonoBehaviour
         int lm;
         lm = 0 << 5;
         lm = ~lm;
-        if (Physics.SphereCast(transform.position,.3f, transform.forward, out hit, safeDist,lm))
+        if (Physics.SphereCast(transform.position,.2f, transform.forward, out hit, safeDist,lm))
         {
             Debug.DrawLine(transform.position, hit.point, Color.red);
             signalStop = true;
