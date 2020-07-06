@@ -56,15 +56,17 @@ public class CarAI : MonoBehaviour
             t.localRotation *= Quaternion.Euler(speedFinal*wheelConst,0f,0f);
             
         }
+        float frequency = 8f;
+        float magnitude = 2f;
         foreach (Light l in leftFlares)
         {
             l.enabled = nf.signalLeft;
-            l.intensity = Mathf.Sin(Time.realtimeSinceStartup*5f) * 5f +2f;
+            l.intensity = Mathf.Sin(Time.realtimeSinceStartup* frequency) * magnitude + magnitude/2f;
         }
         foreach (Light l in rightFlares)
         {
             l.enabled = nf.signalRight;
-            l.intensity = Mathf.Sin(Time.realtimeSinceStartup*5f) * 5f + 2f;
+            l.intensity = Mathf.Sin(Time.realtimeSinceStartup* frequency) * magnitude + magnitude/2f;
         }
         foreach (Light l in stopFlares)
         {
