@@ -18,7 +18,6 @@ public class NodeFollower : MonoBehaviour
     public float waitTime;
     public bool waiting = false;
     private float waitStart = -1f;
-    private float waited;
     public float steering;
     public float stopDist;
     public float movement;
@@ -82,7 +81,7 @@ public class NodeFollower : MonoBehaviour
     {
         signalLeft = false;
         signalRight = false;
-        signalStop = false;
+        signalStop = movement <0.01f;
         
         if (node.stop)
         {
@@ -91,12 +90,13 @@ public class NodeFollower : MonoBehaviour
             return;
         }
 
-        int lm = 0 << 5;
-        lm = ~lm;
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.forward, out hit, safeDist,lm))
+        int lm;
+        lm = 0 << 5;
+        lm = ~lm;
+        if (Physics.SphereCast(transform.position,.3f, transform.forward, out hit, safeDist,lm))
         {
-            Debug.DrawRay(transform.position, transform.forward * hit.distance, Color.red);
+            Debug.DrawLine(transform.position, hit.point, Color.red);
             signalStop = true;
             return;
         }
@@ -108,8 +108,6 @@ public class NodeFollower : MonoBehaviour
         //get the distance
         targetDir = targetPos - transform.position;
         dist2node = targetDir.magnitude; 
-        movement = Vector3.Distance(transform.position, prev_pos);
-        prev_pos = transform.position;
 
         if (dist2node > stopDist)
         {
@@ -120,7 +118,9 @@ public class NodeFollower : MonoBehaviour
             transform.rotation = Quaternion.LookRotation(targetDir);
             //move forth
              transform.position = Vector3.MoveTowards(transform.position, targetPos, speed);
-
+            
+        movement = Vector3.Distance(transform.position, prev_pos);
+        prev_pos = transform.position;
         }
         //get the next node
         else if (dist2node <= stopDist)

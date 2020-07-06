@@ -13,28 +13,26 @@ public class CarAI : MonoBehaviour
     public Vector3 Offset;//offsetfrom the nfT;
     public float wheelConst; //wheel graphics rot rate 
     public Transform[] wheelGraphics; // wheel graphics objects
+    public Transform[] wheelParents;
     private Vector3 targetPos; //final position for car to follow;
     private float distance; // distance to targetPos
     private Vector3 posNoise; // noise to targetPos
     public float NoiseLevel; // noise magnitude;
-    public bool signalLeft;
-    public bool signalRight;
-    public bool signalStop;
     public GameObject stopParent;
     public GameObject leftParent;
     public GameObject rightParent;
-    public LensFlare[] stopFlares;
-    public LensFlare[] leftFlares;
-    public LensFlare[] rightFlares;
+    public Light[] stopFlares;
+    public Light[] leftFlares;
+    public Light[] rightFlares;
     // Start is called before the first frame update
     void Start()
     {
         nfT = nf.transform;
         posNoise = new Vector3(Random.Range(-1, 1), 0, Random.Range(-1, 1));
         posNoise *= NoiseLevel;
-        stopFlares = stopParent.GetComponentsInChildren<LensFlare>();
-        leftFlares = leftParent.GetComponentsInChildren<LensFlare>();
-        rightFlares = rightParent.GetComponentsInChildren<LensFlare>();
+        stopFlares = stopParent.GetComponentsInChildren<Light>();
+        leftFlares = leftParent.GetComponentsInChildren<Light>();
+        rightFlares = rightParent.GetComponentsInChildren<Light>();
         //rb = transform.GetComponent<Rigidbody>();
     }
 
@@ -48,11 +46,54 @@ public class CarAI : MonoBehaviour
         transform.LookAt(targetPos);
         float speedFinal = (distance - stopDist) * speed;
         transform.position += transform.forward * speedFinal;//Vector3.MoveTowards(transform.position, nfT.position, (distance - stopDist) * speed);// nfT.position + transform.forward * posOffSet.x + transform.up*posOffSet.y;
-        foreach (Transform t in wheelGraphics)
-        {
+        float wheel_y;
+        foreach (Transform t in wheelParents) {
 
-            t.localEulerAngles += Vector3.right * distance * wheelConst;
+            t.LookAt(t.position + nf.targetDir);
+        }
+        foreach (Transform t in wheelGraphics){
+    
+            t.localRotation *= Quaternion.Euler(speedFinal*wheelConst,0f,0f);
+            
+        }
+        foreach (Light l in leftFlares)
+        {
+            l.enabled = nf.signalLeft;
+            l.intensity = Mathf.Sin(Time.realtimeSinceStartup*5f) * 5f +2f;
+        }
+        foreach (Light l in rightFlares)
+        {
+            l.enabled = nf.signalRight;
+            l.intensity = Mathf.Sin(Time.realtimeSinceStartup*5f) * 5f + 2f;
+        }
+        foreach (Light l in stopFlares)
+        {
+            l.enabled = nf.signalStop;
         }
 
+    }
+    public bool makeWheelParents = false;
+    //This was meant to format and setup the vehicle prefab because all four wheels were under "Prefab"
+    //The front two wheels need to have parents for y axis rotation, hence the function creates and setup the rest of the scripts.
+    //must be ran in prefab stage as the editor window will not allow prefab will change in scene window.
+    void MakeWheelParent()
+    {
+        for (int i = 0; i < 2; i++)
+        {
+            GameObject gn = new GameObject("wheelParent");
+            GameObject g = GameObject.Instantiate(gn,wheelGraphics[i].parent);
+            g.transform.position = wheelGraphics[i].position;
+            wheelGraphics[i].parent = g.transform;
+            wheelParents[i] = g.transform;
+        }
+
+    }
+    private void OnDrawGizmosSelected()
+    {
+        if (makeWheelParents)
+        {
+            makeWheelParents = false;
+            MakeWheelParent();
+        }
     }
 }
