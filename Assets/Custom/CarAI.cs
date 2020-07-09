@@ -37,7 +37,7 @@ public class CarAI : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         targetPos = nfT.position + Offset + posNoise;
         distance = Vector3.Distance(transform.position, targetPos);

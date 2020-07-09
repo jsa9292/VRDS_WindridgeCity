@@ -31,13 +31,9 @@ public class NodeFollower : MonoBehaviour
         //Destroy(transform.GetComponent<Collider>());
 
     }
-    public void Setup(Node nd, float spd, float stpDist, float sfDist, float wTime) {
+    public void Setup(Node nd) {
         node = nd;
         node.occupied++;
-        speed = spd;
-        stopDist = stpDist;
-        safeDist = sfDist;
-        waitTime = wTime;
         if (node.exits.Count != 0)
         {
             nextNode = node.exits[UnityEngine.Random.Range(0, node.exits.Count)];

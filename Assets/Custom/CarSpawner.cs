@@ -9,11 +9,11 @@ public class CarSpawner : MonoBehaviour
     private CarAI carAI;
     public Vector3 spawnOffset;
     // Start is called before the first frame update
-    void Start()
+	public void Spawn(Transform spawneeParent)
     {
         int carNum = 0;
         car = cars[Random.Range(0, cars.Count)];
-        car = Transform.Instantiate(car,transform.position+transform.forward*spawnOffset.x +transform.up*spawnOffset.y +transform.right*spawnOffset.z,transform.rotation);
+		car = Transform.Instantiate(car,transform.position+transform.forward*spawnOffset.x +transform.up*spawnOffset.y +transform.right*spawnOffset.z,transform.rotation,spawneeParent);
         carAI = car.GetComponent<CarAI>();
         carAI.nf = transform.GetComponent<NodeFollower>();
         //carAI.speed = tm.CarSpeeds[carNum];

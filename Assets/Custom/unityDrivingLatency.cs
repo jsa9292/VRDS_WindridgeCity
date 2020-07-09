@@ -199,7 +199,7 @@ public class unityDrivingLatency : MonoBehaviour {
 	}
 	void LateUpdate(){
 		//Visual stuff
-		//speedDisplay.text = ((int)(carControl.CurrentSpeed * 2.23693629f)).ToString();
+		speedDisplay.text = ((int)(carControl.CurrentSpeed * 2.23693629f)).ToString();
 		steerWheel.transform.localEulerAngles = new Vector3(-18, 0, Logitech.wheel * 450f);
 		Speedometer.transform.localEulerAngles = new Vector3(-12, 0, -45f + carControl.CurrentSpeed * 2.37389f);// 2.23693629f * (260/245));
 		Tachometer.transform.localEulerAngles = new Vector3(-12, 0, 40 + carControl.Revs * 880f / 9f);

@@ -17,11 +17,9 @@ public class DataSave : MonoBehaviour {
 	public bool write = false;
 	public float time;
 	private bool newfile= true;
-	public int randomSeed;
 	// Use this for initialization
 	void Awake(){
 		filename=DateTime.Now.ToString("yyyyMMdd_HHmm") + ".txt";
-		UnityEngine.Random.InitState(randomSeed);
 	}
 	void Start () {
 		time = 0;
