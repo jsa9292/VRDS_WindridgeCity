@@ -960,6 +960,7 @@ GameObject:
   - component: {fileID: 5306720464983995223}
   - component: {fileID: 940778352324242633}
   - component: {fileID: 3870868298140549789}
+  - component: {fileID: 805047610}
   m_Layer: 0
   m_Name: car_15 1 - Copy (2)
   m_TagString: Untagged
@@ -1062,6 +1063,7 @@ MonoBehaviour:
   wheelParents:
   - {fileID: 525707584834431629}
   - {fileID: 3352270164866874411}
+  rb: {fileID: 0}
   NoiseLevel: 0.01
   stopParent: {fileID: 5610091609684822721}
   leftParent: {fileID: 4680021408296202629}
@@ -1070,6 +1072,22 @@ MonoBehaviour:
   leftFlares: []
   rightFlares: []
   makeWheelParents: 0
+--- !u!54 &805047610
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1932120435758664364}
+  serializedVersion: 2
+  m_Mass: 1000
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &2275035088797423829
 GameObject:
   m_ObjectHideFlags: 0

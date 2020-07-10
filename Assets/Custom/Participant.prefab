@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1583516377
 Transform:
   m_ObjectHideFlags: 0
@@ -218,7 +218,7 @@ Camera:
   m_GameObject: {fileID: 128608420526729872}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 4
+  m_ClearFlags: 2
   m_BackGroundColor: {r: 0.8235295, g: 0.8470589, b: 0.854902, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -233,14 +233,14 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.01
-  far clip plane: 5.35
+  far clip plane: 50
   field of view: 90
   orthographic: 0
   orthographic size: 5
   m_Depth: 2
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 4294967295
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -534,7 +534,7 @@ WheelCollider:
     spring: 350000
     damper: 3500
     targetPosition: 0.9
-  m_SuspensionDistance: 0.5
+  m_SuspensionDistance: 0.22
   m_ForceAppPointDistance: 0.1
   m_Mass: 150
   m_WheelDampingRate: 0.25
@@ -970,7 +970,7 @@ WheelCollider:
     spring: 350000
     damper: 3500
     targetPosition: 0.9
-  m_SuspensionDistance: 0.5
+  m_SuspensionDistance: 0.22
   m_ForceAppPointDistance: 0.1
   m_Mass: 150
   m_WheelDampingRate: 0.25
@@ -1780,7 +1780,7 @@ WheelCollider:
     spring: 350000
     damper: 3500
     targetPosition: 0.9
-  m_SuspensionDistance: 0.5
+  m_SuspensionDistance: 0.22
   m_ForceAppPointDistance: 0.1
   m_Mass: 150
   m_WheelDampingRate: 0.25
@@ -7052,7 +7052,7 @@ WheelCollider:
     spring: 350000
     damper: 3500
     targetPosition: 0.9
-  m_SuspensionDistance: 0.5
+  m_SuspensionDistance: 0.22
   m_ForceAppPointDistance: 0.1
   m_Mass: 150
   m_WheelDampingRate: 0.25
@@ -7363,7 +7363,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7467474970489535979
 Transform:
   m_ObjectHideFlags: 0
@@ -7492,7 +7492,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3386418801991614825}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: ba92fb44336020f40bdf294bb66bc9da, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -7761,9 +7761,9 @@ MonoBehaviour:
   surfaceMagDelta: 15
   surfaceFreqMin: 70
   surfaceFreqDelta: -10
-  wheel: 0.00009155553
-  accel: 0
-  brake: 0
+  wheel: 0
+  accel: 0.5
+  brake: 1
   reverse: 0
   neutral: 1
   park: 0
@@ -7807,7 +7807,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7973692954124090274}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a37df85597ab6ec4fb4f4af87b2c4197, type: 3}
   m_Name: 
@@ -7815,7 +7815,7 @@ MonoBehaviour:
   lsw: {fileID: 1986360366025959820}
   ud: {fileID: 1986796361825406770}
   hmd: {fileID: 127597024840343182}
-  filepath: E:\Suburb2018\Data\
+  filepath: E:\Suburb2018\
   filename: 
   Car: {fileID: 1928784844077608382}
   end: 0
@@ -7873,7 +7873,7 @@ MonoBehaviour:
   m_MaxHandbrakeTorque: 100000000
   m_Downforce: 0
   m_SpeedType: 0
-  m_Topspeed: 80
+  m_Topspeed: 400
   m_RevRangeBoundary: 1
   m_SlipLimit: 0.2
   m_BrakeTorque: 10000
@@ -8022,20 +8022,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
-    - target: {fileID: 2611641335144534917, guid: 073d6f000c6083246aa4ee46f7ea6195,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8034175892944287343, guid: 073d6f000c6083246aa4ee46f7ea6195,
         type: 3}
       propertyPath: m_Layer
       value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 8034175892944287343, guid: 073d6f000c6083246aa4ee46f7ea6195,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4218054900723226005, guid: 073d6f000c6083246aa4ee46f7ea6195,
         type: 3}

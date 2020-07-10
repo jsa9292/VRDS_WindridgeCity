@@ -14,6 +14,7 @@ public class CarAI : MonoBehaviour
     public float wheelConst; //wheel graphics rot rate 
     public Transform[] wheelGraphics; // wheel graphics objects
     public Transform[] wheelParents;
+	public Rigidbody rb;
     private Vector3 targetPos; //final position for car to follow;
     private float distance; // distance to targetPos
     private Vector3 posNoise; // noise to targetPos
@@ -33,18 +34,19 @@ public class CarAI : MonoBehaviour
         stopFlares = stopParent.GetComponentsInChildren<Light>();
         leftFlares = leftParent.GetComponentsInChildren<Light>();
         rightFlares = rightParent.GetComponentsInChildren<Light>();
-        //rb = transform.GetComponent<Rigidbody>();
+        rb = transform.GetComponent<Rigidbody>();
     }
-
+	private float speedFinal;
     // Update is called once per frame
     void Update()
     {
+		if(!rb.isKinematic) return;
         targetPos = nfT.position + Offset + posNoise;
         distance = Vector3.Distance(transform.position, targetPos);
         //lookingAt = Vector3.RotateTowards(transform.forward, nfT.forward, steering, 0.0f);
         //transform.rotation = Quaternion.LookRotation(lookingAt);
         transform.LookAt(targetPos);
-        float speedFinal = (distance - stopDist) * speed;
+        speedFinal = (distance - stopDist) * speed* 0.5f + speedFinal*0.5f;
         transform.position += transform.forward * speedFinal;//Vector3.MoveTowards(transform.position, nfT.position, (distance - stopDist) * speed);// nfT.position + transform.forward * posOffSet.x + transform.up*posOffSet.y;
         float wheel_y;
         foreach (Transform t in wheelParents) {
@@ -98,4 +100,8 @@ public class CarAI : MonoBehaviour
             MakeWheelParent();
         }
     }
+	void OnCollisionEnter(Collision c){
+		rb.isKinematic = false;
+		rb.useGravity = true;
+	}
 }
