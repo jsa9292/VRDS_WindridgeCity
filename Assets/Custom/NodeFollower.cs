@@ -50,27 +50,6 @@ public class NodeFollower : MonoBehaviour
         dist2node = targetDir.magnitude;
         //Debug.Log(targetDir);
     }
-    //public void GOorWAIT()
-    //{
-    //    foreach(Node n in node.conflicts)
-    //    {
-    //        /* If the occupied road is stopped than we can still go */
-    //        if(n.occupied>0)
-    //        {
-    //            node.stop = true;
-    //        }
-    //        /* If the road that is one of our conflicts is not stopped and it is occupied than we should stop */
-    //        else
-    //        {
-    //          /* We stop if our conflicts have cars on them */
-    //          /* We break so that it is not reset by another node in conflicts that has no occupants */
-    //          return;
-    //        }
-    //    }
-    //    /* If no nodes have conflicts than turn the node back on and exit */
-    //    node.stop = false;
-    //    return;
-    //}
 
     // Update is called once per frame
     void FixedUpdate()
@@ -78,8 +57,8 @@ public class NodeFollower : MonoBehaviour
         signalLeft = false;
         signalRight = false;
         signalStop = movement <0.01f;
-        
-        if (node.stop)
+		if(node == null) return;
+		if ((node.stop && posI<maxRPI/2) || waiting)
         {
             movement = 0f;
             signalStop = true;
@@ -88,11 +67,12 @@ public class NodeFollower : MonoBehaviour
 
         RaycastHit hit;
         int lm;
-        lm = 0 << 5;
-        lm = ~lm;
+        lm = 1 << 8;
+		lm = ~lm;
         if (Physics.SphereCast(transform.position,.3f, transform.forward, out hit, safeDist,lm))
         {
             Debug.DrawLine(transform.position, hit.point, Color.red);
+			StartCoroutine(Wait(waitTime));
             signalStop = true;
             return;
         }
@@ -117,7 +97,7 @@ public class NodeFollower : MonoBehaviour
             
         movement = Vector3.Distance(transform.position, prev_pos);
         prev_pos = transform.position;
-        }
+		}
         //get the next node
         else if (dist2node <= stopDist)
         {
@@ -134,23 +114,6 @@ public class NodeFollower : MonoBehaviour
                     signalStop = true;
                     return;
                 }
-                if (nextNode.stop)
-                {
-                    if (!waiting)
-                    {
-                        waitStart = Time.realtimeSinceStartup;
-                        waiting = true;
-                    }
-                    else if (waiting && Time.realtimeSinceStartup - waitStart > waitTime)
-                    {
-                        waitStart = -1f;
-                        nextNode = node.exits[UnityEngine.Random.Range(0, node.exits.Count)];
-                        waiting = false;
-                    }
-                    signalStop = true;
-                    return;
-                }
-                waiting = false;
                 node.occupied--;
                 node = nextNode;
                 posI = 1;
@@ -160,18 +123,24 @@ public class NodeFollower : MonoBehaviour
                 {
                     nextNode = node.exits[UnityEngine.Random.Range(0, node.exits.Count)];
                 }
-                else nextNode = node;
+				else nextNode = node;
+				if (maxRPI - posI < 20)
+				{
+					if (nextNode == null) return;
+					signalLeft = nextNode.leftTurn || node.leftTurn;
+					signalRight = nextNode.rightTurn || node.rightTurn;
+				}
 
             }
             targetPos = node.roadMovePositions[posI];
             
             //transform.LookAt(targetPos);
         }
-        if (maxRPI - posI < 20)
-        {
-            if (nextNode == null) return;
-            signalLeft = nextNode.leftTurn || node.leftTurn;
-            signalRight = nextNode.rightTurn || node.rightTurn;
-        }
+        
     }
+	IEnumerator Wait(float seconds){
+		waiting = true;
+		yield return new WaitForSeconds(seconds);
+		waiting = false;
+	}
 }

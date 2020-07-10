@@ -241,18 +241,18 @@ public class unityDrivingLatency : MonoBehaviour {
 															, 0
 															, 0
 															, 0
-															, 0
+															, 0//int
 															, pitch_result*applyScale + pitchTest//pitch
 															, roll_result * applyScale + rollTest//roll
-															, 0//yaw
-															, yaw_result * applyScale + yawTest//speed
-															, 0//surge
-															, 0//heave
-															, 0//sway
-															, 0
-															, 0
-															, 0
-															, 0
+			, yaw_result * applyScale+ yawTest//nothing this is yaw
+			, 0//yaw but snapping at [-6,6] This registers as traction loss
+															, 0//roll
+															, 0//pitch
+															, 0//pitch
+															, 0//nothing
+															, 0//nothing
+															, 0//nothing
+															, 0//nothing
 															, 0
 															, 0
 															, 0
