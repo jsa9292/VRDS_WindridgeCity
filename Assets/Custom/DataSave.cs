@@ -53,7 +53,7 @@ public class DataSave : MonoBehaviour {
 				Car.transform.localEulerAngles.y.ToString ("0.0000") + "," +
 				Car.transform.localEulerAngles.z.ToString ("0.0000") + "," +//8
 				Time.time.ToString ("0.0000") + "," +							//11
-				EnterTrigger.ToString() + "," + LeftTrigger.ToString() + "," + RightTrigger.ToString() + "," + 
+				ud.EnterTrigger.ToString() + "," + ud.LeftTrigger.ToString() + "," + ud.RightTrigger.ToString() + "," + 
 				lsw.neutral.ToString() + "," + lsw.reverse.ToString() + "," +
 				entryIndex
 
@@ -64,13 +64,5 @@ public class DataSave : MonoBehaviour {
 		if (end)
 			w.Close ();
 	}
-	private int EnterTrigger;
-	private int LeftTrigger;
-	private int RightTrigger;
-	void OnTriggerEnter(Collider c){
-		EnterTrigger = String.Compare(c.name,"EnterTrigger");
-		LeftTrigger = String.Compare(c.name,"LeftTrigger");
-		RightTrigger = String.Compare(c.name,"RightTrigger");
 
-	}
 }

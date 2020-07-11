@@ -15,10 +15,6 @@ public class unityDrivingLatency : MonoBehaviour {
 	public LogitechSteeringWheel Logitech;
 	public Rigidbody Car;
 	public Transform driverPos;
-	public Text speedDisplay;
-	public GameObject steerWheel;
-	public GameObject Speedometer;
-	public GameObject Tachometer;
 
 
 	[Header("Simulator Inputs")]
@@ -198,12 +194,16 @@ public class unityDrivingLatency : MonoBehaviour {
 		StartCoroutine(UpdateTelemetry());
 		//		renderTicks.Add(DateTime.Now.Ticks - startTick);
 	}
+	public Text speedDisplay;
+	public GameObject steerWheel;
+	public GameObject Speedometer;
+	public GameObject Tachometer;
 	void LateUpdate(){
 		//Visual stuff
 		speedDisplay.text = ((int)(carControl.CurrentSpeed * 2.23693629f)).ToString();
 		steerWheel.transform.localEulerAngles = new Vector3(-18, 0, Logitech.wheel * 450f);
-		Speedometer.transform.localEulerAngles = new Vector3(-12, 0, -45f + carControl.CurrentSpeed * 2.37389f);// 2.23693629f * (260/245));
-		Tachometer.transform.localEulerAngles = new Vector3(-12, 0, 40 + carControl.Revs * 880f / 9f);
+		//Speedometer.transform.localEulerAngles = new Vector3(-12, 0, -45f + carControl.CurrentSpeed * 2.37389f);// 2.23693629f * (260/245));
+		//Tachometer.transform.localEulerAngles = new Vector3(-12, 0, 40 + carControl.Revs * 880f / 9f);
 		//Update previous
 		previousSpeed_z = CurrentSpeed_z;
 		previousSpeed_x = CurrentSpeed_x;
@@ -261,6 +261,17 @@ public class unityDrivingLatency : MonoBehaviour {
 			
 		yield return null;
 
+
+	}
+
+	[Header("Triggers")]
+	public int EnterTrigger;
+	public int LeftTrigger;
+	public int RightTrigger;
+	void OnTriggerEnter(Collider c){
+		EnterTrigger = String.Compare(c.name,"EnterTrigger");
+		LeftTrigger = String.Compare(c.name,"LeftTrigger");
+		RightTrigger = String.Compare(c.name,"RightTrigger");
 
 	}
 	//Second order washout filters

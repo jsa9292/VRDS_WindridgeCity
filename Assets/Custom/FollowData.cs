@@ -15,12 +15,10 @@ public class FollowData : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-		Physics.autoSimulation = false;
-		QualitySettings.vSyncCount = 1;
-		QualitySettings.maxQueuedFrames = 0;
-		Application.targetFrameRate = 90;
 		sr = new StreamReader(path+ fname);
 		finish = false;
+		Auto.SetActive(true);
+		Error.SetActive(false);
 		LoadSaved();
     }
 	void LoadSaved(){
@@ -34,10 +32,16 @@ public class FollowData : MonoBehaviour
 	private int maxIndex;
 	private string buffer;
 	private string[] data;
+	public GameObject Auto;
+	public GameObject Error;
 	// Update is called once per frame
     void Update()
     {
-		if(followIndex>=maxIndex) return;
+		if(followIndex>=maxIndex) {
+			Auto.SetActive(false);
+			Error.SetActive(true);
+			return;
+		}
 		buffer = LoadedInput[followIndex];
 		data = buffer.Split(',');
 		followIndex++;
@@ -46,7 +50,6 @@ public class FollowData : MonoBehaviour
 		lsw.wheel = float.Parse(data[5]);
 		lsw.neutral = bool.Parse(data[25]);
 		lsw.reverse = bool.Parse(data[26]);
-		Debug.Log(followIndex);
 //		if(buffer == null) {
 //			finish = true;
 //			Debug.Log("Finished");
