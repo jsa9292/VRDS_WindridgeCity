@@ -100,8 +100,8 @@ public class CarAI : MonoBehaviour
             MakeWheelParent();
         }
     }
-	void OnCollisionEnter(Collision c){
-		rb.isKinematic = false;
-		rb.useGravity = true;
-	}
+//	void OnCollisionEnter(Collision c){
+//		rb.isKinematic = false;
+//		rb.useGravity = true;
+//	}
 }

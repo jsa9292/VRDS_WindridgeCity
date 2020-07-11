@@ -15,20 +15,16 @@ public class DataSave : MonoBehaviour {
 	StreamWriter w;
 	public bool end = false;
 	public bool write = false;
-	public float time;
 	private bool newfile= true;
+	private int entryIndex;
 	// Use this for initialization
 	void Awake(){
 		filename=DateTime.Now.ToString("yyyyMMdd_HHmm") + ".txt";
-	}
-	void Start () {
-		time = 0;
+		entryIndex = 0;
 	}
 
 	// Update is called once per frame
 	void LateUpdate () {
-		write = !lsw.neutral;
-		time += Time.deltaTime;
 		if (write) {
 			if (newfile) {
 				w = new StreamWriter (filepath+filename);
@@ -56,11 +52,25 @@ public class DataSave : MonoBehaviour {
 				Car.transform.localEulerAngles.x.ToString ("0.0000") + "," +
 				Car.transform.localEulerAngles.y.ToString ("0.0000") + "," +
 				Car.transform.localEulerAngles.z.ToString ("0.0000") + "," +//8
-				Time.time.ToString ("0.0000")							//11
+				Time.time.ToString ("0.0000") + "," +							//11
+				EnterTrigger.ToString() + "," + LeftTrigger.ToString() + "," + RightTrigger.ToString() + "," + 
+				lsw.neutral.ToString() + "," + lsw.reverse.ToString() + "," +
+				entryIndex
+
 			);
 			w.Flush ();
+			entryIndex++;
 		}
 		if (end)
 			w.Close ();
- 	}
+	}
+	private int EnterTrigger;
+	private int LeftTrigger;
+	private int RightTrigger;
+	void OnTriggerEnter(Collider c){
+		EnterTrigger = String.Compare(c.name,"EnterTrigger");
+		LeftTrigger = String.Compare(c.name,"LeftTrigger");
+		RightTrigger = String.Compare(c.name,"RightTrigger");
+
+	}
 }

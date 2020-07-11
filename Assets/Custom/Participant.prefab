@@ -132,7 +132,7 @@ ReflectionProbe:
   m_BoxSize: {x: 10, y: 10, z: 10}
   m_BoxOffset: {x: 0, y: 0, z: 0}
   m_NearClip: 0.01
-  m_FarClip: 150
+  m_FarClip: 50
   m_ShadowDistance: 100
   m_ClearFlags: 2
   m_BackGroundColor: {r: 0.87887174, g: 0.90199995, b: 0.90199995, a: 1}
@@ -188,6 +188,7 @@ GameObject:
   - component: {fileID: 127597024840343182}
   - component: {fileID: 111579283967440596}
   - component: {fileID: 59848865891387066}
+  - component: {fileID: 2297845551795013910}
   m_Layer: 10
   m_Name: Camera
   m_TagString: MainCamera
@@ -254,6 +255,14 @@ Camera:
   m_StereoSeparation: 0.022
 --- !u!81 &59848865891387066
 AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 128608420526729872}
+  m_Enabled: 1
+--- !u!124 &2297845551795013910
+Behaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1997,7 +2006,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 0.47586206, b: 0, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2010,7 +2019,7 @@ MonoBehaviour:
     m_MaxSize: 50
     m_Alignment: 5
     m_AlignByGeometry: 0
-    m_RichText: 1
+    m_RichText: 0
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
@@ -7238,7 +7247,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 0.47586206, b: 0, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -7251,7 +7260,7 @@ MonoBehaviour:
     m_MaxSize: 50
     m_Alignment: 4
     m_AlignByGeometry: 0
-    m_RichText: 1
+    m_RichText: 0
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
@@ -7761,9 +7770,9 @@ MonoBehaviour:
   surfaceMagDelta: 15
   surfaceFreqMin: 70
   surfaceFreqDelta: -10
-  wheel: 0
-  accel: 0.5
-  brake: 1
+  wheel: 0.0003051851
+  accel: 0
+  brake: 0
   reverse: 0
   neutral: 1
   park: 0

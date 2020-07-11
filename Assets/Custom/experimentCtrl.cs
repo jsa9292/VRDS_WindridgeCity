@@ -8,6 +8,7 @@ public class experimentCtrl : MonoBehaviour
     public int randSeed;
 	public int TrialNum;
 	public int EventTrial;
+	public FollowData fd;
     // Start is called before the first frame update
     void Awake()
     {

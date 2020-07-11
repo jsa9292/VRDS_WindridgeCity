@@ -84,13 +84,14 @@ public class unityDrivingLatency : MonoBehaviour {
 	private long startTick;
 	private List<long> renderTicks = new List<long>();
 	private List<long> simTicks = new List<long>();
-
+	private float timeStep;
 
 	void Awake(){
 		Physics.autoSimulation = false;
 		QualitySettings.vSyncCount = 1;
-		QualitySettings.maxQueuedFrames = 0;
+		QualitySettings.maxQueuedFrames = 1;
 		Application.targetFrameRate = (int) targetFrameRate;
+		timeStep = 1f / (float)targetFrameRate;
 		startTick = DateTime.Now.Ticks;
 		foreach (WheelCollider w in carControl.m_WheelColliders) {
 			w.ConfigureVehicleSubsteps(10, 10, 10);
@@ -102,7 +103,7 @@ public class unityDrivingLatency : MonoBehaviour {
 		Logitech.springMagnitude = 60 + (int)CurrentSpeed_z * 10;
 		reverse = Logitech.reverse ? -1f : 1f;
 		neutral = Logitech.neutral ? 0f : 1f;
-		acceleration = (defaultAccel + (Logitech.accel+ accelTest)*0.9f) * neutral;
+		acceleration = (defaultAccel + (Logitech.accel+ accelTest)*(1-defaultAccel)) * neutral;
 		brake = Logitech.brake * Mathf.Clamp(CurrentSpeed_z, 1f, 10f) / 10f;
 
 		if (Input.GetKeyDown(KeyCode.Space)){
@@ -113,7 +114,7 @@ public class unityDrivingLatency : MonoBehaviour {
 		carControl.Move(wheelTest + Logitech.wheel,  acceleration, brakeTest + brake, 0, reverse);
 		//Car.drag = 0.2f - carControl.m_GearNum*.05f;
 		//Debug.Log(Time.smoothDeltaTime);
-		float timeStep = 1f / (float)targetFrameRate;
+
 		Physics.Simulate(timeStep);
 		pitch = 0;
 		roll = 0;

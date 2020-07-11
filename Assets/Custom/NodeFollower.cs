@@ -25,11 +25,12 @@ public class NodeFollower : MonoBehaviour
     public bool signalStop;
     public bool signalLeft;
     public bool signalRight;
+	private Camera mainCam;
     // Start is called before the first frame update
     void Awake()
     {
         //Destroy(transform.GetComponent<Collider>());
-
+		mainCam = Camera.main;
     }
     public void Setup(Node nd) {
         node = nd;
@@ -52,7 +53,7 @@ public class NodeFollower : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         signalLeft = false;
         signalRight = false;
@@ -69,17 +70,33 @@ public class NodeFollower : MonoBehaviour
         int lm;
         lm = 1 << 8;
 		lm = ~lm;
-        if (Physics.SphereCast(transform.position,.3f, transform.forward, out hit, safeDist,lm))
-        {
-            Debug.DrawLine(transform.position, hit.point, Color.red);
-			StartCoroutine(Wait(waitTime));
-            signalStop = true;
-            return;
-        }
-        else
-        {
-            Debug.DrawRay(transform.position, transform.forward * safeDist, Color.blue);
-        }
+		if ((mainCam.transform.position - transform.position).magnitude <5f){
+			float radius = 1f;
+			if (Physics.SphereCast(transform.position,radius, transform.forward, out hit, safeDist-radius,lm))
+		    {
+		        Debug.DrawLine(transform.position, hit.point, Color.red);
+				StartCoroutine(Wait(waitTime));
+		        signalStop = true;
+		        return;
+		    }
+		    else
+		    {
+		        Debug.DrawRay(transform.position, transform.forward * safeDist, Color.blue);
+		    }
+		}else{
+			if (Physics.Raycast(transform.position,transform.forward, out hit, safeDist,lm))
+			{
+				Debug.DrawLine(transform.position, hit.point, Color.red);
+				StartCoroutine(Wait(waitTime));
+				signalStop = true;
+				return;
+			}
+			else
+			{
+				Debug.DrawRay(transform.position, transform.forward * safeDist, Color.blue);
+			}
+
+		}
 
         //get the distance
         targetDir = targetPos - transform.position;
