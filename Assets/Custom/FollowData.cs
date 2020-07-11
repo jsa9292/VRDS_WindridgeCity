@@ -34,6 +34,8 @@ public class FollowData : MonoBehaviour
 	private string[] data;
 	public GameObject Auto;
 	public GameObject Error;
+	public Vector3 targetPos;
+	public Vector3 targetEuler;
 	// Update is called once per frame
     void Update()
     {
@@ -45,6 +47,8 @@ public class FollowData : MonoBehaviour
 		buffer = LoadedInput[followIndex];
 		data = buffer.Split(',');
 		followIndex++;
+		targetPos = new Vector3(float.Parse(data[15]),float.Parse(data[16]),float.Parse(data[17]));
+		targetEuler = new Vector3(float.Parse(data[18]),float.Parse(data[19]),float.Parse(data[20]));
 		lsw.accel = float.Parse(data[3]);
 		lsw.brake = float.Parse(data[4]);
 		lsw.wheel = float.Parse(data[5]);
@@ -60,5 +64,11 @@ public class FollowData : MonoBehaviour
 //		if(float.Parse(data[21]) >= Time.time) {
 //			
 //		}
+	}
+	public float microPos;
+	public float microRot;
+	void LateUpdate(){
+		car.position = targetPos;//Vector3.MoveTowards(car.position,targetPos,microPos);
+		car.localEulerAngles = targetEuler;//Vector3.RotateTowards(car.localEulerAngles,targetEuler,microRot,0.0f);
 	}
 }
