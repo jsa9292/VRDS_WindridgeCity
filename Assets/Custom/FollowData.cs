@@ -10,13 +10,13 @@ public class FollowData : MonoBehaviour
 	public string fname;
 	private StreamReader sr;
 	public LogitechSteeringWheel lsw;
-	public bool finish;
+	public bool Trolley;
 	public List<string> LoadedInput;
     // Start is called before the first frame update
     void Start()
     {
 		sr = new StreamReader(path+ fname);
-		finish = false;
+		//Trolley = false;
 		Auto.SetActive(true);
 		Error.SetActive(false);
 		LoadSaved();
@@ -42,6 +42,12 @@ public class FollowData : MonoBehaviour
 		if(followIndex>=maxIndex) {
 			Auto.SetActive(false);
 			Error.SetActive(true);
+			if(Trolley) {
+				lsw.accel = 1;
+				lsw.brake = 0;
+				lsw.neutral = false;
+				lsw.reverse = false;
+			}
 			return;
 		}
 		buffer = LoadedInput[followIndex];
@@ -64,11 +70,8 @@ public class FollowData : MonoBehaviour
 //		if(float.Parse(data[21]) >= Time.time) {
 //			
 //		}
-	}
-	public float microPos;
-	public float microRot;
-	void LateUpdate(){
-		car.position = targetPos;//Vector3.MoveTowards(car.position,targetPos,microPos);
-		car.localEulerAngles = targetEuler;//Vector3.RotateTowards(car.localEulerAngles,targetEuler,microRot,0.0f);
+		car.position = Vector3.MoveTowards(car.position,targetPos,0.1f);
+		car.rotation = Quaternion.RotateTowards(car.rotation,Quaternion.Euler(targetEuler),0.1f);//Vector3.RotateTowards(car.localEulerAngles,targetEuler,.1f,0.0f); //targetEuler;
+
 	}
 }

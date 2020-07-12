@@ -5,39 +5,53 @@ using UnityEngine.SceneManagement;
 
 public class experimentCtrl : MonoBehaviour
 {
-    public int randSeed;
+    public int randseed;
+	public System.Random rand;
 	public int TrialNum;
 	public int EventTrial;
+	public int TargetFps;
 	public FollowData fd;
+	private Vector3 initialPos;
+	private Quaternion initialRot;
     // Start is called before the first frame update
     void Awake()
-    {
-
-		TrialNum = 1;
-		Random.InitState(randSeed);
-
+	{
+		//DontDestroyOnLoad(this.gameObject);
+		Random.InitState(randseed); //Unity RNG init (global RNG)
+		rand = new System.Random(randseed);//System RNG init (object RNG)
+		Application.targetFrameRate = (int) TargetFps;
+		initialPos= transform.position;
+		initialRot= transform.rotation;
 		#if UNITY_EDITOR
 			return;
 		#endif
-		SceneManager.LoadScene(1,LoadSceneMode.Additive);
-		SceneManager.LoadScene(2,LoadSceneMode.Additive);
 		SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(0));
-
     }
-	void Update(){
-
-		if (Input.GetKeyDown(KeyCode.End)){
-			resetExperiment();
-			Debug.Log("TrialEnd");
-			if(TrialNum == EventTrial){
-				SceneManager.LoadScene(2,LoadSceneMode.Additive);
-			}
-		}
+	void Start(){
+		Debug.Log(TrialNum);
 	}
-	private void resetExperiment(){
-		SceneManager.UnloadScene(1);
-		SceneManager.LoadScene(1,LoadSceneMode.Additive);
-		TrialNum++;
+	void Update(){
+		if (Input.GetKeyDown(KeyCode.End)){
+			resetTransform();
+			TrialNum++;
+			Debug.Log(TrialNum);
+			Debug.Log(TrialNum == EventTrial);
 
+//			if(TrialNum == EventTrial){
+//				SceneManager.LoadScene(1,LoadSceneMode.Additive);
+//
+//				fd.enabled = true;
+//				fd.Trolley = true;
+//			}else{
+//				fd.enabled = false;
+//				fd.Trolley = false;
+//			}
+		}
+
+	}
+	void resetTransform(){
+		transform.position=initialPos;
+		transform.rotation=initialRot;
+		SceneManager.LoadScene(0,LoadSceneMode.Single);
 	}
 }

@@ -8,7 +8,13 @@ public class CarSpawner : MonoBehaviour
     private GameObject car;
     private CarAI carAI;
     public Vector3 spawnOffset;
+	public int randseed = 0;
+	public System.Random rand;
     // Start is called before the first frame update
+	void Awake(){
+
+		rand = new System.Random(randseed);
+	}
 	public void Spawn(Transform spawneeParent)
     {
         int carNum = 0;

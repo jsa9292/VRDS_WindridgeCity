@@ -86,8 +86,7 @@ public class unityDrivingLatency : MonoBehaviour {
 		Physics.autoSimulation = false;
 		QualitySettings.vSyncCount = 1;
 		QualitySettings.maxQueuedFrames = 1;
-		Application.targetFrameRate = (int) targetFrameRate;
-		timeStep = 1f / (float)targetFrameRate;
+		timeStep = 1f / (float) Application.targetFrameRate;
 		startTick = DateTime.Now.Ticks;
 		foreach (WheelCollider w in carControl.m_WheelColliders) {
 			w.ConfigureVehicleSubsteps(10, 10, 10);
@@ -193,12 +192,6 @@ public class unityDrivingLatency : MonoBehaviour {
 
 		StartCoroutine(UpdateTelemetry());
 		//		renderTicks.Add(DateTime.Now.Ticks - startTick);
-	}
-	public Text speedDisplay;
-	public GameObject steerWheel;
-	public GameObject Speedometer;
-	public GameObject Tachometer;
-	void LateUpdate(){
 		//Visual stuff
 		speedDisplay.text = ((int)(carControl.CurrentSpeed * 2.23693629f)).ToString();
 		steerWheel.transform.localEulerAngles = new Vector3(-18, 0, Logitech.wheel * 450f);
@@ -212,8 +205,11 @@ public class unityDrivingLatency : MonoBehaviour {
 		previousAngularV = angularVelocity;
 		previousAccel_Input = acceleration;
 		prevForward = transform.forward;
-
 	}
+	public Text speedDisplay;
+	public GameObject steerWheel;
+	public GameObject Speedometer;
+	public GameObject Tachometer;
 
 	[Header("Telemetry Package")]
 	public string apiMode = "api";  //constant to identify the package
@@ -272,6 +268,9 @@ public class unityDrivingLatency : MonoBehaviour {
 		EnterTrigger = String.Compare(c.name,"EnterTrigger");
 		LeftTrigger = String.Compare(c.name,"LeftTrigger");
 		RightTrigger = String.Compare(c.name,"RightTrigger");
+		if(String.Compare(c.name,"EndTrigger")==1){
+			Time.timeScale = 0;
+		}
 
 	}
 	//Second order washout filters

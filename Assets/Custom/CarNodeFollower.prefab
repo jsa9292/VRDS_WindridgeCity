@@ -112,7 +112,8 @@ MonoBehaviour:
   targetPos: {x: 0, y: 0, z: 0}
   targetDir: {x: 0, y: 0, z: 0}
   dist2node: 0
-  speed: 0.2
+  speedSlow: 0.1
+  speedFast: 0.2
   safeDist: 3
   waitTime: 1
   waiting: 0
@@ -122,6 +123,7 @@ MonoBehaviour:
   signalStop: 0
   signalLeft: 0
   signalRight: 0
+  randseed: 0
 --- !u!114 &7390704188426102844
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,3 +162,4 @@ MonoBehaviour:
   - {fileID: 7857190877111723160, guid: 73719d0c851e070448c81e580acaf914, type: 3}
   - {fileID: 7857190877111723160, guid: 03e895ca62e65d142befbe54ea1bf65b, type: 3}
   spawnOffset: {x: -0.5, y: -0.3, z: 0}
+  randseed: 0

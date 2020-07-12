@@ -13,7 +13,9 @@ public class NodeFollower : MonoBehaviour
     public Vector3 targetPos;
     public Vector3 targetDir;
     public float dist2node;
-    public float speed;
+    private float speed;
+	public float speedSlow;
+	public float speedFast;
     public float safeDist;
     public float waitTime;
     public bool waiting = false;
@@ -26,23 +28,32 @@ public class NodeFollower : MonoBehaviour
     public bool signalLeft;
     public bool signalRight;
 	private Camera mainCam;
+	public int randseed = 0;
+	public System.Random rand;
     // Start is called before the first frame update
     void Awake()
     {
         //Destroy(transform.GetComponent<Collider>());
 		mainCam = Camera.main;
+		rand = new System.Random(randseed);
+//		int count = 0;
+//		while(count <1000){
+//			turns[count] = rand.Next(0,2);
+//			count++;
+//		}
     }
     public void Setup(Node nd) {
         node = nd;
         node.occupied++;
         if (node.exits.Count != 0)
         {
-            nextNode = node.exits[UnityEngine.Random.Range(0, node.exits.Count)];
+			nextNode = node.exits[rand.Next(0, node.exits.Count)];
         }
         else {
             nextNode = null;
         }
         posI = 0;
+		speed = speedFast;
         maxRPI = node.roadMovePositions.Count;
         transform.position = node.roadMovePositions[0];
         targetPos = node.roadMovePositions[1];
@@ -70,13 +81,14 @@ public class NodeFollower : MonoBehaviour
         int lm;
         lm = 1 << 8;
 		lm = ~lm;
-		if ((mainCam.transform.position - transform.position).magnitude <5f){
+		if ((mainCam.transform.position - transform.position).magnitude < 5f){
 			float radius = 1f;
 			if (Physics.SphereCast(transform.position,radius, transform.forward, out hit, safeDist-radius,lm))
 		    {
 		        Debug.DrawLine(transform.position, hit.point, Color.red);
-				StartCoroutine(Wait(waitTime));
-		        signalStop = true;
+				//StartCoroutine(Wait(waitTime));
+				speed=speedSlow;
+				signalStop = true;
 		        return;
 		    }
 		    else
@@ -138,22 +150,33 @@ public class NodeFollower : MonoBehaviour
                 node.occupied++;
                 if (node.exits.Count > 0)
                 {
-                    nextNode = node.exits[UnityEngine.Random.Range(0, node.exits.Count)];
+					nextNode = node.exits[rand.Next(0, node.exits.Count)];
                 }
 				else nextNode = node;
-				if (maxRPI - posI < 20)
-				{
-					if (nextNode == null) return;
-					signalLeft = nextNode.leftTurn || node.leftTurn;
-					signalRight = nextNode.rightTurn || node.rightTurn;
-				}
+
 
             }
             targetPos = node.roadMovePositions[posI];
             
             //transform.LookAt(targetPos);
-        }
-        
+		}
+		if(node.isIntersectionNode){
+			if (maxRPI - posI < 20)
+			{
+				if (nextNode == null) return;
+				signalLeft = nextNode.leftTurn;
+				signalRight = nextNode.rightTurn;
+				speed = speedSlow;
+			}else speed= speedFast;
+		}else{
+			if (posI < 20)
+			{
+				signalLeft = node.leftTurn;
+				signalRight = node.rightTurn;
+				speed = speedSlow;
+			}else speed= speedFast;
+		}
+
     }
 	IEnumerator Wait(float seconds){
 		waiting = true;

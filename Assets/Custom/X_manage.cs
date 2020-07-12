@@ -70,7 +70,9 @@ public class X_manage : MonoBehaviour
     public MaterialChanger[] LightGroup1;
     public MaterialChanger[] LightGroup2;
     public MaterialChanger[] LightGroup3; //this is yellow light group
-    void FixedUpdate()
+
+	private float TimeforSim;
+    void Update()
     {
 		numCars = 0;
 		//for each intersection, if any of the conflict is occupied, it is disabled. 
@@ -166,5 +168,12 @@ public class X_manage : MonoBehaviour
 //        xI++;
 //        if (xI >= enters.Count) xI = 0;
 
-    }
+		if (!trafficLight) return;
+		TimeforSim += 1f / (float)Application.targetFrameRate;
+		if (TimeforSim > 30f) TimeforSim = 0;
+		if (TimeforSim > 0f) state = 1;
+		if (TimeforSim > 10f) state = 3;
+		if (TimeforSim > 15f) state = 2;
+		if (TimeforSim > 25f) state = 3;
+	}
 }

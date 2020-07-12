@@ -7688,11 +7688,12 @@ GameObject:
   m_Component:
   - component: {fileID: 7973692954124380098}
   - component: {fileID: 1928784844077608382}
+  - component: {fileID: 1077157673}
+  - component: {fileID: 1986534892556461704}
+  - component: {fileID: 49951516441954395}
   - component: {fileID: 7294036880985940658}
   - component: {fileID: 1986360366025959820}
   - component: {fileID: 1990434125698876232}
-  - component: {fileID: 1986534892556461704}
-  - component: {fileID: 49951516441954395}
   - component: {fileID: 1986615673940716036}
   - component: {fileID: 1986796361825406770}
   m_Layer: 10
@@ -7711,7 +7712,7 @@ Transform:
   m_GameObject: {fileID: 7973692954124090274}
   m_LocalRotation: {x: 0, y: -0.9659258, z: 0, w: 0.2588191}
   m_LocalPosition: {x: 335.275, y: 341.824, z: -372.409}
-  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1880179735831588556}
   - {fileID: 1880126571669270998}
@@ -7734,6 +7735,65 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 1
+--- !u!114 &1077157673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7973692954124090274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86d1de66eed81614bbcfb35373351485, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  randseed: 0
+  TrialNum: 1
+  EventTrial: 2
+  TargetFps: 60
+  fd: {fileID: 49951516441954395}
+--- !u!114 &1986534892556461704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7973692954124090274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a37df85597ab6ec4fb4f4af87b2c4197, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lsw: {fileID: 1986360366025959820}
+  ud: {fileID: 1986796361825406770}
+  hmd: {fileID: 127597024840343182}
+  filepath: E:\Suburb2018\
+  filename: 
+  Car: {fileID: 1928784844077608382}
+  end: 0
+  write: 1
+--- !u!114 &49951516441954395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7973692954124090274}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7a8bbaf84486e04ba19940b08ecf4ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  car: {fileID: 7973692954124380098}
+  path: E:\Suburb2018\
+  fname: Trolley.txt
+  lsw: {fileID: 1986360366025959820}
+  Trolley: 0
+  LoadedInput: []
+  Auto: {fileID: 5050788091837697323}
+  Error: {fileID: 5007991308484118197}
+  targetPos: {x: 0, y: 0, z: 0}
+  targetEuler: {x: 0, y: 0, z: 0}
 --- !u!114 &7294036880985940658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7810,46 +7870,6 @@ MonoBehaviour:
   maxRolloffDistance: 500
   dopplerLevel: 1
   useDoppler: 1
---- !u!114 &1986534892556461704
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7973692954124090274}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a37df85597ab6ec4fb4f4af87b2c4197, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lsw: {fileID: 1986360366025959820}
-  ud: {fileID: 1986796361825406770}
-  hmd: {fileID: 127597024840343182}
-  filepath: E:\Suburb2018\
-  filename: 
-  Car: {fileID: 1928784844077608382}
-  end: 0
-  write: 1
---- !u!114 &49951516441954395
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7973692954124090274}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7a8bbaf84486e04ba19940b08ecf4ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  car: {fileID: 7973692954124380098}
-  path: E:\Suburb2018\
-  fname: 20200710_1933.txt
-  lsw: {fileID: 1986360366025959820}
-  finish: 0
-  LoadedInput: []
-  Auto: {fileID: 5050788091837697323}
-  Error: {fileID: 5007991308484118197}
 --- !u!114 &1986615673940716036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7905,7 +7925,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eec774f191fac694eb7ff27254281531, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetFrameRate: 100
+  targetFrameRate: 90
   NextScene: CarTest1
   carControl: {fileID: 1986615673940716036}
   Logitech: {fileID: 1986360366025959820}
@@ -7962,8 +7982,6 @@ MonoBehaviour:
   - 0
   - 0
   - 0
-  Auto: {fileID: 0}
-  Error: {fileID: 0}
   speedDisplay: {fileID: 1986178567074261132}
   steerWheel: {fileID: 1874536463484180478}
   Speedometer: {fileID: 1874211993412199998}

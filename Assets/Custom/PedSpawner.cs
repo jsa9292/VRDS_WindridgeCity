@@ -9,10 +9,17 @@ public class PedSpawner : MonoBehaviour
     private GameObject ped;
     private Animator anim;
     private NodeFollower nf;
+	public int randseed =0;
+	public System.Random rand;
     // Start is called before the first frame update
+	void Awake()
+	{
+		rand = new System.Random(randseed);
+
+	}
     void Start()
     {
-        ped = peds[Random.Range(0, peds.Count)];
+        ped = peds[rand.Next(0, peds.Count)];
         ped = Transform.Instantiate(ped, transform.position, transform.rotation, transform);
         anim = ped.GetComponent<Animator>();
         nf = ped.transform.parent.GetComponent<NodeFollower>();
