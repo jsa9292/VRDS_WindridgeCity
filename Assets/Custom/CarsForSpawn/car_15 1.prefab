@@ -931,7 +931,7 @@ Transform:
   m_GameObject: {fileID: 1932120435758664364}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 9, y: 0, z: 0}
-  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7391633486813232536}
   - {fileID: 6197212522442967234}
@@ -1018,6 +1018,9 @@ MonoBehaviour:
   - {fileID: 6668924296113150520}
   - {fileID: 6381363524586451811}
   NoiseLevel: 0.01
+  signalLeft: 0
+  signalRight: 0
+  signalStop: 0
   stopParent: {fileID: 5610091609684822721}
   leftParent: {fileID: 4680021408296202629}
   rightParent: {fileID: 7489121133259632380}
