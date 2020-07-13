@@ -65,6 +65,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -194,6 +195,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -432,6 +434,8 @@ MonoBehaviour:
     leftSurroundingV3: {x: 0, y: 0, z: 0}
     rightIndentV3: {x: 0, y: 0, z: 0}
     rightSurroundingV3: {x: 0, y: 0, z: 0}
+    leftRoadpoint: {x: 0, y: 0, z: 0}
+    rightRoadpoint: {x: 0, y: 0, z: 0}
     leftCornerInt: -1
     rightCornerInt: -1
     leftIndentInt: 0
@@ -523,6 +527,8 @@ MonoBehaviour:
     leftSurroundingV3: {x: 0, y: 0, z: 0}
     rightIndentV3: {x: 0, y: 0, z: 0}
     rightSurroundingV3: {x: 0, y: 0, z: 0}
+    leftRoadpoint: {x: 0, y: 0, z: 0}
+    rightRoadpoint: {x: 0, y: 0, z: 0}
     leftCornerInt: -1
     rightCornerInt: -1
     leftIndentInt: 0
@@ -714,6 +720,8 @@ MonoBehaviour:
     leftSurroundingV3: {x: 0, y: 0, z: 0}
     rightIndentV3: {x: 0, y: 0, z: 0}
     rightSurroundingV3: {x: 0, y: 0, z: 0}
+    leftRoadpoint: {x: 0, y: 0, z: 0}
+    rightRoadpoint: {x: 0, y: 0, z: 0}
     leftCornerInt: -1
     rightCornerInt: -1
     leftIndentInt: 0
@@ -803,6 +811,8 @@ MonoBehaviour:
     leftSurroundingV3: {x: 0, y: 0, z: 0}
     rightIndentV3: {x: 0, y: 0, z: 0}
     rightSurroundingV3: {x: 0, y: 0, z: 0}
+    leftRoadpoint: {x: 0, y: 0, z: 0}
+    rightRoadpoint: {x: 0, y: 0, z: 0}
     leftCornerInt: -1
     rightCornerInt: -1
     leftIndentInt: 0
@@ -818,6 +828,7 @@ MonoBehaviour:
     roadType: 1438710104.7024977
     roadTypeTimestamp: 0
   sidewalkControlElements: []
+  siblings: []
   meshVecs:
   - {x: 0.7033, y: 0.0562, z: 0.1256}
   - {x: 0.6798, y: 0.0705, z: 1.8712}
@@ -1427,7 +1438,13 @@ MonoBehaviour:
   deformTerrain: 1
   isRoundabout: 0
   isERCrossing: 0
+  isYConnector: 0
   isIConnector: 0
+  isFlexConnector: 0
+  isSnapConnector: 0
+  isExitRoadConnector: 0
+  prefabCenterDummy: {x: 0, y: 0, z: 0}
+  snapRadius: 3
   roundaboutScript: {fileID: 0}
   crossingsScript: {fileID: 0}
   iConnectorScript: {fileID: 0}
@@ -1488,11 +1505,15 @@ MonoBehaviour:
   tp2: {x: 0, y: 0, z: 0}
   doTerrainDeformation: 1
   includeOuterVertices: 1
+  averageNormals: 1
   surroundingDistance: 0
   surfaceMesh: {fileID: 0}
   debugVecs1: []
   debugVecs2: []
   lightmapAdjusted: 0
+  isFlexUpdating: 0
+  oldPosition: {x: 0, y: 0, z: 0}
+  oldRotation: {x: 0, y: 0, z: 0}
   lockScale: 1
   extraIndentMargin: 0
   indent: 0
@@ -1531,6 +1552,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -1622,6 +1644,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -1699,6 +1722,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0

@@ -15,10 +15,6 @@ public class unityDrivingLatency : MonoBehaviour {
 	public LogitechSteeringWheel Logitech;
 	public Rigidbody Car;
 	public Transform driverPos;
-	public Text speedDisplay;
-	public GameObject steerWheel;
-	public GameObject Speedometer;
-	public GameObject Tachometer;
 
 
 	[Header("Simulator Inputs")]
@@ -84,13 +80,13 @@ public class unityDrivingLatency : MonoBehaviour {
 	private long startTick;
 	private List<long> renderTicks = new List<long>();
 	private List<long> simTicks = new List<long>();
-
+	private float timeStep;
 
 	void Awake(){
 		Physics.autoSimulation = false;
 		QualitySettings.vSyncCount = 1;
-		QualitySettings.maxQueuedFrames = 0;
-		Application.targetFrameRate = (int) targetFrameRate;
+		QualitySettings.maxQueuedFrames = 1;
+		timeStep = 1f / (float) Application.targetFrameRate;
 		startTick = DateTime.Now.Ticks;
 		foreach (WheelCollider w in carControl.m_WheelColliders) {
 			w.ConfigureVehicleSubsteps(10, 10, 10);
@@ -102,7 +98,7 @@ public class unityDrivingLatency : MonoBehaviour {
 		Logitech.springMagnitude = 60 + (int)CurrentSpeed_z * 10;
 		reverse = Logitech.reverse ? -1f : 1f;
 		neutral = Logitech.neutral ? 0f : 1f;
-		acceleration = (defaultAccel + (Logitech.accel+ accelTest)*0.9f) * neutral;
+		acceleration = (defaultAccel + (Logitech.accel+ accelTest)*(1-defaultAccel)) * neutral;
 		brake = Logitech.brake * Mathf.Clamp(CurrentSpeed_z, 1f, 10f) / 10f;
 
 		if (Input.GetKeyDown(KeyCode.Space)){
@@ -113,7 +109,7 @@ public class unityDrivingLatency : MonoBehaviour {
 		carControl.Move(wheelTest + Logitech.wheel,  acceleration, brakeTest + brake, 0, reverse);
 		//Car.drag = 0.2f - carControl.m_GearNum*.05f;
 		//Debug.Log(Time.smoothDeltaTime);
-		float timeStep = 1f / (float)targetFrameRate;
+
 		Physics.Simulate(timeStep);
 		pitch = 0;
 		roll = 0;
@@ -196,13 +192,11 @@ public class unityDrivingLatency : MonoBehaviour {
 
 		StartCoroutine(UpdateTelemetry());
 		//		renderTicks.Add(DateTime.Now.Ticks - startTick);
-	}
-	void LateUpdate(){
 		//Visual stuff
-		//speedDisplay.text = ((int)(carControl.CurrentSpeed * 2.23693629f)).ToString();
+		speedDisplay.text = ((int)(carControl.CurrentSpeed * 2.23693629f)).ToString();
 		steerWheel.transform.localEulerAngles = new Vector3(-18, 0, Logitech.wheel * 450f);
-		Speedometer.transform.localEulerAngles = new Vector3(-12, 0, -45f + carControl.CurrentSpeed * 2.37389f);// 2.23693629f * (260/245));
-		Tachometer.transform.localEulerAngles = new Vector3(-12, 0, 40 + carControl.Revs * 880f / 9f);
+		//Speedometer.transform.localEulerAngles = new Vector3(-12, 0, -45f + carControl.CurrentSpeed * 2.37389f);// 2.23693629f * (260/245));
+		//Tachometer.transform.localEulerAngles = new Vector3(-12, 0, 40 + carControl.Revs * 880f / 9f);
 		//Update previous
 		previousSpeed_z = CurrentSpeed_z;
 		previousSpeed_x = CurrentSpeed_x;
@@ -211,8 +205,11 @@ public class unityDrivingLatency : MonoBehaviour {
 		previousAngularV = angularVelocity;
 		previousAccel_Input = acceleration;
 		prevForward = transform.forward;
-
 	}
+	public Text speedDisplay;
+	public GameObject steerWheel;
+	public GameObject Speedometer;
+	public GameObject Tachometer;
 
 	[Header("Telemetry Package")]
 	public string apiMode = "api";  //constant to identify the package
@@ -241,18 +238,18 @@ public class unityDrivingLatency : MonoBehaviour {
 															, 0
 															, 0
 															, 0
-															, 0
+															, 0//int
 															, pitch_result*applyScale + pitchTest//pitch
 															, roll_result * applyScale + rollTest//roll
-															, 0//yaw
-															, yaw_result * applyScale + yawTest//speed
-															, 0//surge
-															, 0//heave
-															, 0//sway
-															, 0
-															, 0
-															, 0
-															, 0
+			, yaw_result * applyScale+ yawTest//nothing this is yaw
+			, 0//yaw but snapping at [-6,6] This registers as traction loss
+															, 0//roll
+															, 0//pitch
+															, 0//pitch
+															, 0//nothing
+															, 0//nothing
+															, 0//nothing
+															, 0//nothing
 															, 0
 															, 0
 															, 0
@@ -260,6 +257,20 @@ public class unityDrivingLatency : MonoBehaviour {
 			
 		yield return null;
 
+
+	}
+
+	[Header("Triggers")]
+	public int EnterTrigger;
+	public int LeftTrigger;
+	public int RightTrigger;
+	void OnTriggerEnter(Collider c){
+		EnterTrigger = String.Compare(c.name,"EnterTrigger");
+		LeftTrigger = String.Compare(c.name,"LeftTrigger");
+		RightTrigger = String.Compare(c.name,"RightTrigger");
+		if(String.Compare(c.name,"EndTrigger")==1){
+			Time.timeScale = 0;
+		}
 
 	}
 	//Second order washout filters

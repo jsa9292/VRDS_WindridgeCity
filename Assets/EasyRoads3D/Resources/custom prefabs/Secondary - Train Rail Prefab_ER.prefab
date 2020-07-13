@@ -80,6 +80,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -171,6 +172,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -460,6 +462,8 @@ MonoBehaviour:
     leftSurroundingV3: {x: -6.468628, y: -1.5959244, z: -9.097168}
     rightIndentV3: {x: 4.460624, y: 0, z: -7.097224}
     rightSurroundingV3: {x: 6.4606323, y: -0.89430046, z: -9.097168}
+    leftRoadpoint: {x: 0, y: 0, z: 0}
+    rightRoadpoint: {x: 0, y: 0, z: 0}
     leftCornerInt: -1
     rightCornerInt: -1
     leftIndentInt: 0
@@ -544,6 +548,8 @@ MonoBehaviour:
     leftSurroundingV3: {x: -12.804504, y: -1.7743111, z: 8.852783}
     rightIndentV3: {x: -10.804524, y: 0, z: -6.6622243}
     rightSurroundingV3: {x: -12.804504, y: -1.7743111, z: -8.662231}
+    leftRoadpoint: {x: 0, y: 0, z: 0}
+    rightRoadpoint: {x: 0, y: 0, z: 0}
     leftCornerInt: -1
     rightCornerInt: -1
     leftIndentInt: 0
@@ -719,6 +725,8 @@ MonoBehaviour:
     leftSurroundingV3: {x: 6.4606323, y: -1.0628052, z: 9.390503}
     rightIndentV3: {x: -4.468624, y: 0, z: 7.390524}
     rightSurroundingV3: {x: -6.468628, y: -1.7743111, z: 9.390503}
+    leftRoadpoint: {x: 0, y: 0, z: 0}
+    rightRoadpoint: {x: 0, y: 0, z: 0}
     leftCornerInt: -1
     rightCornerInt: -1
     leftIndentInt: 0
@@ -803,6 +811,8 @@ MonoBehaviour:
     leftSurroundingV3: {x: 12.804504, y: -0.96622276, z: -8.662231}
     rightIndentV3: {x: 10.804524, y: 0, z: 6.852824}
     rightSurroundingV3: {x: 12.804504, y: -0.902647, z: 8.852783}
+    leftRoadpoint: {x: 0, y: 0, z: 0}
+    rightRoadpoint: {x: 0, y: 0, z: 0}
     leftCornerInt: -1
     rightCornerInt: -1
     leftIndentInt: 0
@@ -818,6 +828,7 @@ MonoBehaviour:
     roadType: 1484069872.8756092
     roadTypeTimestamp: 0
   sidewalkControlElements: []
+  siblings: []
   meshVecs:
   - {x: 0.7033, y: 0.0562, z: -0.0071}
   - {x: 0.6798, y: 0.0705, z: -0.0071}
@@ -1338,7 +1349,13 @@ MonoBehaviour:
   deformTerrain: 1
   isRoundabout: 0
   isERCrossing: 0
+  isYConnector: 0
   isIConnector: 0
+  isFlexConnector: 0
+  isSnapConnector: 0
+  isExitRoadConnector: 0
+  prefabCenterDummy: {x: 0, y: 0, z: 0}
+  snapRadius: 3
   roundaboutScript: {fileID: 0}
   crossingsScript: {fileID: 0}
   iConnectorScript: {fileID: 0}
@@ -1431,6 +1448,7 @@ MonoBehaviour:
   tp2: {x: 0, y: 0, z: 0}
   doTerrainDeformation: 1
   includeOuterVertices: 1
+  averageNormals: 1
   surroundingDistance: 2
   surfaceMesh: {fileID: 4300000, guid: d456f77f210a3854f9aab9009a9a9edf, type: 2}
   debugVecs1:
@@ -1444,6 +1462,9 @@ MonoBehaviour:
   - {x: 4.460624, y: 0, z: -7.097224}
   debugVecs2: []
   lightmapAdjusted: 0
+  isFlexUpdating: 0
+  oldPosition: {x: 0, y: 0, z: 0}
+  oldRotation: {x: 0, y: 0, z: 0}
   lockScale: 1
   extraIndentMargin: 0
   indent: 0
@@ -1482,6 +1503,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -1638,6 +1660,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -1715,6 +1738,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -1792,6 +1816,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -1869,6 +1894,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -1946,6 +1972,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0

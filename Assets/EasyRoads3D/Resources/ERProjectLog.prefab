@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5968575397984017633}
   - component: {fileID: 1024211942319383648}
   m_Layer: 0
-  m_Name: ERSideObjectsLog
+  m_Name: ERProjectLog
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -96,6 +96,7 @@ MonoBehaviour:
     childOrder: 0
     meshBoundsAlignment: 0
     xPosition: 0
+    xPosition2: 0
     relativeTo: 0
     yPosition: 0
     yRotation: 0
@@ -142,6 +143,7 @@ MonoBehaviour:
     smoothEnd: 0
     targetObject: {fileID: 0}
     bridgeObject: 0
+    tunnelObject: 0
     snapToTerrain: 0
     layer: 0
     deformationObject: 0
@@ -176,6 +178,40 @@ MonoBehaviour:
     scale: {x: 1, y: 1, z: 1}
     indentExt: 0
     category: 6
+    densityMap: {fileID: 0}
+    densitySize: 50
+    densitySize2: 50
+    densityStrength: 0.5
+    densityStrength2: 0.5
+    terrainNormal: 0
+    terrainNormal2: 1
+    childObjects: []
+    autoGenerate: 0
+    heightThreshold: 10
+    autogenerateStartOffset: 0
+    autogenerateEndOffset: 0
+    snapIndents: 0
+    snapIndentWidth: 0
+    cutHoles: 1
+    innerStartOffset: 0
+    innerEndOffset: 0
+    ignoredForRetainingWalls: 0
+    heightMaxThreshold: 100
+    heightMaxStartThreshold: 1
+    heightMaxEndThreshold: 1
+    xThresholdDistance: 5
+    angleThreshold: 10
+    connectionRatio: 1
+    retainingWall: 0
+    surroundingControl: 0
+    indentControl: 0
+    nodeListMirrored: []
+    uvsMirrored: []
+    snapWeightListMirrored: []
+    colorListMirrored: []
+    hasVertexColors: 0
+    deformationOffsetForward: 0
+    deformationOffsetSideways: 0
   - version: 2.0.0
     name: Bike Track
     id: 1482240682.273279
@@ -278,6 +314,7 @@ MonoBehaviour:
     childOrder: 0
     meshBoundsAlignment: 0
     xPosition: 0
+    xPosition2: 0
     relativeTo: 0
     yPosition: 0
     yRotation: 0
@@ -324,6 +361,7 @@ MonoBehaviour:
     smoothEnd: 0
     targetObject: {fileID: 0}
     bridgeObject: 0
+    tunnelObject: 0
     snapToTerrain: 0
     layer: 0
     deformationObject: 0
@@ -358,6 +396,40 @@ MonoBehaviour:
     scale: {x: 1, y: 1, z: 1}
     indentExt: 0
     category: 5
+    densityMap: {fileID: 0}
+    densitySize: 50
+    densitySize2: 50
+    densityStrength: 0.5
+    densityStrength2: 0.5
+    terrainNormal: 0
+    terrainNormal2: 1
+    childObjects: []
+    autoGenerate: 0
+    heightThreshold: 10
+    autogenerateStartOffset: 0
+    autogenerateEndOffset: 0
+    snapIndents: 0
+    snapIndentWidth: 0
+    cutHoles: 1
+    innerStartOffset: 0
+    innerEndOffset: 0
+    ignoredForRetainingWalls: 0
+    heightMaxThreshold: 100
+    heightMaxStartThreshold: 1
+    heightMaxEndThreshold: 1
+    xThresholdDistance: 5
+    angleThreshold: 10
+    connectionRatio: 1
+    retainingWall: 0
+    surroundingControl: 0
+    indentControl: 0
+    nodeListMirrored: []
+    uvsMirrored: []
+    snapWeightListMirrored: []
+    colorListMirrored: []
+    hasVertexColors: 0
+    deformationOffsetForward: 0
+    deformationOffsetSideways: 0
   - version: 2.0.0
     name: Bridge 01 Pillar
     id: 1439970267.5877771
@@ -410,6 +482,7 @@ MonoBehaviour:
     childOrder: 0
     meshBoundsAlignment: 0
     xPosition: 0
+    xPosition2: 0
     relativeTo: 0
     yPosition: -0.6
     yRotation: 0
@@ -456,6 +529,7 @@ MonoBehaviour:
     smoothEnd: 0
     targetObject: {fileID: 0}
     bridgeObject: 0
+    tunnelObject: 0
     snapToTerrain: 0
     layer: 0
     deformationObject: 0
@@ -490,6 +564,40 @@ MonoBehaviour:
     scale: {x: 1, y: 1, z: 1}
     indentExt: 0
     category: 3
+    densityMap: {fileID: 0}
+    densitySize: 50
+    densitySize2: 50
+    densityStrength: 0.5
+    densityStrength2: 0.5
+    terrainNormal: 0
+    terrainNormal2: 1
+    childObjects: []
+    autoGenerate: 0
+    heightThreshold: 10
+    autogenerateStartOffset: 0
+    autogenerateEndOffset: 0
+    snapIndents: 0
+    snapIndentWidth: 0
+    cutHoles: 1
+    innerStartOffset: 0
+    innerEndOffset: 0
+    ignoredForRetainingWalls: 0
+    heightMaxThreshold: 100
+    heightMaxStartThreshold: 1
+    heightMaxEndThreshold: 1
+    xThresholdDistance: 5
+    angleThreshold: 10
+    connectionRatio: 1
+    retainingWall: 0
+    surroundingControl: 0
+    indentControl: 0
+    nodeListMirrored: []
+    uvsMirrored: []
+    snapWeightListMirrored: []
+    colorListMirrored: []
+    hasVertexColors: 0
+    deformationOffsetForward: 0
+    deformationOffsetSideways: 0
   - version: 2.0.0
     name: Bridge Simple
     id: 3
@@ -542,6 +650,7 @@ MonoBehaviour:
     childOrder: 0
     meshBoundsAlignment: 0
     xPosition: 0
+    xPosition2: 0
     relativeTo: 0
     yPosition: 0
     yRotation: 0
@@ -588,6 +697,7 @@ MonoBehaviour:
     smoothEnd: 1
     targetObject: {fileID: 0}
     bridgeObject: 1
+    tunnelObject: 0
     snapToTerrain: 0
     layer: 0
     deformationObject: 0
@@ -622,6 +732,40 @@ MonoBehaviour:
     scale: {x: 1, y: 1, z: 1}
     indentExt: 0
     category: 3
+    densityMap: {fileID: 0}
+    densitySize: 50
+    densitySize2: 50
+    densityStrength: 0.5
+    densityStrength2: 0.5
+    terrainNormal: 0
+    terrainNormal2: 1
+    childObjects: []
+    autoGenerate: 0
+    heightThreshold: 10
+    autogenerateStartOffset: 0
+    autogenerateEndOffset: 0
+    snapIndents: 0
+    snapIndentWidth: 0
+    cutHoles: 1
+    innerStartOffset: 0
+    innerEndOffset: 0
+    ignoredForRetainingWalls: 0
+    heightMaxThreshold: 100
+    heightMaxStartThreshold: 1
+    heightMaxEndThreshold: 1
+    xThresholdDistance: 5
+    angleThreshold: 10
+    connectionRatio: 1
+    retainingWall: 0
+    surroundingControl: 0
+    indentControl: 0
+    nodeListMirrored: []
+    uvsMirrored: []
+    snapWeightListMirrored: []
+    colorListMirrored: []
+    hasVertexColors: 0
+    deformationOffsetForward: 0
+    deformationOffsetSideways: 0
   - version: 2.0.0
     name: 'Coast Rock Wall '
     id: 1513626610.6119134
@@ -694,6 +838,7 @@ MonoBehaviour:
     childOrder: 0
     meshBoundsAlignment: 0
     xPosition: 0
+    xPosition2: 0
     relativeTo: 1
     yPosition: 0
     yRotation: 0
@@ -740,6 +885,7 @@ MonoBehaviour:
     smoothEnd: 0
     targetObject: {fileID: 0}
     bridgeObject: 0
+    tunnelObject: 0
     snapToTerrain: 0
     layer: 0
     deformationObject: 0
@@ -774,6 +920,40 @@ MonoBehaviour:
     scale: {x: 1, y: 1, z: 1}
     indentExt: 0
     category: 2
+    densityMap: {fileID: 0}
+    densitySize: 50
+    densitySize2: 50
+    densityStrength: 0.5
+    densityStrength2: 0.5
+    terrainNormal: 0
+    terrainNormal2: 1
+    childObjects: []
+    autoGenerate: 0
+    heightThreshold: 10
+    autogenerateStartOffset: 0
+    autogenerateEndOffset: 0
+    snapIndents: 0
+    snapIndentWidth: 0
+    cutHoles: 1
+    innerStartOffset: 0
+    innerEndOffset: 0
+    ignoredForRetainingWalls: 0
+    heightMaxThreshold: 100
+    heightMaxStartThreshold: 1
+    heightMaxEndThreshold: 1
+    xThresholdDistance: 5
+    angleThreshold: 10
+    connectionRatio: 1
+    retainingWall: 0
+    surroundingControl: 0
+    indentControl: 0
+    nodeListMirrored: []
+    uvsMirrored: []
+    snapWeightListMirrored: []
+    colorListMirrored: []
+    hasVertexColors: 0
+    deformationOffsetForward: 0
+    deformationOffsetSideways: 0
   - version: 2.0.0
     name: Concrete Barrier CS
     id: 1492864192.677831
@@ -826,6 +1006,7 @@ MonoBehaviour:
     childOrder: 0
     meshBoundsAlignment: 0
     xPosition: 0
+    xPosition2: 0
     relativeTo: 0
     yPosition: 0
     yRotation: 0
@@ -872,6 +1053,7 @@ MonoBehaviour:
     smoothEnd: 1
     targetObject: {fileID: 0}
     bridgeObject: 0
+    tunnelObject: 0
     snapToTerrain: 0
     layer: 0
     deformationObject: 0
@@ -906,6 +1088,40 @@ MonoBehaviour:
     scale: {x: 1, y: 1, z: 1}
     indentExt: 0
     category: 0
+    densityMap: {fileID: 0}
+    densitySize: 50
+    densitySize2: 50
+    densityStrength: 0.5
+    densityStrength2: 0.5
+    terrainNormal: 0
+    terrainNormal2: 1
+    childObjects: []
+    autoGenerate: 0
+    heightThreshold: 10
+    autogenerateStartOffset: 0
+    autogenerateEndOffset: 0
+    snapIndents: 0
+    snapIndentWidth: 0
+    cutHoles: 1
+    innerStartOffset: 0
+    innerEndOffset: 0
+    ignoredForRetainingWalls: 0
+    heightMaxThreshold: 100
+    heightMaxStartThreshold: 1
+    heightMaxEndThreshold: 1
+    xThresholdDistance: 5
+    angleThreshold: 10
+    connectionRatio: 1
+    retainingWall: 0
+    surroundingControl: 0
+    indentControl: 0
+    nodeListMirrored: []
+    uvsMirrored: []
+    snapWeightListMirrored: []
+    colorListMirrored: []
+    hasVertexColors: 0
+    deformationOffsetForward: 0
+    deformationOffsetSideways: 0
   - version: 2.0.0
     name: Concrete Barrier Simple Left
     id: 1422205435.6632535
@@ -958,6 +1174,7 @@ MonoBehaviour:
     childOrder: 0
     meshBoundsAlignment: 0
     xPosition: -1
+    xPosition2: 0
     relativeTo: 1
     yPosition: 0
     yRotation: 0
@@ -1004,6 +1221,7 @@ MonoBehaviour:
     smoothEnd: 0
     targetObject: {fileID: 0}
     bridgeObject: 0
+    tunnelObject: 0
     snapToTerrain: 0
     layer: 0
     deformationObject: 0
@@ -1038,6 +1256,40 @@ MonoBehaviour:
     scale: {x: 1, y: 1, z: 1}
     indentExt: 0
     category: 0
+    densityMap: {fileID: 0}
+    densitySize: 50
+    densitySize2: 50
+    densityStrength: 0.5
+    densityStrength2: 0.5
+    terrainNormal: 0
+    terrainNormal2: 1
+    childObjects: []
+    autoGenerate: 0
+    heightThreshold: 10
+    autogenerateStartOffset: 0
+    autogenerateEndOffset: 0
+    snapIndents: 0
+    snapIndentWidth: 0
+    cutHoles: 1
+    innerStartOffset: 0
+    innerEndOffset: 0
+    ignoredForRetainingWalls: 0
+    heightMaxThreshold: 100
+    heightMaxStartThreshold: 1
+    heightMaxEndThreshold: 1
+    xThresholdDistance: 5
+    angleThreshold: 10
+    connectionRatio: 1
+    retainingWall: 0
+    surroundingControl: 0
+    indentControl: 0
+    nodeListMirrored: []
+    uvsMirrored: []
+    snapWeightListMirrored: []
+    colorListMirrored: []
+    hasVertexColors: 0
+    deformationOffsetForward: 0
+    deformationOffsetSideways: 0
   - version: 2.0.0
     name: Concrete Barrier Simple Right
     id: 1422205525.016364
@@ -1090,6 +1342,7 @@ MonoBehaviour:
     childOrder: 0
     meshBoundsAlignment: 0
     xPosition: 1
+    xPosition2: 0
     relativeTo: 2
     yPosition: 0
     yRotation: 0
@@ -1136,6 +1389,7 @@ MonoBehaviour:
     smoothEnd: 0
     targetObject: {fileID: 0}
     bridgeObject: 0
+    tunnelObject: 0
     snapToTerrain: 0
     layer: 0
     deformationObject: 0
@@ -1170,6 +1424,40 @@ MonoBehaviour:
     scale: {x: 1, y: 1, z: 1}
     indentExt: 0
     category: 0
+    densityMap: {fileID: 0}
+    densitySize: 50
+    densitySize2: 50
+    densityStrength: 0.5
+    densityStrength2: 0.5
+    terrainNormal: 0
+    terrainNormal2: 1
+    childObjects: []
+    autoGenerate: 0
+    heightThreshold: 10
+    autogenerateStartOffset: 0
+    autogenerateEndOffset: 0
+    snapIndents: 0
+    snapIndentWidth: 0
+    cutHoles: 1
+    innerStartOffset: 0
+    innerEndOffset: 0
+    ignoredForRetainingWalls: 0
+    heightMaxThreshold: 100
+    heightMaxStartThreshold: 1
+    heightMaxEndThreshold: 1
+    xThresholdDistance: 5
+    angleThreshold: 10
+    connectionRatio: 1
+    retainingWall: 0
+    surroundingControl: 0
+    indentControl: 0
+    nodeListMirrored: []
+    uvsMirrored: []
+    snapWeightListMirrored: []
+    colorListMirrored: []
+    hasVertexColors: 0
+    deformationOffsetForward: 0
+    deformationOffsetSideways: 0
   - version: 2.0.0
     name: Curb Stone Left
     id: 1422201194.1206512
@@ -1242,6 +1530,7 @@ MonoBehaviour:
     childOrder: 0
     meshBoundsAlignment: 0
     xPosition: 0
+    xPosition2: 0
     relativeTo: 1
     yPosition: 0
     yRotation: 0
@@ -1289,6 +1578,7 @@ MonoBehaviour:
     smoothEnd: 0
     targetObject: {fileID: 0}
     bridgeObject: 0
+    tunnelObject: 0
     snapToTerrain: 0
     layer: 0
     deformationObject: 0
@@ -1323,6 +1613,40 @@ MonoBehaviour:
     scale: {x: 1, y: 1, z: 1}
     indentExt: 0
     category: 6
+    densityMap: {fileID: 0}
+    densitySize: 50
+    densitySize2: 50
+    densityStrength: 0.5
+    densityStrength2: 0.5
+    terrainNormal: 0
+    terrainNormal2: 1
+    childObjects: []
+    autoGenerate: 0
+    heightThreshold: 10
+    autogenerateStartOffset: 0
+    autogenerateEndOffset: 0
+    snapIndents: 0
+    snapIndentWidth: 0
+    cutHoles: 1
+    innerStartOffset: 0
+    innerEndOffset: 0
+    ignoredForRetainingWalls: 0
+    heightMaxThreshold: 100
+    heightMaxStartThreshold: 1
+    heightMaxEndThreshold: 1
+    xThresholdDistance: 5
+    angleThreshold: 10
+    connectionRatio: 1
+    retainingWall: 0
+    surroundingControl: 0
+    indentControl: 0
+    nodeListMirrored: []
+    uvsMirrored: []
+    snapWeightListMirrored: []
+    colorListMirrored: []
+    hasVertexColors: 0
+    deformationOffsetForward: 0
+    deformationOffsetSideways: 0
   - version: 2.0.0
     name: Curb Stone Right
     id: 1456261907.8939893
@@ -1395,6 +1719,7 @@ MonoBehaviour:
     childOrder: 0
     meshBoundsAlignment: 0
     xPosition: 0
+    xPosition2: 0
     relativeTo: 2
     yPosition: 0
     yRotation: 0
@@ -1442,6 +1767,7 @@ MonoBehaviour:
     smoothEnd: 0
     targetObject: {fileID: 0}
     bridgeObject: 0
+    tunnelObject: 0
     snapToTerrain: 0
     layer: 0
     deformationObject: 0
@@ -1476,6 +1802,40 @@ MonoBehaviour:
     scale: {x: 1, y: 1, z: 1}
     indentExt: 0
     category: 6
+    densityMap: {fileID: 0}
+    densitySize: 50
+    densitySize2: 50
+    densityStrength: 0.5
+    densityStrength2: 0.5
+    terrainNormal: 0
+    terrainNormal2: 1
+    childObjects: []
+    autoGenerate: 0
+    heightThreshold: 10
+    autogenerateStartOffset: 0
+    autogenerateEndOffset: 0
+    snapIndents: 0
+    snapIndentWidth: 0
+    cutHoles: 1
+    innerStartOffset: 0
+    innerEndOffset: 0
+    ignoredForRetainingWalls: 0
+    heightMaxThreshold: 100
+    heightMaxStartThreshold: 1
+    heightMaxEndThreshold: 1
+    xThresholdDistance: 5
+    angleThreshold: 10
+    connectionRatio: 1
+    retainingWall: 0
+    surroundingControl: 0
+    indentControl: 0
+    nodeListMirrored: []
+    uvsMirrored: []
+    snapWeightListMirrored: []
+    colorListMirrored: []
+    hasVertexColors: 0
+    deformationOffsetForward: 0
+    deformationOffsetSideways: 0
   - version: 2.0.0
     name: Decals Secondary Road
     id: 1501426670.841363
@@ -1528,6 +1888,7 @@ MonoBehaviour:
     childOrder: 2
     meshBoundsAlignment: 0
     xPosition: 0
+    xPosition2: 0
     relativeTo: 0
     yPosition: 0.02
     yRotation: 0
@@ -1575,6 +1936,7 @@ MonoBehaviour:
     smoothEnd: 0
     targetObject: {fileID: 0}
     bridgeObject: 0
+    tunnelObject: 0
     snapToTerrain: 0
     layer: 0
     deformationObject: 0
@@ -1609,6 +1971,40 @@ MonoBehaviour:
     scale: {x: 1, y: 1, z: 1}
     indentExt: 0
     category: 6
+    densityMap: {fileID: 0}
+    densitySize: 50
+    densitySize2: 50
+    densityStrength: 0.5
+    densityStrength2: 0.5
+    terrainNormal: 0
+    terrainNormal2: 1
+    childObjects: []
+    autoGenerate: 0
+    heightThreshold: 10
+    autogenerateStartOffset: 0
+    autogenerateEndOffset: 0
+    snapIndents: 0
+    snapIndentWidth: 0
+    cutHoles: 1
+    innerStartOffset: 0
+    innerEndOffset: 0
+    ignoredForRetainingWalls: 0
+    heightMaxThreshold: 100
+    heightMaxStartThreshold: 1
+    heightMaxEndThreshold: 1
+    xThresholdDistance: 5
+    angleThreshold: 10
+    connectionRatio: 1
+    retainingWall: 0
+    surroundingControl: 0
+    indentControl: 0
+    nodeListMirrored: []
+    uvsMirrored: []
+    snapWeightListMirrored: []
+    colorListMirrored: []
+    hasVertexColors: 0
+    deformationOffsetForward: 0
+    deformationOffsetSideways: 0
   - version: 2.0.0
     name: Fence (wall fence)
     id: 1461096609.419792
@@ -1661,6 +2057,7 @@ MonoBehaviour:
     childOrder: 0
     meshBoundsAlignment: 0
     xPosition: 0.025
+    xPosition2: 0
     relativeTo: 2
     yPosition: 0
     yRotation: 0
@@ -1707,6 +2104,7 @@ MonoBehaviour:
     smoothEnd: 0
     targetObject: {fileID: 0}
     bridgeObject: 0
+    tunnelObject: 0
     snapToTerrain: 0
     layer: 0
     deformationObject: 0
@@ -1741,6 +2139,40 @@ MonoBehaviour:
     scale: {x: 1, y: 1, z: 1}
     indentExt: 0
     category: 1
+    densityMap: {fileID: 0}
+    densitySize: 50
+    densitySize2: 50
+    densityStrength: 0.5
+    densityStrength2: 0.5
+    terrainNormal: 0
+    terrainNormal2: 1
+    childObjects: []
+    autoGenerate: 0
+    heightThreshold: 10
+    autogenerateStartOffset: 0
+    autogenerateEndOffset: 0
+    snapIndents: 0
+    snapIndentWidth: 0
+    cutHoles: 1
+    innerStartOffset: 0
+    innerEndOffset: 0
+    ignoredForRetainingWalls: 0
+    heightMaxThreshold: 100
+    heightMaxStartThreshold: 1
+    heightMaxEndThreshold: 1
+    xThresholdDistance: 5
+    angleThreshold: 10
+    connectionRatio: 1
+    retainingWall: 0
+    surroundingControl: 0
+    indentControl: 0
+    nodeListMirrored: []
+    uvsMirrored: []
+    snapWeightListMirrored: []
+    colorListMirrored: []
+    hasVertexColors: 0
+    deformationOffsetForward: 0
+    deformationOffsetSideways: 0
   - version: 2.0.0
     name: Fence Bootcamp
     id: 1
@@ -1793,6 +2225,7 @@ MonoBehaviour:
     childOrder: 2
     meshBoundsAlignment: 1
     xPosition: 0
+    xPosition2: 0
     relativeTo: 0
     yPosition: 0
     yRotation: 0
@@ -1839,6 +2272,7 @@ MonoBehaviour:
     smoothEnd: 0
     targetObject: {fileID: 0}
     bridgeObject: 0
+    tunnelObject: 0
     snapToTerrain: 0
     layer: 0
     deformationObject: 0
@@ -1873,6 +2307,40 @@ MonoBehaviour:
     scale: {x: 1, y: 1, z: 1}
     indentExt: 0
     category: 1
+    densityMap: {fileID: 0}
+    densitySize: 50
+    densitySize2: 50
+    densityStrength: 0.5
+    densityStrength2: 0.5
+    terrainNormal: 0
+    terrainNormal2: 1
+    childObjects: []
+    autoGenerate: 0
+    heightThreshold: 10
+    autogenerateStartOffset: 0
+    autogenerateEndOffset: 0
+    snapIndents: 0
+    snapIndentWidth: 0
+    cutHoles: 1
+    innerStartOffset: 0
+    innerEndOffset: 0
+    ignoredForRetainingWalls: 0
+    heightMaxThreshold: 100
+    heightMaxStartThreshold: 1
+    heightMaxEndThreshold: 1
+    xThresholdDistance: 5
+    angleThreshold: 10
+    connectionRatio: 1
+    retainingWall: 0
+    surroundingControl: 0
+    indentControl: 0
+    nodeListMirrored: []
+    uvsMirrored: []
+    snapWeightListMirrored: []
+    colorListMirrored: []
+    hasVertexColors: 0
+    deformationOffsetForward: 0
+    deformationOffsetSideways: 0
   - version: 2.0.0
     name: Fence Chain Link
     id: 1461163327.9873817
@@ -1925,6 +2393,7 @@ MonoBehaviour:
     childOrder: 0
     meshBoundsAlignment: 0
     xPosition: 0
+    xPosition2: 0
     relativeTo: 2
     yPosition: -0.2
     yRotation: 0
@@ -1971,6 +2440,7 @@ MonoBehaviour:
     smoothEnd: 0
     targetObject: {fileID: 0}
     bridgeObject: 0
+    tunnelObject: 0
     snapToTerrain: 0
     layer: 0
     deformationObject: 0
@@ -2005,6 +2475,40 @@ MonoBehaviour:
     scale: {x: 1, y: 1, z: 1}
     indentExt: 0
     category: 1
+    densityMap: {fileID: 0}
+    densitySize: 50
+    densitySize2: 50
+    densityStrength: 0.5
+    densityStrength2: 0.5
+    terrainNormal: 0
+    terrainNormal2: 1
+    childObjects: []
+    autoGenerate: 0
+    heightThreshold: 10
+    autogenerateStartOffset: 0
+    autogenerateEndOffset: 0
+    snapIndents: 0
+    snapIndentWidth: 0
+    cutHoles: 1
+    innerStartOffset: 0
+    innerEndOffset: 0
+    ignoredForRetainingWalls: 0
+    heightMaxThreshold: 100
+    heightMaxStartThreshold: 1
+    heightMaxEndThreshold: 1
+    xThresholdDistance: 5
+    angleThreshold: 10
+    connectionRatio: 1
+    retainingWall: 0
+    surroundingControl: 0
+    indentControl: 0
+    nodeListMirrored: []
+    uvsMirrored: []
+    snapWeightListMirrored: []
+    colorListMirrored: []
+    hasVertexColors: 0
+    deformationOffsetForward: 0
+    deformationOffsetSideways: 0
   - version: 2.0.0
     name: Fence Wooden Procedural
     id: 2
@@ -2057,6 +2561,7 @@ MonoBehaviour:
     childOrder: 0
     meshBoundsAlignment: 0
     xPosition: 0
+    xPosition2: 0
     relativeTo: 0
     yPosition: 0
     yRotation: 0
@@ -2103,6 +2608,7 @@ MonoBehaviour:
     smoothEnd: 0
     targetObject: {fileID: 0}
     bridgeObject: 0
+    tunnelObject: 0
     snapToTerrain: 0
     layer: 0
     deformationObject: 0
@@ -2137,6 +2643,40 @@ MonoBehaviour:
     scale: {x: 1, y: 1, z: 1}
     indentExt: 0
     category: 1
+    densityMap: {fileID: 0}
+    densitySize: 50
+    densitySize2: 50
+    densityStrength: 0.5
+    densityStrength2: 0.5
+    terrainNormal: 0
+    terrainNormal2: 1
+    childObjects: []
+    autoGenerate: 0
+    heightThreshold: 10
+    autogenerateStartOffset: 0
+    autogenerateEndOffset: 0
+    snapIndents: 0
+    snapIndentWidth: 0
+    cutHoles: 1
+    innerStartOffset: 0
+    innerEndOffset: 0
+    ignoredForRetainingWalls: 0
+    heightMaxThreshold: 100
+    heightMaxStartThreshold: 1
+    heightMaxEndThreshold: 1
+    xThresholdDistance: 5
+    angleThreshold: 10
+    connectionRatio: 1
+    retainingWall: 0
+    surroundingControl: 0
+    indentControl: 0
+    nodeListMirrored: []
+    uvsMirrored: []
+    snapWeightListMirrored: []
+    colorListMirrored: []
+    hasVertexColors: 0
+    deformationOffsetForward: 0
+    deformationOffsetSideways: 0
   - version: 2.0.0
     name: Gravel terrain Surface
     id: 1475767569.9066167
@@ -2209,6 +2749,7 @@ MonoBehaviour:
     childOrder: 0
     meshBoundsAlignment: 0
     xPosition: 0
+    xPosition2: 0
     relativeTo: 0
     yPosition: 0
     yRotation: 0
@@ -2255,6 +2796,7 @@ MonoBehaviour:
     smoothEnd: 0
     targetObject: {fileID: 0}
     bridgeObject: 0
+    tunnelObject: 0
     snapToTerrain: 0
     layer: 0
     deformationObject: 0
@@ -2289,6 +2831,40 @@ MonoBehaviour:
     scale: {x: 1, y: 1, z: 1}
     indentExt: 0
     category: 5
+    densityMap: {fileID: 0}
+    densitySize: 50
+    densitySize2: 50
+    densityStrength: 0.5
+    densityStrength2: 0.5
+    terrainNormal: 0
+    terrainNormal2: 1
+    childObjects: []
+    autoGenerate: 0
+    heightThreshold: 10
+    autogenerateStartOffset: 0
+    autogenerateEndOffset: 0
+    snapIndents: 0
+    snapIndentWidth: 0
+    cutHoles: 1
+    innerStartOffset: 0
+    innerEndOffset: 0
+    ignoredForRetainingWalls: 0
+    heightMaxThreshold: 100
+    heightMaxStartThreshold: 1
+    heightMaxEndThreshold: 1
+    xThresholdDistance: 5
+    angleThreshold: 10
+    connectionRatio: 1
+    retainingWall: 0
+    surroundingControl: 0
+    indentControl: 0
+    nodeListMirrored: []
+    uvsMirrored: []
+    snapWeightListMirrored: []
+    colorListMirrored: []
+    hasVertexColors: 0
+    deformationOffsetForward: 0
+    deformationOffsetSideways: 0
   - version: 2.0.0
     name: Guard Rail Left
     id: 1422283879.5397072
@@ -2341,6 +2917,7 @@ MonoBehaviour:
     childOrder: 0
     meshBoundsAlignment: 0
     xPosition: 0.25
+    xPosition2: 0
     relativeTo: 1
     yPosition: 0
     yRotation: 0
@@ -2387,6 +2964,7 @@ MonoBehaviour:
     smoothEnd: 1
     targetObject: {fileID: 0}
     bridgeObject: 0
+    tunnelObject: 0
     snapToTerrain: 0
     layer: 0
     deformationObject: 0
@@ -2421,6 +2999,40 @@ MonoBehaviour:
     scale: {x: 1, y: 1, z: 1}
     indentExt: 0
     category: 0
+    densityMap: {fileID: 0}
+    densitySize: 50
+    densitySize2: 50
+    densityStrength: 0.5
+    densityStrength2: 0.5
+    terrainNormal: 0
+    terrainNormal2: 1
+    childObjects: []
+    autoGenerate: 0
+    heightThreshold: 10
+    autogenerateStartOffset: 0
+    autogenerateEndOffset: 0
+    snapIndents: 0
+    snapIndentWidth: 0
+    cutHoles: 1
+    innerStartOffset: 0
+    innerEndOffset: 0
+    ignoredForRetainingWalls: 0
+    heightMaxThreshold: 100
+    heightMaxStartThreshold: 1
+    heightMaxEndThreshold: 1
+    xThresholdDistance: 5
+    angleThreshold: 10
+    connectionRatio: 1
+    retainingWall: 0
+    surroundingControl: 0
+    indentControl: 0
+    nodeListMirrored: []
+    uvsMirrored: []
+    snapWeightListMirrored: []
+    colorListMirrored: []
+    hasVertexColors: 0
+    deformationOffsetForward: 0
+    deformationOffsetSideways: 0
   - version: 2.0.0
     name: Guard Rail Left v2
     id: 1479631637.3054445
@@ -2473,6 +3085,7 @@ MonoBehaviour:
     childOrder: 0
     meshBoundsAlignment: 0
     xPosition: 0
+    xPosition2: 0
     relativeTo: 1
     yPosition: 0
     yRotation: 0
@@ -2519,6 +3132,7 @@ MonoBehaviour:
     smoothEnd: 0
     targetObject: {fileID: 0}
     bridgeObject: 0
+    tunnelObject: 0
     snapToTerrain: 0
     layer: 0
     deformationObject: 0
@@ -2553,6 +3167,40 @@ MonoBehaviour:
     scale: {x: 1, y: 1, z: 1}
     indentExt: 0
     category: 0
+    densityMap: {fileID: 0}
+    densitySize: 50
+    densitySize2: 50
+    densityStrength: 0.5
+    densityStrength2: 0.5
+    terrainNormal: 0
+    terrainNormal2: 1
+    childObjects: []
+    autoGenerate: 0
+    heightThreshold: 10
+    autogenerateStartOffset: 0
+    autogenerateEndOffset: 0
+    snapIndents: 0
+    snapIndentWidth: 0
+    cutHoles: 1
+    innerStartOffset: 0
+    innerEndOffset: 0
+    ignoredForRetainingWalls: 0
+    heightMaxThreshold: 100
+    heightMaxStartThreshold: 1
+    heightMaxEndThreshold: 1
+    xThresholdDistance: 5
+    angleThreshold: 10
+    connectionRatio: 1
+    retainingWall: 0
+    surroundingControl: 0
+    indentControl: 0
+    nodeListMirrored: []
+    uvsMirrored: []
+    snapWeightListMirrored: []
+    colorListMirrored: []
+    hasVertexColors: 0
+    deformationOffsetForward: 0
+    deformationOffsetSideways: 0
   - version: 2.0.0
     name: Guard Rail Right
     id: 1422283828.2437732
@@ -2605,6 +3253,7 @@ MonoBehaviour:
     childOrder: 0
     meshBoundsAlignment: 0
     xPosition: -0.25
+    xPosition2: 0
     relativeTo: 2
     yPosition: 0
     yRotation: 0
@@ -2651,6 +3300,7 @@ MonoBehaviour:
     smoothEnd: 1
     targetObject: {fileID: 0}
     bridgeObject: 0
+    tunnelObject: 0
     snapToTerrain: 0
     layer: 0
     deformationObject: 0
@@ -2685,6 +3335,40 @@ MonoBehaviour:
     scale: {x: 1, y: 1, z: 1}
     indentExt: 0
     category: 0
+    densityMap: {fileID: 0}
+    densitySize: 50
+    densitySize2: 50
+    densityStrength: 0.5
+    densityStrength2: 0.5
+    terrainNormal: 0
+    terrainNormal2: 1
+    childObjects: []
+    autoGenerate: 0
+    heightThreshold: 10
+    autogenerateStartOffset: 0
+    autogenerateEndOffset: 0
+    snapIndents: 0
+    snapIndentWidth: 0
+    cutHoles: 1
+    innerStartOffset: 0
+    innerEndOffset: 0
+    ignoredForRetainingWalls: 0
+    heightMaxThreshold: 100
+    heightMaxStartThreshold: 1
+    heightMaxEndThreshold: 1
+    xThresholdDistance: 5
+    angleThreshold: 10
+    connectionRatio: 1
+    retainingWall: 0
+    surroundingControl: 0
+    indentControl: 0
+    nodeListMirrored: []
+    uvsMirrored: []
+    snapWeightListMirrored: []
+    colorListMirrored: []
+    hasVertexColors: 0
+    deformationOffsetForward: 0
+    deformationOffsetSideways: 0
   - version: 2.0.0
     name: Guard Rail Right v2
     id: 1463140085.8857749
@@ -2737,6 +3421,7 @@ MonoBehaviour:
     childOrder: 0
     meshBoundsAlignment: 0
     xPosition: 0
+    xPosition2: 0
     relativeTo: 2
     yPosition: 0
     yRotation: 0
@@ -2783,6 +3468,7 @@ MonoBehaviour:
     smoothEnd: 0
     targetObject: {fileID: 0}
     bridgeObject: 0
+    tunnelObject: 0
     snapToTerrain: 0
     layer: 0
     deformationObject: 0
@@ -2817,6 +3503,40 @@ MonoBehaviour:
     scale: {x: 1, y: 1, z: 1}
     indentExt: 0
     category: 0
+    densityMap: {fileID: 0}
+    densitySize: 50
+    densitySize2: 50
+    densityStrength: 0.5
+    densityStrength2: 0.5
+    terrainNormal: 0
+    terrainNormal2: 1
+    childObjects: []
+    autoGenerate: 0
+    heightThreshold: 10
+    autogenerateStartOffset: 0
+    autogenerateEndOffset: 0
+    snapIndents: 0
+    snapIndentWidth: 0
+    cutHoles: 1
+    innerStartOffset: 0
+    innerEndOffset: 0
+    ignoredForRetainingWalls: 0
+    heightMaxThreshold: 100
+    heightMaxStartThreshold: 1
+    heightMaxEndThreshold: 1
+    xThresholdDistance: 5
+    angleThreshold: 10
+    connectionRatio: 1
+    retainingWall: 0
+    surroundingControl: 0
+    indentControl: 0
+    nodeListMirrored: []
+    uvsMirrored: []
+    snapWeightListMirrored: []
+    colorListMirrored: []
+    hasVertexColors: 0
+    deformationOffsetForward: 0
+    deformationOffsetSideways: 0
   - version: 2.0.0
     name: Guard Rail Rock
     id: 1492274600.4877152
@@ -2869,6 +3589,7 @@ MonoBehaviour:
     childOrder: 0
     meshBoundsAlignment: 1
     xPosition: 0
+    xPosition2: 0
     relativeTo: 0
     yPosition: -0.05
     yRotation: 0
@@ -2915,6 +3636,7 @@ MonoBehaviour:
     smoothEnd: 0
     targetObject: {fileID: 0}
     bridgeObject: 0
+    tunnelObject: 0
     snapToTerrain: 0
     layer: 0
     deformationObject: 0
@@ -2949,6 +3671,40 @@ MonoBehaviour:
     scale: {x: 1, y: 1, z: 1}
     indentExt: 0
     category: 0
+    densityMap: {fileID: 0}
+    densitySize: 50
+    densitySize2: 50
+    densityStrength: 0.5
+    densityStrength2: 0.5
+    terrainNormal: 0
+    terrainNormal2: 1
+    childObjects: []
+    autoGenerate: 0
+    heightThreshold: 10
+    autogenerateStartOffset: 0
+    autogenerateEndOffset: 0
+    snapIndents: 0
+    snapIndentWidth: 0
+    cutHoles: 1
+    innerStartOffset: 0
+    innerEndOffset: 0
+    ignoredForRetainingWalls: 0
+    heightMaxThreshold: 100
+    heightMaxStartThreshold: 1
+    heightMaxEndThreshold: 1
+    xThresholdDistance: 5
+    angleThreshold: 10
+    connectionRatio: 1
+    retainingWall: 0
+    surroundingControl: 0
+    indentControl: 0
+    nodeListMirrored: []
+    uvsMirrored: []
+    snapWeightListMirrored: []
+    colorListMirrored: []
+    hasVertexColors: 0
+    deformationOffsetForward: 0
+    deformationOffsetSideways: 0
   - version: 2.0.0
     name: Guard Rail Wood
     id: 1490533100.0728989
@@ -3001,6 +3757,7 @@ MonoBehaviour:
     childOrder: 0
     meshBoundsAlignment: 1
     xPosition: 0
+    xPosition2: 0
     relativeTo: 0
     yPosition: 0.05
     yRotation: 0
@@ -3047,6 +3804,7 @@ MonoBehaviour:
     smoothEnd: 0
     targetObject: {fileID: 0}
     bridgeObject: 0
+    tunnelObject: 0
     snapToTerrain: 0
     layer: 0
     deformationObject: 0
@@ -3081,6 +3839,40 @@ MonoBehaviour:
     scale: {x: 1, y: 1, z: 1}
     indentExt: 0
     category: 0
+    densityMap: {fileID: 0}
+    densitySize: 50
+    densitySize2: 50
+    densityStrength: 0.5
+    densityStrength2: 0.5
+    terrainNormal: 0
+    terrainNormal2: 1
+    childObjects: []
+    autoGenerate: 0
+    heightThreshold: 10
+    autogenerateStartOffset: 0
+    autogenerateEndOffset: 0
+    snapIndents: 0
+    snapIndentWidth: 0
+    cutHoles: 1
+    innerStartOffset: 0
+    innerEndOffset: 0
+    ignoredForRetainingWalls: 0
+    heightMaxThreshold: 100
+    heightMaxStartThreshold: 1
+    heightMaxEndThreshold: 1
+    xThresholdDistance: 5
+    angleThreshold: 10
+    connectionRatio: 1
+    retainingWall: 0
+    surroundingControl: 0
+    indentControl: 0
+    nodeListMirrored: []
+    uvsMirrored: []
+    snapWeightListMirrored: []
+    colorListMirrored: []
+    hasVertexColors: 0
+    deformationOffsetForward: 0
+    deformationOffsetSideways: 0
   - version: 2.0.0
     name: Guard Rail wood Procedural
     id: 1492351454.8959825
@@ -3133,6 +3925,7 @@ MonoBehaviour:
     childOrder: 0
     meshBoundsAlignment: 1
     xPosition: 0
+    xPosition2: 0
     relativeTo: 0
     yPosition: 0.05
     yRotation: 0
@@ -3179,6 +3972,7 @@ MonoBehaviour:
     smoothEnd: 0
     targetObject: {fileID: 0}
     bridgeObject: 0
+    tunnelObject: 0
     snapToTerrain: 1
     layer: 0
     deformationObject: 0
@@ -3213,6 +4007,40 @@ MonoBehaviour:
     scale: {x: 1, y: 1, z: 1}
     indentExt: 0
     category: 0
+    densityMap: {fileID: 0}
+    densitySize: 50
+    densitySize2: 50
+    densityStrength: 0.5
+    densityStrength2: 0.5
+    terrainNormal: 0
+    terrainNormal2: 1
+    childObjects: []
+    autoGenerate: 0
+    heightThreshold: 10
+    autogenerateStartOffset: 0
+    autogenerateEndOffset: 0
+    snapIndents: 0
+    snapIndentWidth: 0
+    cutHoles: 1
+    innerStartOffset: 0
+    innerEndOffset: 0
+    ignoredForRetainingWalls: 0
+    heightMaxThreshold: 100
+    heightMaxStartThreshold: 1
+    heightMaxEndThreshold: 1
+    xThresholdDistance: 5
+    angleThreshold: 10
+    connectionRatio: 1
+    retainingWall: 0
+    surroundingControl: 0
+    indentControl: 0
+    nodeListMirrored: []
+    uvsMirrored: []
+    snapWeightListMirrored: []
+    colorListMirrored: []
+    hasVertexColors: 0
+    deformationOffsetForward: 0
+    deformationOffsetSideways: 0
   - version: 2.0.0
     name: Guard Rail Wood Small
     id: 1492886547.8844757
@@ -3265,6 +4093,7 @@ MonoBehaviour:
     childOrder: 0
     meshBoundsAlignment: 1
     xPosition: 0
+    xPosition2: 0
     relativeTo: 0
     yPosition: -0.05
     yRotation: 0
@@ -3311,6 +4140,7 @@ MonoBehaviour:
     smoothEnd: 0
     targetObject: {fileID: 0}
     bridgeObject: 0
+    tunnelObject: 0
     snapToTerrain: 0
     layer: 0
     deformationObject: 0
@@ -3345,6 +4175,40 @@ MonoBehaviour:
     scale: {x: 1, y: 1, z: 1}
     indentExt: 0
     category: 0
+    densityMap: {fileID: 0}
+    densitySize: 50
+    densitySize2: 50
+    densityStrength: 0.5
+    densityStrength2: 0.5
+    terrainNormal: 0
+    terrainNormal2: 1
+    childObjects: []
+    autoGenerate: 0
+    heightThreshold: 10
+    autogenerateStartOffset: 0
+    autogenerateEndOffset: 0
+    snapIndents: 0
+    snapIndentWidth: 0
+    cutHoles: 1
+    innerStartOffset: 0
+    innerEndOffset: 0
+    ignoredForRetainingWalls: 0
+    heightMaxThreshold: 100
+    heightMaxStartThreshold: 1
+    heightMaxEndThreshold: 1
+    xThresholdDistance: 5
+    angleThreshold: 10
+    connectionRatio: 1
+    retainingWall: 0
+    surroundingControl: 0
+    indentControl: 0
+    nodeListMirrored: []
+    uvsMirrored: []
+    snapWeightListMirrored: []
+    colorListMirrored: []
+    hasVertexColors: 0
+    deformationOffsetForward: 0
+    deformationOffsetSideways: 0
   - version: 2.0.0
     name: Guard Rail Wood Small 2nd
     id: 1506755623.4085588
@@ -3397,6 +4261,7 @@ MonoBehaviour:
     childOrder: 0
     meshBoundsAlignment: 1
     xPosition: 0
+    xPosition2: 0
     relativeTo: 0
     yPosition: -0.05
     yRotation: 0
@@ -3443,6 +4308,7 @@ MonoBehaviour:
     smoothEnd: 0
     targetObject: {fileID: 0}
     bridgeObject: 0
+    tunnelObject: 0
     snapToTerrain: 0
     layer: 0
     deformationObject: 0
@@ -3477,6 +4343,40 @@ MonoBehaviour:
     scale: {x: 1, y: 1, z: 1}
     indentExt: 0
     category: 0
+    densityMap: {fileID: 0}
+    densitySize: 50
+    densitySize2: 50
+    densityStrength: 0.5
+    densityStrength2: 0.5
+    terrainNormal: 0
+    terrainNormal2: 1
+    childObjects: []
+    autoGenerate: 0
+    heightThreshold: 10
+    autogenerateStartOffset: 0
+    autogenerateEndOffset: 0
+    snapIndents: 0
+    snapIndentWidth: 0
+    cutHoles: 1
+    innerStartOffset: 0
+    innerEndOffset: 0
+    ignoredForRetainingWalls: 0
+    heightMaxThreshold: 100
+    heightMaxStartThreshold: 1
+    heightMaxEndThreshold: 1
+    xThresholdDistance: 5
+    angleThreshold: 10
+    connectionRatio: 1
+    retainingWall: 0
+    surroundingControl: 0
+    indentControl: 0
+    nodeListMirrored: []
+    uvsMirrored: []
+    snapWeightListMirrored: []
+    colorListMirrored: []
+    hasVertexColors: 0
+    deformationOffsetForward: 0
+    deformationOffsetSideways: 0
   - version: 2.0.0
     name: 'Kart Track Barrier '
     id: 1496597092.548931
@@ -3529,6 +4429,7 @@ MonoBehaviour:
     childOrder: 0
     meshBoundsAlignment: 0
     xPosition: 0
+    xPosition2: 0
     relativeTo: 0
     yPosition: 0
     yRotation: 0
@@ -3575,6 +4476,7 @@ MonoBehaviour:
     smoothEnd: 0
     targetObject: {fileID: 0}
     bridgeObject: 0
+    tunnelObject: 0
     snapToTerrain: 0
     layer: 0
     deformationObject: 0
@@ -3609,6 +4511,40 @@ MonoBehaviour:
     scale: {x: 1, y: 1, z: 1}
     indentExt: 0
     category: 6
+    densityMap: {fileID: 0}
+    densitySize: 50
+    densitySize2: 50
+    densityStrength: 0.5
+    densityStrength2: 0.5
+    terrainNormal: 0
+    terrainNormal2: 1
+    childObjects: []
+    autoGenerate: 0
+    heightThreshold: 10
+    autogenerateStartOffset: 0
+    autogenerateEndOffset: 0
+    snapIndents: 0
+    snapIndentWidth: 0
+    cutHoles: 1
+    innerStartOffset: 0
+    innerEndOffset: 0
+    ignoredForRetainingWalls: 0
+    heightMaxThreshold: 100
+    heightMaxStartThreshold: 1
+    heightMaxEndThreshold: 1
+    xThresholdDistance: 5
+    angleThreshold: 10
+    connectionRatio: 1
+    retainingWall: 0
+    surroundingControl: 0
+    indentControl: 0
+    nodeListMirrored: []
+    uvsMirrored: []
+    snapWeightListMirrored: []
+    colorListMirrored: []
+    hasVertexColors: 0
+    deformationOffsetForward: 0
+    deformationOffsetSideways: 0
   - version: 2.0.0
     name: Kart Track Barrier Small Left
     id: 1496949275.520249
@@ -3661,6 +4597,7 @@ MonoBehaviour:
     childOrder: 0
     meshBoundsAlignment: 0
     xPosition: -0.74
+    xPosition2: 0
     relativeTo: 1
     yPosition: 0.15
     yRotation: 0
@@ -3707,6 +4644,7 @@ MonoBehaviour:
     smoothEnd: 1
     targetObject: {fileID: 0}
     bridgeObject: 0
+    tunnelObject: 0
     snapToTerrain: 0
     layer: 0
     deformationObject: 0
@@ -3741,6 +4679,40 @@ MonoBehaviour:
     scale: {x: 1, y: 1, z: 1}
     indentExt: 0
     category: 6
+    densityMap: {fileID: 0}
+    densitySize: 50
+    densitySize2: 50
+    densityStrength: 0.5
+    densityStrength2: 0.5
+    terrainNormal: 0
+    terrainNormal2: 1
+    childObjects: []
+    autoGenerate: 0
+    heightThreshold: 10
+    autogenerateStartOffset: 0
+    autogenerateEndOffset: 0
+    snapIndents: 0
+    snapIndentWidth: 0
+    cutHoles: 1
+    innerStartOffset: 0
+    innerEndOffset: 0
+    ignoredForRetainingWalls: 0
+    heightMaxThreshold: 100
+    heightMaxStartThreshold: 1
+    heightMaxEndThreshold: 1
+    xThresholdDistance: 5
+    angleThreshold: 10
+    connectionRatio: 1
+    retainingWall: 0
+    surroundingControl: 0
+    indentControl: 0
+    nodeListMirrored: []
+    uvsMirrored: []
+    snapWeightListMirrored: []
+    colorListMirrored: []
+    hasVertexColors: 0
+    deformationOffsetForward: 0
+    deformationOffsetSideways: 0
   - version: 2.0.0
     name: Kart Track Barrier Small Right
     id: 1496950190.5545192
@@ -3793,6 +4765,7 @@ MonoBehaviour:
     childOrder: 0
     meshBoundsAlignment: 0
     xPosition: 0.74
+    xPosition2: 0
     relativeTo: 2
     yPosition: 0.15
     yRotation: 0
@@ -3839,6 +4812,7 @@ MonoBehaviour:
     smoothEnd: 1
     targetObject: {fileID: 0}
     bridgeObject: 0
+    tunnelObject: 0
     snapToTerrain: 0
     layer: 0
     deformationObject: 0
@@ -3873,6 +4847,40 @@ MonoBehaviour:
     scale: {x: 1, y: 1, z: 1}
     indentExt: 0
     category: 6
+    densityMap: {fileID: 0}
+    densitySize: 50
+    densitySize2: 50
+    densityStrength: 0.5
+    densityStrength2: 0.5
+    terrainNormal: 0
+    terrainNormal2: 1
+    childObjects: []
+    autoGenerate: 0
+    heightThreshold: 10
+    autogenerateStartOffset: 0
+    autogenerateEndOffset: 0
+    snapIndents: 0
+    snapIndentWidth: 0
+    cutHoles: 1
+    innerStartOffset: 0
+    innerEndOffset: 0
+    ignoredForRetainingWalls: 0
+    heightMaxThreshold: 100
+    heightMaxStartThreshold: 1
+    heightMaxEndThreshold: 1
+    xThresholdDistance: 5
+    angleThreshold: 10
+    connectionRatio: 1
+    retainingWall: 0
+    surroundingControl: 0
+    indentControl: 0
+    nodeListMirrored: []
+    uvsMirrored: []
+    snapWeightListMirrored: []
+    colorListMirrored: []
+    hasVertexColors: 0
+    deformationOffsetForward: 0
+    deformationOffsetSideways: 0
   - version: 2.0.0
     name: Kart Track Bridge
     id: 1497771329.4354687
@@ -3925,6 +4933,7 @@ MonoBehaviour:
     childOrder: 0
     meshBoundsAlignment: 0
     xPosition: 0
+    xPosition2: 0
     relativeTo: 0
     yPosition: 0
     yRotation: 0
@@ -3971,6 +4980,7 @@ MonoBehaviour:
     smoothEnd: 1
     targetObject: {fileID: 0}
     bridgeObject: 0
+    tunnelObject: 0
     snapToTerrain: 0
     layer: 0
     deformationObject: 0
@@ -4005,6 +5015,40 @@ MonoBehaviour:
     scale: {x: 1, y: 1, z: 1}
     indentExt: 0
     category: 3
+    densityMap: {fileID: 0}
+    densitySize: 50
+    densitySize2: 50
+    densityStrength: 0.5
+    densityStrength2: 0.5
+    terrainNormal: 0
+    terrainNormal2: 1
+    childObjects: []
+    autoGenerate: 0
+    heightThreshold: 10
+    autogenerateStartOffset: 0
+    autogenerateEndOffset: 0
+    snapIndents: 0
+    snapIndentWidth: 0
+    cutHoles: 1
+    innerStartOffset: 0
+    innerEndOffset: 0
+    ignoredForRetainingWalls: 0
+    heightMaxThreshold: 100
+    heightMaxStartThreshold: 1
+    heightMaxEndThreshold: 1
+    xThresholdDistance: 5
+    angleThreshold: 10
+    connectionRatio: 1
+    retainingWall: 0
+    surroundingControl: 0
+    indentControl: 0
+    nodeListMirrored: []
+    uvsMirrored: []
+    snapWeightListMirrored: []
+    colorListMirrored: []
+    hasVertexColors: 0
+    deformationOffsetForward: 0
+    deformationOffsetSideways: 0
   - version: 2.0.0
     name: Kart Track Start Grid
     id: 1501401162.2714965
@@ -4057,6 +5101,7 @@ MonoBehaviour:
     childOrder: 0
     meshBoundsAlignment: 0
     xPosition: 0
+    xPosition2: 0
     relativeTo: 0
     yPosition: 0.005
     yRotation: 0
@@ -4104,6 +5149,7 @@ MonoBehaviour:
     smoothEnd: 0
     targetObject: {fileID: 0}
     bridgeObject: 0
+    tunnelObject: 0
     snapToTerrain: 0
     layer: 0
     deformationObject: 0
@@ -4138,6 +5184,40 @@ MonoBehaviour:
     scale: {x: 1, y: 1, z: 1}
     indentExt: 0
     category: 6
+    densityMap: {fileID: 0}
+    densitySize: 50
+    densitySize2: 50
+    densityStrength: 0.5
+    densityStrength2: 0.5
+    terrainNormal: 0
+    terrainNormal2: 1
+    childObjects: []
+    autoGenerate: 0
+    heightThreshold: 10
+    autogenerateStartOffset: 0
+    autogenerateEndOffset: 0
+    snapIndents: 0
+    snapIndentWidth: 0
+    cutHoles: 1
+    innerStartOffset: 0
+    innerEndOffset: 0
+    ignoredForRetainingWalls: 0
+    heightMaxThreshold: 100
+    heightMaxStartThreshold: 1
+    heightMaxEndThreshold: 1
+    xThresholdDistance: 5
+    angleThreshold: 10
+    connectionRatio: 1
+    retainingWall: 0
+    surroundingControl: 0
+    indentControl: 0
+    nodeListMirrored: []
+    uvsMirrored: []
+    snapWeightListMirrored: []
+    colorListMirrored: []
+    hasVertexColors: 0
+    deformationOffsetForward: 0
+    deformationOffsetSideways: 0
   - version: 2.0.0
     name: Kart Track Wall
     id: 1496592239.599358
@@ -4230,6 +5310,7 @@ MonoBehaviour:
     childOrder: 0
     meshBoundsAlignment: 0
     xPosition: 0
+    xPosition2: 0
     relativeTo: 0
     yPosition: 0
     yRotation: 0
@@ -4276,6 +5357,7 @@ MonoBehaviour:
     smoothEnd: 0
     targetObject: {fileID: 0}
     bridgeObject: 0
+    tunnelObject: 0
     snapToTerrain: 0
     layer: 0
     deformationObject: 0
@@ -4310,6 +5392,40 @@ MonoBehaviour:
     scale: {x: 1, y: 1, z: 1}
     indentExt: 0
     category: 6
+    densityMap: {fileID: 0}
+    densitySize: 50
+    densitySize2: 50
+    densityStrength: 0.5
+    densityStrength2: 0.5
+    terrainNormal: 0
+    terrainNormal2: 1
+    childObjects: []
+    autoGenerate: 0
+    heightThreshold: 10
+    autogenerateStartOffset: 0
+    autogenerateEndOffset: 0
+    snapIndents: 0
+    snapIndentWidth: 0
+    cutHoles: 1
+    innerStartOffset: 0
+    innerEndOffset: 0
+    ignoredForRetainingWalls: 0
+    heightMaxThreshold: 100
+    heightMaxStartThreshold: 1
+    heightMaxEndThreshold: 1
+    xThresholdDistance: 5
+    angleThreshold: 10
+    connectionRatio: 1
+    retainingWall: 0
+    surroundingControl: 0
+    indentControl: 0
+    nodeListMirrored: []
+    uvsMirrored: []
+    snapWeightListMirrored: []
+    colorListMirrored: []
+    hasVertexColors: 0
+    deformationOffsetForward: 0
+    deformationOffsetSideways: 0
   - version: 2.0.0
     name: Kart Track Wall Caps
     id: 1497083851.7107809
@@ -4402,6 +5518,7 @@ MonoBehaviour:
     childOrder: 0
     meshBoundsAlignment: 0
     xPosition: 0
+    xPosition2: 0
     relativeTo: 0
     yPosition: -0.1
     yRotation: 0
@@ -4448,6 +5565,7 @@ MonoBehaviour:
     smoothEnd: 1
     targetObject: {fileID: 0}
     bridgeObject: 0
+    tunnelObject: 0
     snapToTerrain: 0
     layer: 0
     deformationObject: 0
@@ -4482,6 +5600,40 @@ MonoBehaviour:
     scale: {x: 1, y: 1, z: 1}
     indentExt: 0
     category: 6
+    densityMap: {fileID: 0}
+    densitySize: 50
+    densitySize2: 50
+    densityStrength: 0.5
+    densityStrength2: 0.5
+    terrainNormal: 0
+    terrainNormal2: 1
+    childObjects: []
+    autoGenerate: 0
+    heightThreshold: 10
+    autogenerateStartOffset: 0
+    autogenerateEndOffset: 0
+    snapIndents: 0
+    snapIndentWidth: 0
+    cutHoles: 1
+    innerStartOffset: 0
+    innerEndOffset: 0
+    ignoredForRetainingWalls: 0
+    heightMaxThreshold: 100
+    heightMaxStartThreshold: 1
+    heightMaxEndThreshold: 1
+    xThresholdDistance: 5
+    angleThreshold: 10
+    connectionRatio: 1
+    retainingWall: 0
+    surroundingControl: 0
+    indentControl: 0
+    nodeListMirrored: []
+    uvsMirrored: []
+    snapWeightListMirrored: []
+    colorListMirrored: []
+    hasVertexColors: 0
+    deformationOffsetForward: 0
+    deformationOffsetSideways: 0
   - version: 2.0.0
     name: Kart Track Wall Snap to Terrain
     id: 1496864307.0503993
@@ -4614,6 +5766,7 @@ MonoBehaviour:
     childOrder: 0
     meshBoundsAlignment: 0
     xPosition: 0
+    xPosition2: 0
     relativeTo: 0
     yPosition: 0
     yRotation: 0
@@ -4660,6 +5813,7 @@ MonoBehaviour:
     smoothEnd: 0
     targetObject: {fileID: 0}
     bridgeObject: 0
+    tunnelObject: 0
     snapToTerrain: 0
     layer: 0
     deformationObject: 0
@@ -4694,6 +5848,40 @@ MonoBehaviour:
     scale: {x: 1, y: 1, z: 1}
     indentExt: 0
     category: 6
+    densityMap: {fileID: 0}
+    densitySize: 50
+    densitySize2: 50
+    densityStrength: 0.5
+    densityStrength2: 0.5
+    terrainNormal: 0
+    terrainNormal2: 1
+    childObjects: []
+    autoGenerate: 0
+    heightThreshold: 10
+    autogenerateStartOffset: 0
+    autogenerateEndOffset: 0
+    snapIndents: 0
+    snapIndentWidth: 0
+    cutHoles: 1
+    innerStartOffset: 0
+    innerEndOffset: 0
+    ignoredForRetainingWalls: 0
+    heightMaxThreshold: 100
+    heightMaxStartThreshold: 1
+    heightMaxEndThreshold: 1
+    xThresholdDistance: 5
+    angleThreshold: 10
+    connectionRatio: 1
+    retainingWall: 0
+    surroundingControl: 0
+    indentControl: 0
+    nodeListMirrored: []
+    uvsMirrored: []
+    snapWeightListMirrored: []
+    colorListMirrored: []
+    hasVertexColors: 0
+    deformationOffsetForward: 0
+    deformationOffsetSideways: 0
   - version: 2.0.0
     name: Kart Track Wall Up
     id: 1496594489.694056
@@ -4786,6 +5974,7 @@ MonoBehaviour:
     childOrder: 0
     meshBoundsAlignment: 0
     xPosition: 0
+    xPosition2: 0
     relativeTo: 0
     yPosition: 0
     yRotation: 0
@@ -4832,6 +6021,7 @@ MonoBehaviour:
     smoothEnd: 0
     targetObject: {fileID: 0}
     bridgeObject: 0
+    tunnelObject: 0
     snapToTerrain: 0
     layer: 0
     deformationObject: 0
@@ -4866,6 +6056,40 @@ MonoBehaviour:
     scale: {x: 1, y: 1, z: 1}
     indentExt: 0
     category: 6
+    densityMap: {fileID: 0}
+    densitySize: 50
+    densitySize2: 50
+    densityStrength: 0.5
+    densityStrength2: 0.5
+    terrainNormal: 0
+    terrainNormal2: 1
+    childObjects: []
+    autoGenerate: 0
+    heightThreshold: 10
+    autogenerateStartOffset: 0
+    autogenerateEndOffset: 0
+    snapIndents: 0
+    snapIndentWidth: 0
+    cutHoles: 1
+    innerStartOffset: 0
+    innerEndOffset: 0
+    ignoredForRetainingWalls: 0
+    heightMaxThreshold: 100
+    heightMaxStartThreshold: 1
+    heightMaxEndThreshold: 1
+    xThresholdDistance: 5
+    angleThreshold: 10
+    connectionRatio: 1
+    retainingWall: 0
+    surroundingControl: 0
+    indentControl: 0
+    nodeListMirrored: []
+    uvsMirrored: []
+    snapWeightListMirrored: []
+    colorListMirrored: []
+    hasVertexColors: 0
+    deformationOffsetForward: 0
+    deformationOffsetSideways: 0
   - version: 2.0.0
     name: Lamppost Motorway
     id: 1501083060.894909
@@ -4918,6 +6142,7 @@ MonoBehaviour:
     childOrder: 0
     meshBoundsAlignment: 0
     xPosition: 0
+    xPosition2: 0
     relativeTo: 0
     yPosition: 0
     yRotation: 0
@@ -4964,6 +6189,7 @@ MonoBehaviour:
     smoothEnd: 0
     targetObject: {fileID: 0}
     bridgeObject: 0
+    tunnelObject: 0
     snapToTerrain: 0
     layer: 0
     deformationObject: 0
@@ -4998,6 +6224,40 @@ MonoBehaviour:
     scale: {x: 1, y: 1, z: 1}
     indentExt: 0
     category: 4
+    densityMap: {fileID: 0}
+    densitySize: 50
+    densitySize2: 50
+    densityStrength: 0.5
+    densityStrength2: 0.5
+    terrainNormal: 0
+    terrainNormal2: 1
+    childObjects: []
+    autoGenerate: 0
+    heightThreshold: 10
+    autogenerateStartOffset: 0
+    autogenerateEndOffset: 0
+    snapIndents: 0
+    snapIndentWidth: 0
+    cutHoles: 1
+    innerStartOffset: 0
+    innerEndOffset: 0
+    ignoredForRetainingWalls: 0
+    heightMaxThreshold: 100
+    heightMaxStartThreshold: 1
+    heightMaxEndThreshold: 1
+    xThresholdDistance: 5
+    angleThreshold: 10
+    connectionRatio: 1
+    retainingWall: 0
+    surroundingControl: 0
+    indentControl: 0
+    nodeListMirrored: []
+    uvsMirrored: []
+    snapWeightListMirrored: []
+    colorListMirrored: []
+    hasVertexColors: 0
+    deformationOffsetForward: 0
+    deformationOffsetSideways: 0
   - version: 2.0.0
     name: Lampposts
     id: 1492633790.5171874
@@ -5050,6 +6310,7 @@ MonoBehaviour:
     childOrder: 0
     meshBoundsAlignment: 0
     xPosition: 0
+    xPosition2: 0
     relativeTo: 0
     yPosition: 0
     yRotation: 0
@@ -5096,6 +6357,7 @@ MonoBehaviour:
     smoothEnd: 0
     targetObject: {fileID: 0}
     bridgeObject: 0
+    tunnelObject: 0
     snapToTerrain: 0
     layer: 0
     deformationObject: 0
@@ -5130,6 +6392,40 @@ MonoBehaviour:
     scale: {x: 1, y: 1, z: 1}
     indentExt: 0
     category: 4
+    densityMap: {fileID: 0}
+    densitySize: 50
+    densitySize2: 50
+    densityStrength: 0.5
+    densityStrength2: 0.5
+    terrainNormal: 0
+    terrainNormal2: 1
+    childObjects: []
+    autoGenerate: 0
+    heightThreshold: 10
+    autogenerateStartOffset: 0
+    autogenerateEndOffset: 0
+    snapIndents: 0
+    snapIndentWidth: 0
+    cutHoles: 1
+    innerStartOffset: 0
+    innerEndOffset: 0
+    ignoredForRetainingWalls: 0
+    heightMaxThreshold: 100
+    heightMaxStartThreshold: 1
+    heightMaxEndThreshold: 1
+    xThresholdDistance: 5
+    angleThreshold: 10
+    connectionRatio: 1
+    retainingWall: 0
+    surroundingControl: 0
+    indentControl: 0
+    nodeListMirrored: []
+    uvsMirrored: []
+    snapWeightListMirrored: []
+    colorListMirrored: []
+    hasVertexColors: 0
+    deformationOffsetForward: 0
+    deformationOffsetSideways: 0
   - version: 2.0.0
     name: Motorway 2L Bridge
     id: 1477490107.45513
@@ -5182,6 +6478,7 @@ MonoBehaviour:
     childOrder: 0
     meshBoundsAlignment: 0
     xPosition: 0
+    xPosition2: 0
     relativeTo: 0
     yPosition: 0
     yRotation: 0
@@ -5228,6 +6525,7 @@ MonoBehaviour:
     smoothEnd: 0
     targetObject: {fileID: 0}
     bridgeObject: 1
+    tunnelObject: 0
     snapToTerrain: 0
     layer: 0
     deformationObject: 0
@@ -5262,6 +6560,40 @@ MonoBehaviour:
     scale: {x: 1, y: 1, z: 1}
     indentExt: 0
     category: 3
+    densityMap: {fileID: 0}
+    densitySize: 50
+    densitySize2: 50
+    densityStrength: 0.5
+    densityStrength2: 0.5
+    terrainNormal: 0
+    terrainNormal2: 1
+    childObjects: []
+    autoGenerate: 0
+    heightThreshold: 10
+    autogenerateStartOffset: 0
+    autogenerateEndOffset: 0
+    snapIndents: 0
+    snapIndentWidth: 0
+    cutHoles: 1
+    innerStartOffset: 0
+    innerEndOffset: 0
+    ignoredForRetainingWalls: 0
+    heightMaxThreshold: 100
+    heightMaxStartThreshold: 1
+    heightMaxEndThreshold: 1
+    xThresholdDistance: 5
+    angleThreshold: 10
+    connectionRatio: 1
+    retainingWall: 0
+    surroundingControl: 0
+    indentControl: 0
+    nodeListMirrored: []
+    uvsMirrored: []
+    snapWeightListMirrored: []
+    colorListMirrored: []
+    hasVertexColors: 0
+    deformationOffsetForward: 0
+    deformationOffsetSideways: 0
   - version: 2.0.0
     name: Mountain Wall
     id: 1492273168.831829
@@ -5334,6 +6666,7 @@ MonoBehaviour:
     childOrder: 0
     meshBoundsAlignment: 0
     xPosition: 0
+    xPosition2: 0
     relativeTo: 1
     yPosition: 0
     yRotation: 0
@@ -5380,6 +6713,7 @@ MonoBehaviour:
     smoothEnd: 0
     targetObject: {fileID: 0}
     bridgeObject: 0
+    tunnelObject: 0
     snapToTerrain: 0
     layer: 0
     deformationObject: 0
@@ -5414,6 +6748,40 @@ MonoBehaviour:
     scale: {x: 1, y: 1, z: 1}
     indentExt: 0
     category: 2
+    densityMap: {fileID: 0}
+    densitySize: 50
+    densitySize2: 50
+    densityStrength: 0.5
+    densityStrength2: 0.5
+    terrainNormal: 0
+    terrainNormal2: 1
+    childObjects: []
+    autoGenerate: 0
+    heightThreshold: 10
+    autogenerateStartOffset: 0
+    autogenerateEndOffset: 0
+    snapIndents: 0
+    snapIndentWidth: 0
+    cutHoles: 1
+    innerStartOffset: 0
+    innerEndOffset: 0
+    ignoredForRetainingWalls: 0
+    heightMaxThreshold: 100
+    heightMaxStartThreshold: 1
+    heightMaxEndThreshold: 1
+    xThresholdDistance: 5
+    angleThreshold: 10
+    connectionRatio: 1
+    retainingWall: 0
+    surroundingControl: 0
+    indentControl: 0
+    nodeListMirrored: []
+    uvsMirrored: []
+    snapWeightListMirrored: []
+    colorListMirrored: []
+    hasVertexColors: 0
+    deformationOffsetForward: 0
+    deformationOffsetSideways: 0
   - version: 2.0.0
     name: Oval Lane Marking
     id: 1501866791.6741104
@@ -5476,6 +6844,7 @@ MonoBehaviour:
     childOrder: 0
     meshBoundsAlignment: 0
     xPosition: 0
+    xPosition2: 0
     relativeTo: 0
     yPosition: 0.02
     yRotation: 0
@@ -5522,6 +6891,7 @@ MonoBehaviour:
     smoothEnd: 0
     targetObject: {fileID: 0}
     bridgeObject: 0
+    tunnelObject: 0
     snapToTerrain: 0
     layer: 0
     deformationObject: 0
@@ -5556,6 +6926,40 @@ MonoBehaviour:
     scale: {x: 1, y: 1, z: 1}
     indentExt: 0
     category: 6
+    densityMap: {fileID: 0}
+    densitySize: 50
+    densitySize2: 50
+    densityStrength: 0.5
+    densityStrength2: 0.5
+    terrainNormal: 0
+    terrainNormal2: 1
+    childObjects: []
+    autoGenerate: 0
+    heightThreshold: 10
+    autogenerateStartOffset: 0
+    autogenerateEndOffset: 0
+    snapIndents: 0
+    snapIndentWidth: 0
+    cutHoles: 1
+    innerStartOffset: 0
+    innerEndOffset: 0
+    ignoredForRetainingWalls: 0
+    heightMaxThreshold: 100
+    heightMaxStartThreshold: 1
+    heightMaxEndThreshold: 1
+    xThresholdDistance: 5
+    angleThreshold: 10
+    connectionRatio: 1
+    retainingWall: 0
+    surroundingControl: 0
+    indentControl: 0
+    nodeListMirrored: []
+    uvsMirrored: []
+    snapWeightListMirrored: []
+    colorListMirrored: []
+    hasVertexColors: 0
+    deformationOffsetForward: 0
+    deformationOffsetSideways: 0
   - version: 2.0.0
     name: 'Oval Track '
     id: 1501173983.5210633
@@ -5623,6 +7027,7 @@ MonoBehaviour:
     childOrder: 0
     meshBoundsAlignment: 0
     xPosition: 0
+    xPosition2: 0
     relativeTo: 0
     yPosition: 0
     yRotation: 0
@@ -5669,6 +7074,7 @@ MonoBehaviour:
     smoothEnd: 0
     targetObject: {fileID: 0}
     bridgeObject: 0
+    tunnelObject: 0
     snapToTerrain: 0
     layer: 0
     deformationObject: 0
@@ -5703,6 +7109,40 @@ MonoBehaviour:
     scale: {x: 1, y: 1, z: 1}
     indentExt: 0
     category: 6
+    densityMap: {fileID: 0}
+    densitySize: 50
+    densitySize2: 50
+    densityStrength: 0.5
+    densityStrength2: 0.5
+    terrainNormal: 0
+    terrainNormal2: 1
+    childObjects: []
+    autoGenerate: 0
+    heightThreshold: 10
+    autogenerateStartOffset: 0
+    autogenerateEndOffset: 0
+    snapIndents: 0
+    snapIndentWidth: 0
+    cutHoles: 1
+    innerStartOffset: 0
+    innerEndOffset: 0
+    ignoredForRetainingWalls: 0
+    heightMaxThreshold: 100
+    heightMaxStartThreshold: 1
+    heightMaxEndThreshold: 1
+    xThresholdDistance: 5
+    angleThreshold: 10
+    connectionRatio: 1
+    retainingWall: 0
+    surroundingControl: 0
+    indentControl: 0
+    nodeListMirrored: []
+    uvsMirrored: []
+    snapWeightListMirrored: []
+    colorListMirrored: []
+    hasVertexColors: 0
+    deformationOffsetForward: 0
+    deformationOffsetSideways: 0
   - version: 2.0.0
     name: Palm Trees
     id: 1462981249.4311268
@@ -5755,6 +7195,7 @@ MonoBehaviour:
     childOrder: 0
     meshBoundsAlignment: 0
     xPosition: 0
+    xPosition2: 0
     relativeTo: 0
     yPosition: 0
     yRotation: 0
@@ -5801,6 +7242,7 @@ MonoBehaviour:
     smoothEnd: 0
     targetObject: {fileID: 0}
     bridgeObject: 0
+    tunnelObject: 0
     snapToTerrain: 0
     layer: 0
     deformationObject: 0
@@ -5835,6 +7277,40 @@ MonoBehaviour:
     scale: {x: 1, y: 1, z: 1}
     indentExt: 0
     category: 5
+    densityMap: {fileID: 0}
+    densitySize: 50
+    densitySize2: 50
+    densityStrength: 0.5
+    densityStrength2: 0.5
+    terrainNormal: 0
+    terrainNormal2: 1
+    childObjects: []
+    autoGenerate: 0
+    heightThreshold: 10
+    autogenerateStartOffset: 0
+    autogenerateEndOffset: 0
+    snapIndents: 0
+    snapIndentWidth: 0
+    cutHoles: 1
+    innerStartOffset: 0
+    innerEndOffset: 0
+    ignoredForRetainingWalls: 0
+    heightMaxThreshold: 100
+    heightMaxStartThreshold: 1
+    heightMaxEndThreshold: 1
+    xThresholdDistance: 5
+    angleThreshold: 10
+    connectionRatio: 1
+    retainingWall: 0
+    surroundingControl: 0
+    indentControl: 0
+    nodeListMirrored: []
+    uvsMirrored: []
+    snapWeightListMirrored: []
+    colorListMirrored: []
+    hasVertexColors: 0
+    deformationOffsetForward: 0
+    deformationOffsetSideways: 0
   - version: 2.0.0
     name: Palm Trees Left
     id: 1422283787.149423
@@ -5888,6 +7364,7 @@ MonoBehaviour:
     childOrder: 0
     meshBoundsAlignment: 0
     xPosition: -2
+    xPosition2: 0
     relativeTo: 1
     yPosition: 0
     yRotation: 0
@@ -5934,6 +7411,7 @@ MonoBehaviour:
     smoothEnd: 0
     targetObject: {fileID: 0}
     bridgeObject: 0
+    tunnelObject: 0
     snapToTerrain: 0
     layer: 0
     deformationObject: 0
@@ -5968,6 +7446,40 @@ MonoBehaviour:
     scale: {x: 1, y: 1, z: 1}
     indentExt: 0
     category: 5
+    densityMap: {fileID: 0}
+    densitySize: 50
+    densitySize2: 50
+    densityStrength: 0.5
+    densityStrength2: 0.5
+    terrainNormal: 0
+    terrainNormal2: 1
+    childObjects: []
+    autoGenerate: 0
+    heightThreshold: 10
+    autogenerateStartOffset: 0
+    autogenerateEndOffset: 0
+    snapIndents: 0
+    snapIndentWidth: 0
+    cutHoles: 1
+    innerStartOffset: 0
+    innerEndOffset: 0
+    ignoredForRetainingWalls: 0
+    heightMaxThreshold: 100
+    heightMaxStartThreshold: 1
+    heightMaxEndThreshold: 1
+    xThresholdDistance: 5
+    angleThreshold: 10
+    connectionRatio: 1
+    retainingWall: 0
+    surroundingControl: 0
+    indentControl: 0
+    nodeListMirrored: []
+    uvsMirrored: []
+    snapWeightListMirrored: []
+    colorListMirrored: []
+    hasVertexColors: 0
+    deformationOffsetForward: 0
+    deformationOffsetSideways: 0
   - version: 2.0.0
     name: Palm Trees Right
     id: 1422280172.2846642
@@ -6020,6 +7532,7 @@ MonoBehaviour:
     childOrder: 0
     meshBoundsAlignment: 0
     xPosition: 2
+    xPosition2: 0
     relativeTo: 2
     yPosition: 0
     yRotation: 0
@@ -6066,6 +7579,7 @@ MonoBehaviour:
     smoothEnd: 0
     targetObject: {fileID: 0}
     bridgeObject: 0
+    tunnelObject: 0
     snapToTerrain: 0
     layer: 0
     deformationObject: 0
@@ -6100,6 +7614,40 @@ MonoBehaviour:
     scale: {x: 1, y: 1, z: 1}
     indentExt: 0
     category: 5
+    densityMap: {fileID: 0}
+    densitySize: 50
+    densitySize2: 50
+    densityStrength: 0.5
+    densityStrength2: 0.5
+    terrainNormal: 0
+    terrainNormal2: 1
+    childObjects: []
+    autoGenerate: 0
+    heightThreshold: 10
+    autogenerateStartOffset: 0
+    autogenerateEndOffset: 0
+    snapIndents: 0
+    snapIndentWidth: 0
+    cutHoles: 1
+    innerStartOffset: 0
+    innerEndOffset: 0
+    ignoredForRetainingWalls: 0
+    heightMaxThreshold: 100
+    heightMaxStartThreshold: 1
+    heightMaxEndThreshold: 1
+    xThresholdDistance: 5
+    angleThreshold: 10
+    connectionRatio: 1
+    retainingWall: 0
+    surroundingControl: 0
+    indentControl: 0
+    nodeListMirrored: []
+    uvsMirrored: []
+    snapWeightListMirrored: []
+    colorListMirrored: []
+    hasVertexColors: 0
+    deformationOffsetForward: 0
+    deformationOffsetSideways: 0
   - version: 2.0.0
     name: Palm Trees Track
     id: 1501519166.9649243
@@ -6152,6 +7700,7 @@ MonoBehaviour:
     childOrder: 0
     meshBoundsAlignment: 0
     xPosition: 0
+    xPosition2: 0
     relativeTo: 0
     yPosition: -0.45
     yRotation: 0
@@ -6199,6 +7748,7 @@ MonoBehaviour:
     smoothEnd: 0
     targetObject: {fileID: 0}
     bridgeObject: 0
+    tunnelObject: 0
     snapToTerrain: 0
     layer: 0
     deformationObject: 0
@@ -6233,6 +7783,40 @@ MonoBehaviour:
     scale: {x: 1, y: 1, z: 1}
     indentExt: 0
     category: 5
+    densityMap: {fileID: 0}
+    densitySize: 50
+    densitySize2: 50
+    densityStrength: 0.5
+    densityStrength2: 0.5
+    terrainNormal: 0
+    terrainNormal2: 1
+    childObjects: []
+    autoGenerate: 0
+    heightThreshold: 10
+    autogenerateStartOffset: 0
+    autogenerateEndOffset: 0
+    snapIndents: 0
+    snapIndentWidth: 0
+    cutHoles: 1
+    innerStartOffset: 0
+    innerEndOffset: 0
+    ignoredForRetainingWalls: 0
+    heightMaxThreshold: 100
+    heightMaxStartThreshold: 1
+    heightMaxEndThreshold: 1
+    xThresholdDistance: 5
+    angleThreshold: 10
+    connectionRatio: 1
+    retainingWall: 0
+    surroundingControl: 0
+    indentControl: 0
+    nodeListMirrored: []
+    uvsMirrored: []
+    snapWeightListMirrored: []
+    colorListMirrored: []
+    hasVertexColors: 0
+    deformationOffsetForward: 0
+    deformationOffsetSideways: 0
   - version: 2.0.0
     name: Parking Seperator
     id: 1484762355.2292368
@@ -6285,6 +7869,7 @@ MonoBehaviour:
     childOrder: 0
     meshBoundsAlignment: 0
     xPosition: 0
+    xPosition2: 0
     relativeTo: 0
     yPosition: 0
     yRotation: 0
@@ -6331,6 +7916,7 @@ MonoBehaviour:
     smoothEnd: 0
     targetObject: {fileID: 0}
     bridgeObject: 0
+    tunnelObject: 0
     snapToTerrain: 0
     layer: 0
     deformationObject: 0
@@ -6365,6 +7951,40 @@ MonoBehaviour:
     scale: {x: 1, y: 1, z: 1}
     indentExt: 0
     category: 6
+    densityMap: {fileID: 0}
+    densitySize: 50
+    densitySize2: 50
+    densityStrength: 0.5
+    densityStrength2: 0.5
+    terrainNormal: 0
+    terrainNormal2: 1
+    childObjects: []
+    autoGenerate: 0
+    heightThreshold: 10
+    autogenerateStartOffset: 0
+    autogenerateEndOffset: 0
+    snapIndents: 0
+    snapIndentWidth: 0
+    cutHoles: 1
+    innerStartOffset: 0
+    innerEndOffset: 0
+    ignoredForRetainingWalls: 0
+    heightMaxThreshold: 100
+    heightMaxStartThreshold: 1
+    heightMaxEndThreshold: 1
+    xThresholdDistance: 5
+    angleThreshold: 10
+    connectionRatio: 1
+    retainingWall: 0
+    surroundingControl: 0
+    indentControl: 0
+    nodeListMirrored: []
+    uvsMirrored: []
+    snapWeightListMirrored: []
+    colorListMirrored: []
+    hasVertexColors: 0
+    deformationOffsetForward: 0
+    deformationOffsetSideways: 0
   - version: 2.0.0
     name: Plastic  Construction Barrier
     id: 1464957000.801562
@@ -6417,6 +8037,7 @@ MonoBehaviour:
     childOrder: 0
     meshBoundsAlignment: 0
     xPosition: 0
+    xPosition2: 0
     relativeTo: 0
     yPosition: 0
     yRotation: 0
@@ -6463,6 +8084,7 @@ MonoBehaviour:
     smoothEnd: 0
     targetObject: {fileID: 0}
     bridgeObject: 0
+    tunnelObject: 0
     snapToTerrain: 0
     layer: 0
     deformationObject: 0
@@ -6497,6 +8119,40 @@ MonoBehaviour:
     scale: {x: 1, y: 1, z: 1}
     indentExt: 0
     category: 0
+    densityMap: {fileID: 0}
+    densitySize: 50
+    densitySize2: 50
+    densityStrength: 0.5
+    densityStrength2: 0.5
+    terrainNormal: 0
+    terrainNormal2: 1
+    childObjects: []
+    autoGenerate: 0
+    heightThreshold: 10
+    autogenerateStartOffset: 0
+    autogenerateEndOffset: 0
+    snapIndents: 0
+    snapIndentWidth: 0
+    cutHoles: 1
+    innerStartOffset: 0
+    innerEndOffset: 0
+    ignoredForRetainingWalls: 0
+    heightMaxThreshold: 100
+    heightMaxStartThreshold: 1
+    heightMaxEndThreshold: 1
+    xThresholdDistance: 5
+    angleThreshold: 10
+    connectionRatio: 1
+    retainingWall: 0
+    surroundingControl: 0
+    indentControl: 0
+    nodeListMirrored: []
+    uvsMirrored: []
+    snapWeightListMirrored: []
+    colorListMirrored: []
+    hasVertexColors: 0
+    deformationOffsetForward: 0
+    deformationOffsetSideways: 0
   - version: 2.0.0
     name: Plastic Traffic Barrier
     id: 1466536631.2855144
@@ -6549,6 +8205,7 @@ MonoBehaviour:
     childOrder: 1
     meshBoundsAlignment: 1
     xPosition: 0
+    xPosition2: 0
     relativeTo: 0
     yPosition: 0
     yRotation: 0
@@ -6595,6 +8252,7 @@ MonoBehaviour:
     smoothEnd: 0
     targetObject: {fileID: 0}
     bridgeObject: 0
+    tunnelObject: 0
     snapToTerrain: 0
     layer: 0
     deformationObject: 0
@@ -6629,6 +8287,40 @@ MonoBehaviour:
     scale: {x: 1, y: 1, z: 1}
     indentExt: 0
     category: 0
+    densityMap: {fileID: 0}
+    densitySize: 50
+    densitySize2: 50
+    densityStrength: 0.5
+    densityStrength2: 0.5
+    terrainNormal: 0
+    terrainNormal2: 1
+    childObjects: []
+    autoGenerate: 0
+    heightThreshold: 10
+    autogenerateStartOffset: 0
+    autogenerateEndOffset: 0
+    snapIndents: 0
+    snapIndentWidth: 0
+    cutHoles: 1
+    innerStartOffset: 0
+    innerEndOffset: 0
+    ignoredForRetainingWalls: 0
+    heightMaxThreshold: 100
+    heightMaxStartThreshold: 1
+    heightMaxEndThreshold: 1
+    xThresholdDistance: 5
+    angleThreshold: 10
+    connectionRatio: 1
+    retainingWall: 0
+    surroundingControl: 0
+    indentControl: 0
+    nodeListMirrored: []
+    uvsMirrored: []
+    snapWeightListMirrored: []
+    colorListMirrored: []
+    hasVertexColors: 0
+    deformationOffsetForward: 0
+    deformationOffsetSideways: 0
   - version: 2.0.0
     name: Powerline Wood Single
     id: 1466451290.7593656
@@ -6681,6 +8373,7 @@ MonoBehaviour:
     childOrder: 0
     meshBoundsAlignment: 0
     xPosition: 0
+    xPosition2: 0
     relativeTo: 0
     yPosition: 0
     yRotation: 0
@@ -6727,6 +8420,7 @@ MonoBehaviour:
     smoothEnd: 0
     targetObject: {fileID: 0}
     bridgeObject: 0
+    tunnelObject: 0
     snapToTerrain: 1
     layer: 0
     deformationObject: 0
@@ -6761,6 +8455,40 @@ MonoBehaviour:
     scale: {x: 1, y: 1, z: 1}
     indentExt: 0
     category: 6
+    densityMap: {fileID: 0}
+    densitySize: 50
+    densitySize2: 50
+    densityStrength: 0.5
+    densityStrength2: 0.5
+    terrainNormal: 0
+    terrainNormal2: 1
+    childObjects: []
+    autoGenerate: 0
+    heightThreshold: 10
+    autogenerateStartOffset: 0
+    autogenerateEndOffset: 0
+    snapIndents: 0
+    snapIndentWidth: 0
+    cutHoles: 1
+    innerStartOffset: 0
+    innerEndOffset: 0
+    ignoredForRetainingWalls: 0
+    heightMaxThreshold: 100
+    heightMaxStartThreshold: 1
+    heightMaxEndThreshold: 1
+    xThresholdDistance: 5
+    angleThreshold: 10
+    connectionRatio: 1
+    retainingWall: 0
+    surroundingControl: 0
+    indentControl: 0
+    nodeListMirrored: []
+    uvsMirrored: []
+    snapWeightListMirrored: []
+    colorListMirrored: []
+    hasVertexColors: 0
+    deformationOffsetForward: 0
+    deformationOffsetSideways: 0
   - version: 2.0.0
     name: Primary Road Line Marking
     id: 1501510160.2551785
@@ -6823,6 +8551,7 @@ MonoBehaviour:
     childOrder: 0
     meshBoundsAlignment: 0
     xPosition: -0.2
+    xPosition2: 0
     relativeTo: 0
     yPosition: 0.01
     yRotation: 0
@@ -6869,6 +8598,7 @@ MonoBehaviour:
     smoothEnd: 0
     targetObject: {fileID: 0}
     bridgeObject: 0
+    tunnelObject: 0
     snapToTerrain: 0
     layer: 0
     deformationObject: 0
@@ -6903,6 +8633,40 @@ MonoBehaviour:
     scale: {x: 1, y: 1, z: 1}
     indentExt: 0
     category: 6
+    densityMap: {fileID: 0}
+    densitySize: 50
+    densitySize2: 50
+    densityStrength: 0.5
+    densityStrength2: 0.5
+    terrainNormal: 0
+    terrainNormal2: 1
+    childObjects: []
+    autoGenerate: 0
+    heightThreshold: 10
+    autogenerateStartOffset: 0
+    autogenerateEndOffset: 0
+    snapIndents: 0
+    snapIndentWidth: 0
+    cutHoles: 1
+    innerStartOffset: 0
+    innerEndOffset: 0
+    ignoredForRetainingWalls: 0
+    heightMaxThreshold: 100
+    heightMaxStartThreshold: 1
+    heightMaxEndThreshold: 1
+    xThresholdDistance: 5
+    angleThreshold: 10
+    connectionRatio: 1
+    retainingWall: 0
+    surroundingControl: 0
+    indentControl: 0
+    nodeListMirrored: []
+    uvsMirrored: []
+    snapWeightListMirrored: []
+    colorListMirrored: []
+    hasVertexColors: 0
+    deformationOffsetForward: 0
+    deformationOffsetSideways: 0
   - version: 2.0.0
     name: Race Track Blue Surface Left
     id: 1456047967.1928487
@@ -6965,6 +8729,7 @@ MonoBehaviour:
     childOrder: 0
     meshBoundsAlignment: 0
     xPosition: 0
+    xPosition2: 0
     relativeTo: 1
     yPosition: 0
     yRotation: 0
@@ -7011,6 +8776,7 @@ MonoBehaviour:
     smoothEnd: 0
     targetObject: {fileID: 0}
     bridgeObject: 0
+    tunnelObject: 0
     snapToTerrain: 0
     layer: 0
     deformationObject: 0
@@ -7045,6 +8811,40 @@ MonoBehaviour:
     scale: {x: 1, y: 1, z: 1}
     indentExt: 0
     category: 6
+    densityMap: {fileID: 0}
+    densitySize: 50
+    densitySize2: 50
+    densityStrength: 0.5
+    densityStrength2: 0.5
+    terrainNormal: 0
+    terrainNormal2: 1
+    childObjects: []
+    autoGenerate: 0
+    heightThreshold: 10
+    autogenerateStartOffset: 0
+    autogenerateEndOffset: 0
+    snapIndents: 0
+    snapIndentWidth: 0
+    cutHoles: 1
+    innerStartOffset: 0
+    innerEndOffset: 0
+    ignoredForRetainingWalls: 0
+    heightMaxThreshold: 100
+    heightMaxStartThreshold: 1
+    heightMaxEndThreshold: 1
+    xThresholdDistance: 5
+    angleThreshold: 10
+    connectionRatio: 1
+    retainingWall: 0
+    surroundingControl: 0
+    indentControl: 0
+    nodeListMirrored: []
+    uvsMirrored: []
+    snapWeightListMirrored: []
+    colorListMirrored: []
+    hasVertexColors: 0
+    deformationOffsetForward: 0
+    deformationOffsetSideways: 0
   - version: 2.0.0
     name: Race Track Blue Surface Right
     id: 1455979697.5109153
@@ -7107,6 +8907,7 @@ MonoBehaviour:
     childOrder: 0
     meshBoundsAlignment: 0
     xPosition: 0
+    xPosition2: 0
     relativeTo: 2
     yPosition: 0
     yRotation: 0
@@ -7153,6 +8954,7 @@ MonoBehaviour:
     smoothEnd: 0
     targetObject: {fileID: 0}
     bridgeObject: 0
+    tunnelObject: 0
     snapToTerrain: 0
     layer: 0
     deformationObject: 0
@@ -7187,6 +8989,40 @@ MonoBehaviour:
     scale: {x: 1, y: 1, z: 1}
     indentExt: 0
     category: 6
+    densityMap: {fileID: 0}
+    densitySize: 50
+    densitySize2: 50
+    densityStrength: 0.5
+    densityStrength2: 0.5
+    terrainNormal: 0
+    terrainNormal2: 1
+    childObjects: []
+    autoGenerate: 0
+    heightThreshold: 10
+    autogenerateStartOffset: 0
+    autogenerateEndOffset: 0
+    snapIndents: 0
+    snapIndentWidth: 0
+    cutHoles: 1
+    innerStartOffset: 0
+    innerEndOffset: 0
+    ignoredForRetainingWalls: 0
+    heightMaxThreshold: 100
+    heightMaxStartThreshold: 1
+    heightMaxEndThreshold: 1
+    xThresholdDistance: 5
+    angleThreshold: 10
+    connectionRatio: 1
+    retainingWall: 0
+    surroundingControl: 0
+    indentControl: 0
+    nodeListMirrored: []
+    uvsMirrored: []
+    snapWeightListMirrored: []
+    colorListMirrored: []
+    hasVertexColors: 0
+    deformationOffsetForward: 0
+    deformationOffsetSideways: 0
   - version: 2.0.0
     name: Race Track Grandstand
     id: 1497036892.9481807
@@ -7349,6 +9185,7 @@ MonoBehaviour:
     childOrder: 0
     meshBoundsAlignment: 0
     xPosition: 0
+    xPosition2: 0
     relativeTo: 0
     yPosition: 0
     yRotation: 0
@@ -7395,6 +9232,7 @@ MonoBehaviour:
     smoothEnd: 0
     targetObject: {fileID: 0}
     bridgeObject: 0
+    tunnelObject: 0
     snapToTerrain: 0
     layer: 0
     deformationObject: 0
@@ -7429,6 +9267,40 @@ MonoBehaviour:
     scale: {x: 1, y: 1, z: 1}
     indentExt: 0
     category: 6
+    densityMap: {fileID: 0}
+    densitySize: 50
+    densitySize2: 50
+    densityStrength: 0.5
+    densityStrength2: 0.5
+    terrainNormal: 0
+    terrainNormal2: 1
+    childObjects: []
+    autoGenerate: 0
+    heightThreshold: 10
+    autogenerateStartOffset: 0
+    autogenerateEndOffset: 0
+    snapIndents: 0
+    snapIndentWidth: 0
+    cutHoles: 1
+    innerStartOffset: 0
+    innerEndOffset: 0
+    ignoredForRetainingWalls: 0
+    heightMaxThreshold: 100
+    heightMaxStartThreshold: 1
+    heightMaxEndThreshold: 1
+    xThresholdDistance: 5
+    angleThreshold: 10
+    connectionRatio: 1
+    retainingWall: 0
+    surroundingControl: 0
+    indentControl: 0
+    nodeListMirrored: []
+    uvsMirrored: []
+    snapWeightListMirrored: []
+    colorListMirrored: []
+    hasVertexColors: 0
+    deformationOffsetForward: 0
+    deformationOffsetSideways: 0
   - version: 2.0.0
     name: Race Track Grandstand Main
     id: 1501186258.0972695
@@ -7571,6 +9443,7 @@ MonoBehaviour:
     childOrder: 0
     meshBoundsAlignment: 0
     xPosition: 0
+    xPosition2: 0
     relativeTo: 0
     yPosition: 0
     yRotation: 0
@@ -7617,6 +9490,7 @@ MonoBehaviour:
     smoothEnd: 0
     targetObject: {fileID: 0}
     bridgeObject: 0
+    tunnelObject: 0
     snapToTerrain: 0
     layer: 0
     deformationObject: 0
@@ -7651,6 +9525,40 @@ MonoBehaviour:
     scale: {x: 1, y: 1, z: 1}
     indentExt: 0
     category: 6
+    densityMap: {fileID: 0}
+    densitySize: 50
+    densitySize2: 50
+    densityStrength: 0.5
+    densityStrength2: 0.5
+    terrainNormal: 0
+    terrainNormal2: 1
+    childObjects: []
+    autoGenerate: 0
+    heightThreshold: 10
+    autogenerateStartOffset: 0
+    autogenerateEndOffset: 0
+    snapIndents: 0
+    snapIndentWidth: 0
+    cutHoles: 1
+    innerStartOffset: 0
+    innerEndOffset: 0
+    ignoredForRetainingWalls: 0
+    heightMaxThreshold: 100
+    heightMaxStartThreshold: 1
+    heightMaxEndThreshold: 1
+    xThresholdDistance: 5
+    angleThreshold: 10
+    connectionRatio: 1
+    retainingWall: 0
+    surroundingControl: 0
+    indentControl: 0
+    nodeListMirrored: []
+    uvsMirrored: []
+    snapWeightListMirrored: []
+    colorListMirrored: []
+    hasVertexColors: 0
+    deformationOffsetForward: 0
+    deformationOffsetSideways: 0
   - version: 2.0.0
     name: Race Track Grandstand Roof
     id: 1501186335.3634262
@@ -7728,6 +9636,7 @@ MonoBehaviour:
     childOrder: 0
     meshBoundsAlignment: 0
     xPosition: 0
+    xPosition2: 0
     relativeTo: 0
     yPosition: 0
     yRotation: 0
@@ -7774,6 +9683,7 @@ MonoBehaviour:
     smoothEnd: 0
     targetObject: {fileID: 0}
     bridgeObject: 0
+    tunnelObject: 0
     snapToTerrain: 0
     layer: 0
     deformationObject: 0
@@ -7808,6 +9718,40 @@ MonoBehaviour:
     scale: {x: 1, y: 1, z: 1}
     indentExt: 0
     category: 6
+    densityMap: {fileID: 0}
+    densitySize: 50
+    densitySize2: 50
+    densityStrength: 0.5
+    densityStrength2: 0.5
+    terrainNormal: 0
+    terrainNormal2: 1
+    childObjects: []
+    autoGenerate: 0
+    heightThreshold: 10
+    autogenerateStartOffset: 0
+    autogenerateEndOffset: 0
+    snapIndents: 0
+    snapIndentWidth: 0
+    cutHoles: 1
+    innerStartOffset: 0
+    innerEndOffset: 0
+    ignoredForRetainingWalls: 0
+    heightMaxThreshold: 100
+    heightMaxStartThreshold: 1
+    heightMaxEndThreshold: 1
+    xThresholdDistance: 5
+    angleThreshold: 10
+    connectionRatio: 1
+    retainingWall: 0
+    surroundingControl: 0
+    indentControl: 0
+    nodeListMirrored: []
+    uvsMirrored: []
+    snapWeightListMirrored: []
+    colorListMirrored: []
+    hasVertexColors: 0
+    deformationOffsetForward: 0
+    deformationOffsetSideways: 0
   - version: 2.0.0
     name: Race Track Sand Surface
     id: 1455984277.9008987
@@ -7870,6 +9814,7 @@ MonoBehaviour:
     childOrder: 0
     meshBoundsAlignment: 0
     xPosition: 0
+    xPosition2: 0
     relativeTo: 1
     yPosition: 0
     yRotation: 0
@@ -7916,6 +9861,7 @@ MonoBehaviour:
     smoothEnd: 0
     targetObject: {fileID: 0}
     bridgeObject: 0
+    tunnelObject: 0
     snapToTerrain: 0
     layer: 0
     deformationObject: 0
@@ -7950,6 +9896,40 @@ MonoBehaviour:
     scale: {x: 1, y: 1, z: 1}
     indentExt: 0
     category: 6
+    densityMap: {fileID: 0}
+    densitySize: 50
+    densitySize2: 50
+    densityStrength: 0.5
+    densityStrength2: 0.5
+    terrainNormal: 0
+    terrainNormal2: 1
+    childObjects: []
+    autoGenerate: 0
+    heightThreshold: 10
+    autogenerateStartOffset: 0
+    autogenerateEndOffset: 0
+    snapIndents: 0
+    snapIndentWidth: 0
+    cutHoles: 1
+    innerStartOffset: 0
+    innerEndOffset: 0
+    ignoredForRetainingWalls: 0
+    heightMaxThreshold: 100
+    heightMaxStartThreshold: 1
+    heightMaxEndThreshold: 1
+    xThresholdDistance: 5
+    angleThreshold: 10
+    connectionRatio: 1
+    retainingWall: 0
+    surroundingControl: 0
+    indentControl: 0
+    nodeListMirrored: []
+    uvsMirrored: []
+    snapWeightListMirrored: []
+    colorListMirrored: []
+    hasVertexColors: 0
+    deformationOffsetForward: 0
+    deformationOffsetSideways: 0
   - version: 2.0.0
     name: River Bed Deformation Surface
     id: 6
@@ -8037,6 +10017,7 @@ MonoBehaviour:
     childOrder: 0
     meshBoundsAlignment: 0
     xPosition: 0
+    xPosition2: 0
     relativeTo: 0
     yPosition: 0
     yRotation: 0
@@ -8083,6 +10064,7 @@ MonoBehaviour:
     smoothEnd: 0
     targetObject: {fileID: 0}
     bridgeObject: 0
+    tunnelObject: 0
     snapToTerrain: 0
     layer: 0
     deformationObject: 1
@@ -8117,6 +10099,40 @@ MonoBehaviour:
     scale: {x: 1, y: 1, z: 1}
     indentExt: 0
     category: 5
+    densityMap: {fileID: 0}
+    densitySize: 50
+    densitySize2: 50
+    densityStrength: 0.5
+    densityStrength2: 0.5
+    terrainNormal: 0
+    terrainNormal2: 1
+    childObjects: []
+    autoGenerate: 0
+    heightThreshold: 10
+    autogenerateStartOffset: 0
+    autogenerateEndOffset: 0
+    snapIndents: 0
+    snapIndentWidth: 0
+    cutHoles: 1
+    innerStartOffset: 0
+    innerEndOffset: 0
+    ignoredForRetainingWalls: 0
+    heightMaxThreshold: 100
+    heightMaxStartThreshold: 1
+    heightMaxEndThreshold: 1
+    xThresholdDistance: 5
+    angleThreshold: 10
+    connectionRatio: 1
+    retainingWall: 0
+    surroundingControl: 0
+    indentControl: 0
+    nodeListMirrored: []
+    uvsMirrored: []
+    snapWeightListMirrored: []
+    colorListMirrored: []
+    hasVertexColors: 0
+    deformationOffsetForward: 0
+    deformationOffsetSideways: 0
   - version: 2.0.0
     name: River Surface
     id: 5
@@ -8194,6 +10210,7 @@ MonoBehaviour:
     childOrder: 0
     meshBoundsAlignment: 0
     xPosition: 0
+    xPosition2: 0
     relativeTo: 0
     yPosition: 0
     yRotation: 0
@@ -8240,6 +10257,7 @@ MonoBehaviour:
     smoothEnd: 0
     targetObject: {fileID: 100000, guid: 3b7ee7cbdaad2de4fba36b142f3fa7b3, type: 3}
     bridgeObject: 0
+    tunnelObject: 0
     snapToTerrain: 0
     layer: 0
     deformationObject: 0
@@ -8274,6 +10292,40 @@ MonoBehaviour:
     scale: {x: 1, y: 1, z: 1}
     indentExt: 0
     category: 5
+    densityMap: {fileID: 0}
+    densitySize: 50
+    densitySize2: 50
+    densityStrength: 0.5
+    densityStrength2: 0.5
+    terrainNormal: 0
+    terrainNormal2: 1
+    childObjects: []
+    autoGenerate: 0
+    heightThreshold: 10
+    autogenerateStartOffset: 0
+    autogenerateEndOffset: 0
+    snapIndents: 0
+    snapIndentWidth: 0
+    cutHoles: 1
+    innerStartOffset: 0
+    innerEndOffset: 0
+    ignoredForRetainingWalls: 0
+    heightMaxThreshold: 100
+    heightMaxStartThreshold: 1
+    heightMaxEndThreshold: 1
+    xThresholdDistance: 5
+    angleThreshold: 10
+    connectionRatio: 1
+    retainingWall: 0
+    surroundingControl: 0
+    indentControl: 0
+    nodeListMirrored: []
+    uvsMirrored: []
+    snapWeightListMirrored: []
+    colorListMirrored: []
+    hasVertexColors: 0
+    deformationOffsetForward: 0
+    deformationOffsetSideways: 0
   - version: 2.0.0
     name: Road Ditch Deformation Surface
     id: 1455632234.3322053
@@ -8356,6 +10408,7 @@ MonoBehaviour:
     childOrder: 0
     meshBoundsAlignment: 0
     xPosition: 0
+    xPosition2: 0
     relativeTo: 0
     yPosition: 0
     yRotation: 0
@@ -8402,6 +10455,7 @@ MonoBehaviour:
     smoothEnd: 0
     targetObject: {fileID: 0}
     bridgeObject: 0
+    tunnelObject: 0
     snapToTerrain: 0
     layer: 31
     deformationObject: 1
@@ -8436,6 +10490,40 @@ MonoBehaviour:
     scale: {x: 1, y: 1, z: 1}
     indentExt: 0
     category: 5
+    densityMap: {fileID: 0}
+    densitySize: 50
+    densitySize2: 50
+    densityStrength: 0.5
+    densityStrength2: 0.5
+    terrainNormal: 0
+    terrainNormal2: 1
+    childObjects: []
+    autoGenerate: 0
+    heightThreshold: 10
+    autogenerateStartOffset: 0
+    autogenerateEndOffset: 0
+    snapIndents: 0
+    snapIndentWidth: 0
+    cutHoles: 1
+    innerStartOffset: 0
+    innerEndOffset: 0
+    ignoredForRetainingWalls: 0
+    heightMaxThreshold: 100
+    heightMaxStartThreshold: 1
+    heightMaxEndThreshold: 1
+    xThresholdDistance: 5
+    angleThreshold: 10
+    connectionRatio: 1
+    retainingWall: 0
+    surroundingControl: 0
+    indentControl: 0
+    nodeListMirrored: []
+    uvsMirrored: []
+    snapWeightListMirrored: []
+    colorListMirrored: []
+    hasVertexColors: 0
+    deformationOffsetForward: 0
+    deformationOffsetSideways: 0
   - version: 2.0.0
     name: Road Ditch Left
     id: 1455632482.996428
@@ -8508,6 +10596,7 @@ MonoBehaviour:
     childOrder: 0
     meshBoundsAlignment: 0
     xPosition: 0
+    xPosition2: 0
     relativeTo: 1
     yPosition: 0
     yRotation: 0
@@ -8554,6 +10643,7 @@ MonoBehaviour:
     smoothEnd: 0
     targetObject: {fileID: 0}
     bridgeObject: 0
+    tunnelObject: 0
     snapToTerrain: 0
     layer: 0
     deformationObject: 0
@@ -8588,6 +10678,40 @@ MonoBehaviour:
     scale: {x: 1, y: 1, z: 1}
     indentExt: 0
     category: 5
+    densityMap: {fileID: 0}
+    densitySize: 50
+    densitySize2: 50
+    densityStrength: 0.5
+    densityStrength2: 0.5
+    terrainNormal: 0
+    terrainNormal2: 1
+    childObjects: []
+    autoGenerate: 0
+    heightThreshold: 10
+    autogenerateStartOffset: 0
+    autogenerateEndOffset: 0
+    snapIndents: 0
+    snapIndentWidth: 0
+    cutHoles: 1
+    innerStartOffset: 0
+    innerEndOffset: 0
+    ignoredForRetainingWalls: 0
+    heightMaxThreshold: 100
+    heightMaxStartThreshold: 1
+    heightMaxEndThreshold: 1
+    xThresholdDistance: 5
+    angleThreshold: 10
+    connectionRatio: 1
+    retainingWall: 0
+    surroundingControl: 0
+    indentControl: 0
+    nodeListMirrored: []
+    uvsMirrored: []
+    snapWeightListMirrored: []
+    colorListMirrored: []
+    hasVertexColors: 0
+    deformationOffsetForward: 0
+    deformationOffsetSideways: 0
   - version: 2.0.0
     name: Road Ditch Right
     id: 1455632818.7536323
@@ -8680,6 +10804,7 @@ MonoBehaviour:
     childOrder: 0
     meshBoundsAlignment: 0
     xPosition: 0
+    xPosition2: 0
     relativeTo: 2
     yPosition: 0
     yRotation: 0
@@ -8726,6 +10851,7 @@ MonoBehaviour:
     smoothEnd: 0
     targetObject: {fileID: 0}
     bridgeObject: 0
+    tunnelObject: 0
     snapToTerrain: 0
     layer: 0
     deformationObject: 0
@@ -8760,6 +10886,40 @@ MonoBehaviour:
     scale: {x: 1, y: 1, z: 1}
     indentExt: 0
     category: 5
+    densityMap: {fileID: 0}
+    densitySize: 50
+    densitySize2: 50
+    densityStrength: 0.5
+    densityStrength2: 0.5
+    terrainNormal: 0
+    terrainNormal2: 1
+    childObjects: []
+    autoGenerate: 0
+    heightThreshold: 10
+    autogenerateStartOffset: 0
+    autogenerateEndOffset: 0
+    snapIndents: 0
+    snapIndentWidth: 0
+    cutHoles: 1
+    innerStartOffset: 0
+    innerEndOffset: 0
+    ignoredForRetainingWalls: 0
+    heightMaxThreshold: 100
+    heightMaxStartThreshold: 1
+    heightMaxEndThreshold: 1
+    xThresholdDistance: 5
+    angleThreshold: 10
+    connectionRatio: 1
+    retainingWall: 0
+    surroundingControl: 0
+    indentControl: 0
+    nodeListMirrored: []
+    uvsMirrored: []
+    snapWeightListMirrored: []
+    colorListMirrored: []
+    hasVertexColors: 0
+    deformationOffsetForward: 0
+    deformationOffsetSideways: 0
   - version: 2.0.0
     name: Road Marker Left
     id: 1477422674.1485436
@@ -8812,6 +10972,7 @@ MonoBehaviour:
     childOrder: 0
     meshBoundsAlignment: 0
     xPosition: -0.5
+    xPosition2: 0
     relativeTo: 1
     yPosition: 0
     yRotation: 0
@@ -8858,6 +11019,7 @@ MonoBehaviour:
     smoothEnd: 0
     targetObject: {fileID: 0}
     bridgeObject: 0
+    tunnelObject: 0
     snapToTerrain: 0
     layer: 0
     deformationObject: 0
@@ -8892,6 +11054,40 @@ MonoBehaviour:
     scale: {x: 1, y: 1, z: 1}
     indentExt: 0
     category: 4
+    densityMap: {fileID: 0}
+    densitySize: 50
+    densitySize2: 50
+    densityStrength: 0.5
+    densityStrength2: 0.5
+    terrainNormal: 0
+    terrainNormal2: 1
+    childObjects: []
+    autoGenerate: 0
+    heightThreshold: 10
+    autogenerateStartOffset: 0
+    autogenerateEndOffset: 0
+    snapIndents: 0
+    snapIndentWidth: 0
+    cutHoles: 1
+    innerStartOffset: 0
+    innerEndOffset: 0
+    ignoredForRetainingWalls: 0
+    heightMaxThreshold: 100
+    heightMaxStartThreshold: 1
+    heightMaxEndThreshold: 1
+    xThresholdDistance: 5
+    angleThreshold: 10
+    connectionRatio: 1
+    retainingWall: 0
+    surroundingControl: 0
+    indentControl: 0
+    nodeListMirrored: []
+    uvsMirrored: []
+    snapWeightListMirrored: []
+    colorListMirrored: []
+    hasVertexColors: 0
+    deformationOffsetForward: 0
+    deformationOffsetSideways: 0
   - version: 2.0.0
     name: Road Marker Right
     id: 1477422337.8233068
@@ -8944,6 +11140,7 @@ MonoBehaviour:
     childOrder: 0
     meshBoundsAlignment: 0
     xPosition: 0.5
+    xPosition2: 0
     relativeTo: 2
     yPosition: 0
     yRotation: 180
@@ -8990,6 +11187,7 @@ MonoBehaviour:
     smoothEnd: 0
     targetObject: {fileID: 0}
     bridgeObject: 0
+    tunnelObject: 0
     snapToTerrain: 0
     layer: 0
     deformationObject: 0
@@ -9024,6 +11222,40 @@ MonoBehaviour:
     scale: {x: 1, y: 1, z: 1}
     indentExt: 0
     category: 4
+    densityMap: {fileID: 0}
+    densitySize: 50
+    densitySize2: 50
+    densityStrength: 0.5
+    densityStrength2: 0.5
+    terrainNormal: 0
+    terrainNormal2: 1
+    childObjects: []
+    autoGenerate: 0
+    heightThreshold: 10
+    autogenerateStartOffset: 0
+    autogenerateEndOffset: 0
+    snapIndents: 0
+    snapIndentWidth: 0
+    cutHoles: 1
+    innerStartOffset: 0
+    innerEndOffset: 0
+    ignoredForRetainingWalls: 0
+    heightMaxThreshold: 100
+    heightMaxStartThreshold: 1
+    heightMaxEndThreshold: 1
+    xThresholdDistance: 5
+    angleThreshold: 10
+    connectionRatio: 1
+    retainingWall: 0
+    surroundingControl: 0
+    indentControl: 0
+    nodeListMirrored: []
+    uvsMirrored: []
+    snapWeightListMirrored: []
+    colorListMirrored: []
+    hasVertexColors: 0
+    deformationOffsetForward: 0
+    deformationOffsetSideways: 0
   - version: 2.0.0
     name: Rocks
     id: 1496500505.889294
@@ -9076,6 +11308,7 @@ MonoBehaviour:
     childOrder: 2
     meshBoundsAlignment: 0
     xPosition: 0
+    xPosition2: 0
     relativeTo: 0
     yPosition: 0
     yRotation: 0
@@ -9122,6 +11355,7 @@ MonoBehaviour:
     smoothEnd: 0
     targetObject: {fileID: 0}
     bridgeObject: 0
+    tunnelObject: 0
     snapToTerrain: 0
     layer: 0
     deformationObject: 0
@@ -9156,6 +11390,40 @@ MonoBehaviour:
     scale: {x: 1, y: 1, z: 1}
     indentExt: 0
     category: 6
+    densityMap: {fileID: 0}
+    densitySize: 50
+    densitySize2: 50
+    densityStrength: 0.5
+    densityStrength2: 0.5
+    terrainNormal: 0
+    terrainNormal2: 1
+    childObjects: []
+    autoGenerate: 0
+    heightThreshold: 10
+    autogenerateStartOffset: 0
+    autogenerateEndOffset: 0
+    snapIndents: 0
+    snapIndentWidth: 0
+    cutHoles: 1
+    innerStartOffset: 0
+    innerEndOffset: 0
+    ignoredForRetainingWalls: 0
+    heightMaxThreshold: 100
+    heightMaxStartThreshold: 1
+    heightMaxEndThreshold: 1
+    xThresholdDistance: 5
+    angleThreshold: 10
+    connectionRatio: 1
+    retainingWall: 0
+    surroundingControl: 0
+    indentControl: 0
+    nodeListMirrored: []
+    uvsMirrored: []
+    snapWeightListMirrored: []
+    colorListMirrored: []
+    hasVertexColors: 0
+    deformationOffsetForward: 0
+    deformationOffsetSideways: 0
   - version: 2.0.0
     name: Swimming Pool
     id: 1455353139.0054991
@@ -9238,6 +11506,7 @@ MonoBehaviour:
     childOrder: 0
     meshBoundsAlignment: 0
     xPosition: 0
+    xPosition2: 0
     relativeTo: 0
     yPosition: 0
     yRotation: 0
@@ -9284,6 +11553,7 @@ MonoBehaviour:
     smoothEnd: 0
     targetObject: {fileID: 0}
     bridgeObject: 0
+    tunnelObject: 0
     snapToTerrain: 0
     layer: 0
     deformationObject: 0
@@ -9318,6 +11588,40 @@ MonoBehaviour:
     scale: {x: 1, y: 1, z: 1}
     indentExt: 0
     category: 6
+    densityMap: {fileID: 0}
+    densitySize: 50
+    densitySize2: 50
+    densityStrength: 0.5
+    densityStrength2: 0.5
+    terrainNormal: 0
+    terrainNormal2: 1
+    childObjects: []
+    autoGenerate: 0
+    heightThreshold: 10
+    autogenerateStartOffset: 0
+    autogenerateEndOffset: 0
+    snapIndents: 0
+    snapIndentWidth: 0
+    cutHoles: 1
+    innerStartOffset: 0
+    innerEndOffset: 0
+    ignoredForRetainingWalls: 0
+    heightMaxThreshold: 100
+    heightMaxStartThreshold: 1
+    heightMaxEndThreshold: 1
+    xThresholdDistance: 5
+    angleThreshold: 10
+    connectionRatio: 1
+    retainingWall: 0
+    surroundingControl: 0
+    indentControl: 0
+    nodeListMirrored: []
+    uvsMirrored: []
+    snapWeightListMirrored: []
+    colorListMirrored: []
+    hasVertexColors: 0
+    deformationOffsetForward: 0
+    deformationOffsetSideways: 0
   - version: 2.0.0
     name: Terrain Rock Overlay
     id: 1492275297.1925645
@@ -9390,6 +11694,7 @@ MonoBehaviour:
     childOrder: 0
     meshBoundsAlignment: 0
     xPosition: 0
+    xPosition2: 0
     relativeTo: 2
     yPosition: 0
     yRotation: 0
@@ -9436,6 +11741,7 @@ MonoBehaviour:
     smoothEnd: 0
     targetObject: {fileID: 0}
     bridgeObject: 0
+    tunnelObject: 0
     snapToTerrain: 0
     layer: 0
     deformationObject: 0
@@ -9470,6 +11776,40 @@ MonoBehaviour:
     scale: {x: 1, y: 1, z: 1}
     indentExt: 0
     category: 5
+    densityMap: {fileID: 0}
+    densitySize: 50
+    densitySize2: 50
+    densityStrength: 0.5
+    densityStrength2: 0.5
+    terrainNormal: 0
+    terrainNormal2: 1
+    childObjects: []
+    autoGenerate: 0
+    heightThreshold: 10
+    autogenerateStartOffset: 0
+    autogenerateEndOffset: 0
+    snapIndents: 0
+    snapIndentWidth: 0
+    cutHoles: 1
+    innerStartOffset: 0
+    innerEndOffset: 0
+    ignoredForRetainingWalls: 0
+    heightMaxThreshold: 100
+    heightMaxStartThreshold: 1
+    heightMaxEndThreshold: 1
+    xThresholdDistance: 5
+    angleThreshold: 10
+    connectionRatio: 1
+    retainingWall: 0
+    surroundingControl: 0
+    indentControl: 0
+    nodeListMirrored: []
+    uvsMirrored: []
+    snapWeightListMirrored: []
+    colorListMirrored: []
+    hasVertexColors: 0
+    deformationOffsetForward: 0
+    deformationOffsetSideways: 0
   - version: 2.0.0
     name: Traffic Cone
     id: 1505407226.4160588
@@ -9522,6 +11862,7 @@ MonoBehaviour:
     childOrder: 0
     meshBoundsAlignment: 0
     xPosition: 0
+    xPosition2: 0
     relativeTo: 0
     yPosition: 0
     yRotation: 0
@@ -9569,6 +11910,7 @@ MonoBehaviour:
     smoothEnd: 0
     targetObject: {fileID: 0}
     bridgeObject: 0
+    tunnelObject: 0
     snapToTerrain: 0
     layer: 0
     deformationObject: 0
@@ -9603,6 +11945,40 @@ MonoBehaviour:
     scale: {x: 1, y: 1, z: 1}
     indentExt: 0
     category: 4
+    densityMap: {fileID: 0}
+    densitySize: 50
+    densitySize2: 50
+    densityStrength: 0.5
+    densityStrength2: 0.5
+    terrainNormal: 0
+    terrainNormal2: 1
+    childObjects: []
+    autoGenerate: 0
+    heightThreshold: 10
+    autogenerateStartOffset: 0
+    autogenerateEndOffset: 0
+    snapIndents: 0
+    snapIndentWidth: 0
+    cutHoles: 1
+    innerStartOffset: 0
+    innerEndOffset: 0
+    ignoredForRetainingWalls: 0
+    heightMaxThreshold: 100
+    heightMaxStartThreshold: 1
+    heightMaxEndThreshold: 1
+    xThresholdDistance: 5
+    angleThreshold: 10
+    connectionRatio: 1
+    retainingWall: 0
+    surroundingControl: 0
+    indentControl: 0
+    nodeListMirrored: []
+    uvsMirrored: []
+    snapWeightListMirrored: []
+    colorListMirrored: []
+    hasVertexColors: 0
+    deformationOffsetForward: 0
+    deformationOffsetSideways: 0
   - version: 2.0.0
     name: Train Rail Concrete
     id: 1438703293.2729063
@@ -9655,6 +12031,7 @@ MonoBehaviour:
     childOrder: 0
     meshBoundsAlignment: 0
     xPosition: 0
+    xPosition2: 0
     relativeTo: 0
     yPosition: -0.02
     yRotation: 0
@@ -9701,6 +12078,7 @@ MonoBehaviour:
     smoothEnd: 0
     targetObject: {fileID: 0}
     bridgeObject: 0
+    tunnelObject: 0
     snapToTerrain: 0
     layer: 0
     deformationObject: 0
@@ -9735,6 +12113,40 @@ MonoBehaviour:
     scale: {x: 1, y: 1, z: 1}
     indentExt: 0
     category: 6
+    densityMap: {fileID: 0}
+    densitySize: 50
+    densitySize2: 50
+    densityStrength: 0.5
+    densityStrength2: 0.5
+    terrainNormal: 0
+    terrainNormal2: 1
+    childObjects: []
+    autoGenerate: 0
+    heightThreshold: 10
+    autogenerateStartOffset: 0
+    autogenerateEndOffset: 0
+    snapIndents: 0
+    snapIndentWidth: 0
+    cutHoles: 1
+    innerStartOffset: 0
+    innerEndOffset: 0
+    ignoredForRetainingWalls: 0
+    heightMaxThreshold: 100
+    heightMaxStartThreshold: 1
+    heightMaxEndThreshold: 1
+    xThresholdDistance: 5
+    angleThreshold: 10
+    connectionRatio: 1
+    retainingWall: 0
+    surroundingControl: 0
+    indentControl: 0
+    nodeListMirrored: []
+    uvsMirrored: []
+    snapWeightListMirrored: []
+    colorListMirrored: []
+    hasVertexColors: 0
+    deformationOffsetForward: 0
+    deformationOffsetSideways: 0
   - version: 2.0.0
     name: Train Rail Ground
     id: 1499500677.1240554
@@ -9797,6 +12209,7 @@ MonoBehaviour:
     childOrder: 0
     meshBoundsAlignment: 0
     xPosition: 0
+    xPosition2: 0
     relativeTo: 0
     yPosition: -0.0325
     yRotation: 0
@@ -9843,6 +12256,7 @@ MonoBehaviour:
     smoothEnd: 0
     targetObject: {fileID: 0}
     bridgeObject: 0
+    tunnelObject: 0
     snapToTerrain: 0
     layer: 0
     deformationObject: 0
@@ -9877,6 +12291,40 @@ MonoBehaviour:
     scale: {x: 1, y: 1, z: 1}
     indentExt: 0
     category: 6
+    densityMap: {fileID: 0}
+    densitySize: 50
+    densitySize2: 50
+    densityStrength: 0.5
+    densityStrength2: 0.5
+    terrainNormal: 0
+    terrainNormal2: 1
+    childObjects: []
+    autoGenerate: 0
+    heightThreshold: 10
+    autogenerateStartOffset: 0
+    autogenerateEndOffset: 0
+    snapIndents: 0
+    snapIndentWidth: 0
+    cutHoles: 1
+    innerStartOffset: 0
+    innerEndOffset: 0
+    ignoredForRetainingWalls: 0
+    heightMaxThreshold: 100
+    heightMaxStartThreshold: 1
+    heightMaxEndThreshold: 1
+    xThresholdDistance: 5
+    angleThreshold: 10
+    connectionRatio: 1
+    retainingWall: 0
+    surroundingControl: 0
+    indentControl: 0
+    nodeListMirrored: []
+    uvsMirrored: []
+    snapWeightListMirrored: []
+    colorListMirrored: []
+    hasVertexColors: 0
+    deformationOffsetForward: 0
+    deformationOffsetSideways: 0
   - version: 2.0.0
     name: Train Tunnel
     id: 1498378582.6466486
@@ -9929,6 +12377,7 @@ MonoBehaviour:
     childOrder: 0
     meshBoundsAlignment: 0
     xPosition: 0
+    xPosition2: 0
     relativeTo: 0
     yPosition: 0
     yRotation: 0
@@ -9976,6 +12425,7 @@ MonoBehaviour:
     smoothEnd: 0
     targetObject: {fileID: 0}
     bridgeObject: 1
+    tunnelObject: 0
     snapToTerrain: 0
     layer: 0
     deformationObject: 0
@@ -10010,6 +12460,40 @@ MonoBehaviour:
     scale: {x: 1, y: 1, z: 1}
     indentExt: 0
     category: 3
+    densityMap: {fileID: 0}
+    densitySize: 50
+    densitySize2: 50
+    densityStrength: 0.5
+    densityStrength2: 0.5
+    terrainNormal: 0
+    terrainNormal2: 1
+    childObjects: []
+    autoGenerate: 0
+    heightThreshold: 10
+    autogenerateStartOffset: 0
+    autogenerateEndOffset: 0
+    snapIndents: 0
+    snapIndentWidth: 0
+    cutHoles: 1
+    innerStartOffset: 0
+    innerEndOffset: 0
+    ignoredForRetainingWalls: 0
+    heightMaxThreshold: 100
+    heightMaxStartThreshold: 1
+    heightMaxEndThreshold: 1
+    xThresholdDistance: 5
+    angleThreshold: 10
+    connectionRatio: 1
+    retainingWall: 0
+    surroundingControl: 0
+    indentControl: 0
+    nodeListMirrored: []
+    uvsMirrored: []
+    snapWeightListMirrored: []
+    colorListMirrored: []
+    hasVertexColors: 0
+    deformationOffsetForward: 0
+    deformationOffsetSideways: 0
   - version: 2.0.0
     name: Walk Bridge Sea
     id: 1463296109.0005498
@@ -10062,6 +12546,7 @@ MonoBehaviour:
     childOrder: 0
     meshBoundsAlignment: 0
     xPosition: 0
+    xPosition2: 0
     relativeTo: 0
     yPosition: 0
     yRotation: 0
@@ -10108,6 +12593,7 @@ MonoBehaviour:
     smoothEnd: 0
     targetObject: {fileID: 0}
     bridgeObject: 0
+    tunnelObject: 0
     snapToTerrain: 0
     layer: 0
     deformationObject: 0
@@ -10142,6 +12628,40 @@ MonoBehaviour:
     scale: {x: 1, y: 1, z: 1}
     indentExt: 0
     category: 6
+    densityMap: {fileID: 0}
+    densitySize: 50
+    densitySize2: 50
+    densityStrength: 0.5
+    densityStrength2: 0.5
+    terrainNormal: 0
+    terrainNormal2: 1
+    childObjects: []
+    autoGenerate: 0
+    heightThreshold: 10
+    autogenerateStartOffset: 0
+    autogenerateEndOffset: 0
+    snapIndents: 0
+    snapIndentWidth: 0
+    cutHoles: 1
+    innerStartOffset: 0
+    innerEndOffset: 0
+    ignoredForRetainingWalls: 0
+    heightMaxThreshold: 100
+    heightMaxStartThreshold: 1
+    heightMaxEndThreshold: 1
+    xThresholdDistance: 5
+    angleThreshold: 10
+    connectionRatio: 1
+    retainingWall: 0
+    surroundingControl: 0
+    indentControl: 0
+    nodeListMirrored: []
+    uvsMirrored: []
+    snapWeightListMirrored: []
+    colorListMirrored: []
+    hasVertexColors: 0
+    deformationOffsetForward: 0
+    deformationOffsetSideways: 0
   - version: 2.0.0
     name: Wall CC
     id: 1492873209.4315598
@@ -10194,6 +12714,7 @@ MonoBehaviour:
     childOrder: 0
     meshBoundsAlignment: 1
     xPosition: 0
+    xPosition2: 0
     relativeTo: 0
     yPosition: -0.25
     yRotation: 0
@@ -10240,6 +12761,7 @@ MonoBehaviour:
     smoothEnd: 0
     targetObject: {fileID: 0}
     bridgeObject: 0
+    tunnelObject: 0
     snapToTerrain: 1
     layer: 0
     deformationObject: 0
@@ -10274,6 +12796,40 @@ MonoBehaviour:
     scale: {x: 1, y: 1, z: 1}
     indentExt: 0
     category: 2
+    densityMap: {fileID: 0}
+    densitySize: 50
+    densitySize2: 50
+    densityStrength: 0.5
+    densityStrength2: 0.5
+    terrainNormal: 0
+    terrainNormal2: 1
+    childObjects: []
+    autoGenerate: 0
+    heightThreshold: 10
+    autogenerateStartOffset: 0
+    autogenerateEndOffset: 0
+    snapIndents: 0
+    snapIndentWidth: 0
+    cutHoles: 1
+    innerStartOffset: 0
+    innerEndOffset: 0
+    ignoredForRetainingWalls: 0
+    heightMaxThreshold: 100
+    heightMaxStartThreshold: 1
+    heightMaxEndThreshold: 1
+    xThresholdDistance: 5
+    angleThreshold: 10
+    connectionRatio: 1
+    retainingWall: 0
+    surroundingControl: 0
+    indentControl: 0
+    nodeListMirrored: []
+    uvsMirrored: []
+    snapWeightListMirrored: []
+    colorListMirrored: []
+    hasVertexColors: 0
+    deformationOffsetForward: 0
+    deformationOffsetSideways: 0
   - version: 2.0.0
     name: Wall Country Side
     id: 1477826774.0961607
@@ -10326,6 +12882,7 @@ MonoBehaviour:
     childOrder: 0
     meshBoundsAlignment: 0
     xPosition: 0
+    xPosition2: 0
     relativeTo: 0
     yPosition: -0.5
     yRotation: 0
@@ -10372,6 +12929,7 @@ MonoBehaviour:
     smoothEnd: 1
     targetObject: {fileID: 0}
     bridgeObject: 0
+    tunnelObject: 0
     snapToTerrain: 0
     layer: 0
     deformationObject: 0
@@ -10406,6 +12964,40 @@ MonoBehaviour:
     scale: {x: 1, y: 1, z: 1}
     indentExt: 0
     category: 2
+    densityMap: {fileID: 0}
+    densitySize: 50
+    densitySize2: 50
+    densityStrength: 0.5
+    densityStrength2: 0.5
+    terrainNormal: 0
+    terrainNormal2: 1
+    childObjects: []
+    autoGenerate: 0
+    heightThreshold: 10
+    autogenerateStartOffset: 0
+    autogenerateEndOffset: 0
+    snapIndents: 0
+    snapIndentWidth: 0
+    cutHoles: 1
+    innerStartOffset: 0
+    innerEndOffset: 0
+    ignoredForRetainingWalls: 0
+    heightMaxThreshold: 100
+    heightMaxStartThreshold: 1
+    heightMaxEndThreshold: 1
+    xThresholdDistance: 5
+    angleThreshold: 10
+    connectionRatio: 1
+    retainingWall: 0
+    surroundingControl: 0
+    indentControl: 0
+    nodeListMirrored: []
+    uvsMirrored: []
+    snapWeightListMirrored: []
+    colorListMirrored: []
+    hasVertexColors: 0
+    deformationOffsetForward: 0
+    deformationOffsetSideways: 0
   - version: 2.0.0
     name: Wall Fence
     id: 1461096279.6289291
@@ -10458,6 +13050,7 @@ MonoBehaviour:
     childOrder: 0
     meshBoundsAlignment: 0
     xPosition: 0.025
+    xPosition2: 0
     relativeTo: 2
     yPosition: 0
     yRotation: 0
@@ -10504,6 +13097,7 @@ MonoBehaviour:
     smoothEnd: 1
     targetObject: {fileID: 0}
     bridgeObject: 0
+    tunnelObject: 0
     snapToTerrain: 0
     layer: 0
     deformationObject: 0
@@ -10538,6 +13132,40 @@ MonoBehaviour:
     scale: {x: 1, y: 1, z: 1}
     indentExt: 0
     category: 2
+    densityMap: {fileID: 0}
+    densitySize: 50
+    densitySize2: 50
+    densityStrength: 0.5
+    densityStrength2: 0.5
+    terrainNormal: 0
+    terrainNormal2: 1
+    childObjects: []
+    autoGenerate: 0
+    heightThreshold: 10
+    autogenerateStartOffset: 0
+    autogenerateEndOffset: 0
+    snapIndents: 0
+    snapIndentWidth: 0
+    cutHoles: 1
+    innerStartOffset: 0
+    innerEndOffset: 0
+    ignoredForRetainingWalls: 0
+    heightMaxThreshold: 100
+    heightMaxStartThreshold: 1
+    heightMaxEndThreshold: 1
+    xThresholdDistance: 5
+    angleThreshold: 10
+    connectionRatio: 1
+    retainingWall: 0
+    surroundingControl: 0
+    indentControl: 0
+    nodeListMirrored: []
+    uvsMirrored: []
+    snapWeightListMirrored: []
+    colorListMirrored: []
+    hasVertexColors: 0
+    deformationOffsetForward: 0
+    deformationOffsetSideways: 0
   ints: 
   roadPresets:
   - roadTypeName: Default Road
@@ -10803,6 +13431,7 @@ MonoBehaviour:
     fixedDistance: 0
     connectionAngle: 0
     connectionRadius: 0
+    isRoadShape: 0
   - roadTypeName: Default Road
     id: 1
     timestamp: 1520960221.8587415
@@ -11061,6 +13690,7 @@ MonoBehaviour:
     fixedDistance: 0
     connectionAngle: 0
     connectionRadius: 0
+    isRoadShape: 0
   - roadTypeName: Motorway 2x2
     id: 2
     timestamp: 1501946462.7156386
@@ -11323,6 +13953,7 @@ MonoBehaviour:
     fixedDistance: 0
     connectionAngle: 0
     connectionRadius: 0
+    isRoadShape: 0
   - roadTypeName: Side Object General
     id: 3
     timestamp: 1473146638.3992405
@@ -11582,6 +14213,7 @@ MonoBehaviour:
     fixedDistance: 0
     connectionAngle: 0
     connectionRadius: 0
+    isRoadShape: 0
   - roadTypeName: Fence
     id: 4
     timestamp: 1544719013.1823206
@@ -11837,6 +14469,7 @@ MonoBehaviour:
     fixedDistance: 0
     connectionAngle: 0
     connectionRadius: 0
+    isRoadShape: 0
   - roadTypeName: Train Rail
     id: 1438710071.382592
     timestamp: 1566243550.5844507
@@ -12189,6 +14822,7 @@ MonoBehaviour:
     fixedDistance: 0
     connectionAngle: 0
     connectionRadius: 0
+    isRoadShape: 0
   - roadTypeName: Single Lane
     id: 1438710104.7024977
     timestamp: 1483708237.1121268
@@ -12453,6 +15087,7 @@ MonoBehaviour:
     fixedDistance: 0
     connectionAngle: 0
     connectionRadius: 0
+    isRoadShape: 0
   - roadTypeName: Bridge 01 Two Lane
     id: 1447879021.327027
     timestamp: 1447879349.7668128
@@ -12746,6 +15381,7 @@ MonoBehaviour:
     fixedDistance: 0
     connectionAngle: 0
     connectionRadius: 0
+    isRoadShape: 0
   - roadTypeName: Bridge 01 Single Lane
     id: 1447879054.0869007
     timestamp: 1447879522.0456665
@@ -13040,6 +15676,7 @@ MonoBehaviour:
     fixedDistance: 0
     connectionAngle: 0
     connectionRadius: 0
+    isRoadShape: 0
   - roadTypeName: 'Dirt Path Sand '
     id: 1457285573.9652064
     timestamp: 1510682405.6211696
@@ -13300,6 +15937,7 @@ MonoBehaviour:
     fixedDistance: 0
     connectionAngle: 0
     connectionRadius: 0
+    isRoadShape: 0
   - roadTypeName: Dirt Path Gravel
     id: 1475600008.0470793
     timestamp: 1475767091.7092655
@@ -13560,6 +16198,7 @@ MonoBehaviour:
     fixedDistance: 0
     connectionAngle: 0
     connectionRadius: 0
+    isRoadShape: 0
   - roadTypeName: Asphalt Road Rough
     id: 1475600423.0698173
     timestamp: 1475600446.6901684
@@ -13820,6 +16459,7 @@ MonoBehaviour:
     fixedDistance: 0
     connectionAngle: 0
     connectionRadius: 0
+    isRoadShape: 0
   - roadTypeName: Residential Road
     id: 1481564524.5813577
     timestamp: 1481564585.2478275
@@ -14079,6 +16719,7 @@ MonoBehaviour:
     fixedDistance: 0
     connectionAngle: 0
     connectionRadius: 0
+    isRoadShape: 0
   - roadTypeName: Primary Road
     id: 1483992878.332847
     timestamp: 1529223791.1944132
@@ -14404,6 +17045,7 @@ MonoBehaviour:
     fixedDistance: 0
     connectionAngle: 0
     connectionRadius: 0
+    isRoadShape: 0
   - roadTypeName: Secondary Road
     id: 1484069872.8756092
     timestamp: 1528920119.1452627
@@ -14729,6 +17371,7 @@ MonoBehaviour:
     fixedDistance: 0
     connectionAngle: 0
     connectionRadius: 0
+    isRoadShape: 0
   - roadTypeName: Primary Road Coast
     id: 1484142445.4042275
     timestamp: 1508777791.4286003
@@ -14991,6 +17634,7 @@ MonoBehaviour:
     fixedDistance: 0
     connectionAngle: 0
     connectionRadius: 0
+    isRoadShape: 0
   - roadTypeName: RA Road
     id: 1484757374.1183336
     timestamp: 9505146696.69919
@@ -15278,6 +17922,7 @@ MonoBehaviour:
     fixedDistance: 0
     connectionAngle: 0
     connectionRadius: 0
+    isRoadShape: 0
   - roadTypeName: Tertiary Road New
     id: 1493135458.6686025
     timestamp: 1493560092.3450265
@@ -15540,6 +18185,7 @@ MonoBehaviour:
     fixedDistance: 0
     connectionAngle: 0
     connectionRadius: 0
+    isRoadShape: 0
   - roadTypeName: Dirt Track Swamp
     id: 1493665303.9374294
     timestamp: 1493665419.6490476
@@ -15833,6 +18479,7 @@ MonoBehaviour:
     fixedDistance: 0
     connectionAngle: 0
     connectionRadius: 0
+    isRoadShape: 0
   - roadTypeName: Dirt Track Grass
     id: 1493738297.4245384
     timestamp: 1493738330.9734573
@@ -16095,6 +18742,7 @@ MonoBehaviour:
     fixedDistance: 0
     connectionAngle: 0
     connectionRadius: 0
+    isRoadShape: 0
   - roadTypeName: Race Track
     id: 1496086826.7569551
     timestamp: 1497773587.9519272
@@ -16357,6 +19005,7 @@ MonoBehaviour:
     fixedDistance: 0
     connectionAngle: 0
     connectionRadius: 0
+    isRoadShape: 0
   - roadTypeName: River
     id: 1516725379.7474687
     timestamp: 1516725400.1374695
@@ -16619,6 +19268,7 @@ MonoBehaviour:
     fixedDistance: 0
     connectionAngle: 0
     connectionRadius: 0
+    isRoadShape: 0
   - roadTypeName: Powerline
     id: 1565858908.107446
     timestamp: 1565858926.6217616
@@ -16876,6 +19526,7 @@ MonoBehaviour:
     fixedDistance: 5
     connectionAngle: 25
     connectionRadius: 10
+    isRoadShape: 0
   - roadTypeName: Fence Chain Link
     id: 1565867072.9755578
     timestamp: 1565867141.3413684
@@ -17133,6 +19784,7 @@ MonoBehaviour:
     fixedDistance: 5
     connectionAngle: 25
     connectionRadius: 10
+    isRoadShape: 0
   - roadTypeName: Wall Country Side
     id: 1565867305.2387204
     timestamp: 1565867323.5342956
@@ -17390,7 +20042,10 @@ MonoBehaviour:
     fixedDistance: 5
     connectionAngle: 25
     connectionRadius: 10
+    isRoadShape: 0
   crossingCornerPresets: []
   sidewalkPresets: []
   textureData: []
+  presetAssets: []
+  logIndex: 0
   updateInt: 2

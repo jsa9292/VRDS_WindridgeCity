@@ -110,7 +110,7 @@ GameObject:
   - component: {fileID: 400004}
   - component: {fileID: 11400000}
   m_Layer: 0
-  m_Name: ER Road Network
+  m_Name: ERRoadNetwork
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -147,6 +147,7 @@ MonoBehaviour:
   updateInt: 10
   newSplatMapRestoreCode: 0
   toolbarInt: 4
+  oldToolbarInt: 0
   roadToolbarInt: 0
   markerToolbarInt: 0
   menuTexs:
@@ -170,7 +171,7 @@ MonoBehaviour:
   sceneGUITex: {fileID: 0}
   roadObjectsParent: {fileID: 400000}
   connectionObjectsParent: {fileID: 400002}
-  ODQQQDOQOD: {fileID: 0}
+  ODOCOQQCDC: {fileID: 0}
   roadTypes:
   - roadTypeName: Default Road
     id: 0
@@ -287,6 +288,7 @@ MonoBehaviour:
     fixedDistance: 0
     connectionAngle: 0
     connectionRadius: 0
+    isRoadShape: 0
   selectedRoadType: 0
   selectedNewRoadType: 0
   inspRoadTypes: []
@@ -494,7 +496,7 @@ MonoBehaviour:
   hideSurfaces: 1
   useLightProbes: 0
   hideLockedObjects: 0
-  ODQQCCODDO: 0
+  OODOQDCCOC: 0
   isInBuildMode: 0
   progressFlag: 0
   progressTerrain: 1
@@ -573,15 +575,15 @@ MonoBehaviour:
   dirtyBool: 0
   dirtyOnSceneBool: 0
   forceRoadNetworkSelect: 0
-  OQDCDCQDCO: 1
-  ODQQQDOQODScript: {fileID: 0}
-  OOCDOCQOOOCrossingsScript: {fileID: 0}
-  OOCDOCQOOOScript: {fileID: 0}
-  ODQQQDOQODElement: -1
-  ODOCQOOCCO: -1
-  OQOOCOCOQD: {fileID: 0}
-  OOCQDDDDQQ: {fileID: 0}
-  OCQOOQCDOC: -1
+  OQQDQOCOCC: 1
+  ODOCOQQCDCScript: {fileID: 0}
+  OCCDODOOODCrossingsScript: {fileID: 0}
+  OCCDODOOODScript: {fileID: 0}
+  ODOCOQQCDCElement: -1
+  OQOQCDDCQD: -1
+  OCQDOOQCDQ: {fileID: 0}
+  OQQCOOQQDC: {fileID: 0}
+  OQOQQQQCQO: -1
   selectedRoadSOMarker: -1
   selectedMarkerNode: -1
   selectedMarkerNodes: 
@@ -599,6 +601,7 @@ MonoBehaviour:
   globalGridSize: 10
   globalGridRadius: 1000
   globalGridRotation: 0
+  gridOffset: {x: 0, y: 0}
   ggTL: {x: 0, y: 0, z: 0}
   ggBL: {x: 0, y: 0, z: 0}
   ggBR: {x: 0, y: 0, z: 0}
@@ -652,8 +655,8 @@ MonoBehaviour:
   lockRoadNetwork: 0
   showNotifications: 1
   multipleTerrainsWarning: 0
-  OQDQQDDQQO: []
-  OCCODOQQCC: []
+  OCQDQCDQOD: []
+  OQOQOQOQDQ: []
   textureCounter: 0
   vegetationStudio: 0
   vegetationStudioPro: 0
@@ -670,7 +673,7 @@ MonoBehaviour:
   vegetationStudioBiomeMaskNoiseScale: 0
   aiTraffic: 0
   aiMatchingLanesOnly: 1
-  aiNearestLanesOnly: 1
+  aiconnectNonMatchinglaneCounts: 1
   aiIgnoreConnections: 1
   displayLaneData: 0
   rightHandDriving: 1
@@ -679,4 +682,5 @@ MonoBehaviour:
   laneHandleSelectedColour: {r: 1, g: 1, b: 0, a: 0.5}
   roadUvThreshold: 1750
   updateQueue: 0
+  logChange: 0
   debugMode: 0

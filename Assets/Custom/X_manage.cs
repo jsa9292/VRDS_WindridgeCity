@@ -7,6 +7,7 @@ public class X_manage : MonoBehaviour
     public bool detect; //pickup Node from children
     public float detectDist;
     public bool detectLights; //pickup MaterialChanger from LightGroupParents 
+	public int numCars;
     // Start is called before the first frame update
     void Start()
     {
@@ -69,8 +70,18 @@ public class X_manage : MonoBehaviour
     public MaterialChanger[] LightGroup1;
     public MaterialChanger[] LightGroup2;
     public MaterialChanger[] LightGroup3; //this is yellow light group
-    void FixedUpdate()
+
+	private float TimeforSim;
+    void Update()
     {
+		numCars = 0;
+		//for each intersection, if any of the conflict is occupied, it is disabled. 
+		foreach (Node n in intersection) {
+			numCars+=n.occupied;
+        	foreach (Node m in n.conflicts) {
+				m.stop = n.occupied> 0;
+			}
+		}
         //if(Time.realtimeSinceStartup >)
         if (state != prev_state)
         {
@@ -118,7 +129,7 @@ public class X_manage : MonoBehaviour
                     }
                     prev_state = 2;
                     break;
-                /* All directions are open, 4 way stop, whichever car gets there first should get there first */
+                /* all stop*/
                 case 3:
                     if (trafficLight)
                     {
@@ -127,15 +138,25 @@ public class X_manage : MonoBehaviour
                             m.Switch(true);
                         }
                     }
+					for (int i = 0; i < enters.Count; i++)
+					{
+						enters[i].exitOn = false;
+					}
                     prev_state = 3;
                     return;
-                /* Closes all ways */
+                /* one car in the intersection at a time */
                 default:
-                    for (int i = 0; i < enters.Count; i++)
-                    {
-                        enters[i].exitOn = false;
-                    }
-                    break;
+					for (int i = 0; i < enters.Count; i++)
+					{
+						enters[i].exitOn = false;
+					}
+					prev_state = 3;
+					if(numCars == 0){
+				        enters[xI].exitOn = true;
+				        xI++;
+				        if (xI >= enters.Count) xI = 0;
+					}
+					return;
             }
         }
         // This enforces nodefollowers to waitfor execution of rest of X_manage script before allowed to switch to intersection node
@@ -143,16 +164,16 @@ public class X_manage : MonoBehaviour
         // then the multiple instances of nodefollowers switched to intersection node before conflicts were updated.
         // instead of updating conflict for each switch which increases operations count,
         // shutting down allows reducing the operation count
-        enters[xI].exitOn = true;
-        xI++;
-        if (xI >= enters.Count) xI = 0;
+//        enters[xI].exitOn = t;
+//        xI++;
+//        if (xI >= enters.Count) xI = 0;
 
-        //for each intersection, if any of the conflict is occupied, it is disabled. 
-        foreach (Node n in intersection) {
-            n.stop = false;
-            foreach (Node m in n.conflicts) {
-                n.stop = n.stop || (m.occupied > 0);
-            }
-        }
-    }
+		if (!trafficLight) return;
+		TimeforSim += 1f / (float)Application.targetFrameRate;
+		if (TimeforSim > 30f) TimeforSim = 0;
+		if (TimeforSim > 0f) state = 1;
+		if (TimeforSim > 10f) state = 3;
+		if (TimeforSim > 15f) state = 2;
+		if (TimeforSim > 25f) state = 3;
+	}
 }

@@ -112,12 +112,18 @@ MonoBehaviour:
   targetPos: {x: 0, y: 0, z: 0}
   targetDir: {x: 0, y: 0, z: 0}
   dist2node: 0
-  speed: 0
+  speedSlow: 0
+  speedFast: 0
   safeDist: 0
   waitTime: 0
   waiting: 0
   steering: 0.01
   stopDist: 0
+  movement: 0
+  signalStop: 0
+  signalLeft: 0
+  signalRight: 0
+  randseed: 0
 --- !u!114 &7390704188426102844
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,5 +136,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b56ce639aef3ea84a8cf5afb111ac384, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tm: {fileID: 0}
-  spawnOffset: 0
+  cars: []
+  spawnOffset: {x: 0, y: 0, z: 0}
+  randseed: 0

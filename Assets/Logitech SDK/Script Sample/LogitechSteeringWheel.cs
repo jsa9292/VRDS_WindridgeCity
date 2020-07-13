@@ -27,6 +27,7 @@ public class LogitechSteeringWheel : MonoBehaviour {
 	[Header ("Inputs")]
 	public float wheel;
 	public float accel;
+	private float prev_accel;
 	public float brake;
 	public bool reverse;
     public bool neutral;
@@ -108,9 +109,9 @@ public class LogitechSteeringWheel : MonoBehaviour {
             else if (wheel > ignoreWheelUp) wheel -= ignoreWheelUp;
             else wheel = 0;
 
-            float prev_accel = accel;
-            if (accel >= prev_accel) accel = (-rec.lZ/32767f)+1;
+			if (accel >= prev_accel) accel = ((-rec.lY/32767f)+1)/2f ;
 			else accel = prev_accel-Time.deltaTime/10f;
+			prev_accel  = accel;
             brake = (-rec.lRz/32767f +1);
 			reverse = ((rec.rgbButtons[16] ==128)||(rec.rgbButtons[14] == 128)||( rec.rgbButtons[12] == 128));
             park = rec.rgbButtons[16] == 128;

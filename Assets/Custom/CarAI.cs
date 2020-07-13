@@ -9,43 +9,44 @@ public class CarAI : MonoBehaviour
     public float speed; //speed of following nodefollower
     public float steering; //rot rate of the car graphics
     public float stopDist; //distance from node follower to converge. will accelerate/decelearate to this position. will back off if too close.
-    //private Vector3 lookingAt; //vector dedicated for quaternion rotation. 
+    private Vector3 lookingAt; //vector dedicated for quaternion rotation. 
     public Vector3 Offset;//offsetfrom the nfT;
     public float wheelConst; //wheel graphics rot rate 
     public Transform[] wheelGraphics; // wheel graphics objects
     public Transform[] wheelParents;
+	public Rigidbody rb;
     private Vector3 targetPos; //final position for car to follow;
+	private Vector3 targetDir;
     private float distance; // distance to targetPos
-    private Vector3 posNoise; // noise to targetPos
-    public float NoiseLevel; // noise magnitude;
     public GameObject stopParent;
     public GameObject leftParent;
     public GameObject rightParent;
     public Light[] stopFlares;
     public Light[] leftFlares;
     public Light[] rightFlares;
+
     // Start is called before the first frame update
     void Start()
     {
         nfT = nf.transform;
-        posNoise = new Vector3(Random.Range(-1, 1), 0, Random.Range(-1, 1));
-        posNoise *= NoiseLevel;
         stopFlares = stopParent.GetComponentsInChildren<Light>();
         leftFlares = leftParent.GetComponentsInChildren<Light>();
         rightFlares = rightParent.GetComponentsInChildren<Light>();
-        //rb = transform.GetComponent<Rigidbody>();
+        rb = transform.GetComponent<Rigidbody>();
     }
-
+	private float speedFinal;
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
-        targetPos = nfT.position + Offset + posNoise;
-        distance = Vector3.Distance(transform.position, targetPos);
-        //lookingAt = Vector3.RotateTowards(transform.forward, nfT.forward, steering, 0.0f);
-        //transform.rotation = Quaternion.LookRotation(lookingAt);
-        transform.LookAt(targetPos);
-        float speedFinal = (distance - stopDist) * speed;
-        transform.position += transform.forward * speedFinal;//Vector3.MoveTowards(transform.position, nfT.position, (distance - stopDist) * speed);// nfT.position + transform.forward * posOffSet.x + transform.up*posOffSet.y;
+		if(!rb.isKinematic) return;
+        targetPos = nfT.position + Offset;
+		targetDir = targetPos - transform.position;
+		distance = targetDir.magnitude;
+        lookingAt = Vector3.RotateTowards(transform.forward, nfT.forward, steering, 0.0f);
+        transform.rotation = Quaternion.LookRotation(lookingAt);
+        //transform.LookAt(targetPos);
+        speedFinal = (distance - stopDist) * speed* 0.5f + speedFinal*0.5f;
+		transform.position += targetDir * speedFinal;//Vector3.MoveTowards(transform.position, nfT.position, (distance - stopDist) * speed);// nfT.position + transform.forward * posOffSet.x + transform.up*posOffSet.y;
         float wheel_y;
         foreach (Transform t in wheelParents) {
 
@@ -61,12 +62,12 @@ public class CarAI : MonoBehaviour
         foreach (Light l in leftFlares)
         {
             l.enabled = nf.signalLeft;
-            l.intensity = Mathf.Sin(Time.realtimeSinceStartup* frequency) * magnitude + magnitude/2f;
+			if(l.enabled) l.intensity = Mathf.Sin(Time.realtimeSinceStartup* frequency) * magnitude + magnitude/2f;
         }
         foreach (Light l in rightFlares)
         {
             l.enabled = nf.signalRight;
-            l.intensity = Mathf.Sin(Time.realtimeSinceStartup* frequency) * magnitude + magnitude/2f;
+			if(l.enabled) l.intensity = Mathf.Sin(Time.realtimeSinceStartup* frequency) * magnitude + magnitude/2f;
         }
         foreach (Light l in stopFlares)
         {
@@ -98,4 +99,8 @@ public class CarAI : MonoBehaviour
             MakeWheelParent();
         }
     }
+//	void OnCollisionEnter(Collision c){
+//		rb.isKinematic = false;
+//		rb.useGravity = true;
+//	}
 }
