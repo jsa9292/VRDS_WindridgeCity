@@ -1,0 +1,169 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2435569061045753531
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3456947868793521035}
+  - component: {fileID: 1763208514168853751}
+  - component: {fileID: 6682945397249142889}
+  - component: {fileID: 79553978058985491}
+  - component: {fileID: 4792164046581813582}
+  - component: {fileID: 7390704188426102844}
+  m_Layer: 5
+  m_Name: CarNodeFollower
+  m_TagString: Follower
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3456947868793521035
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2435569061045753531}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &1763208514168853751
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2435569061045753531}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &6682945397249142889
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2435569061045753531}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 6e1d36c4bbd37d54f9ea183e4f5fd656, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!65 &79553978058985491
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2435569061045753531}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4792164046581813582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2435569061045753531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d36b14cc089d57488588fe7cfa239da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  node: {fileID: 0}
+  nextNode: {fileID: 0}
+  followedBy: {fileID: 0}
+  posI: 0
+  maxRPI: 0
+  targetPos: {x: 0, y: 0, z: 0}
+  targetDir: {x: 0, y: 0, z: 0}
+  dist2node: 0
+  speed: 0
+  minspeed: 2
+  maxspeed: 10
+  safeDist: 5
+  waitTime: 1
+  waiting: 0
+  steering: 0.003
+  stopDist: 2
+  movement: 0
+  signalStop: 0
+  signalLeft: 0
+  signalRight: 0
+  randseed: 0
+--- !u!114 &7390704188426102844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2435569061045753531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b56ce639aef3ea84a8cf5afb111ac384, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cars:
+  - {fileID: 5674508714650412411, guid: cb2c695d66036fb4181aab2548a3ad30, type: 3}
+  - {fileID: 6114575133802204713, guid: 78c614dc81730374bb79b8ec3575af56, type: 3}
+  - {fileID: 2283743433453695061, guid: 10f3a7f45d7705f4095d2e083119e6ee, type: 3}
+  - {fileID: 4293922837972412330, guid: a989499490a4f9c47b4d53f37127dd5f, type: 3}
+  - {fileID: 862864160788235626, guid: cdc07ae1063256f49bf09ab86e153c00, type: 3}
+  - {fileID: 1932171267032327214, guid: 680b2b2b608aad54c9f0c246c24dd7ad, type: 3}
+  - {fileID: 4479482572051698702, guid: b097da1a0ef3ca24c993abc52e4a93c6, type: 3}
+  - {fileID: 7429353772699604227, guid: 4f1f5829813331c40aa84693b7e67f08, type: 3}
+  - {fileID: 6152090004325774363, guid: 5606a7ca263f40640a74c7d89c6f307d, type: 3}
+  - {fileID: 6313042441902921241, guid: 7670a702f9e721e4aae3a6a3fd9d50a1, type: 3}
+  - {fileID: 7616074980251153986, guid: 95fe59075eb968246b9ec7be0726e692, type: 3}
+  - {fileID: 4860370808447301263, guid: 051b215cd80f01647bbd723ce77bc422, type: 3}
+  - {fileID: 1924837650551638537, guid: f29bee6db59cb614392923dfa2557106, type: 3}
+  - {fileID: 7004684663399573678, guid: a1e058b1d9007dd439cb0078dfc6ad2b, type: 3}
+  - {fileID: 2761690246687126932, guid: 96c82cd5a61668649a82ac2119492187, type: 3}
+  - {fileID: 1826251911806162108, guid: 3fed14c2a3abfef49be9250c7012963d, type: 3}
+  - {fileID: 3036911243423150508, guid: e3433bb3f90589443957348ff4e19f2e, type: 3}
+  - {fileID: 893892255616526314, guid: 9f69cd6db9e68fc428b39be578132d87, type: 3}
+  - {fileID: 8054566089306274283, guid: 86c9e29d94bceab40bf3eccb06cb6463, type: 3}
+  - {fileID: 7679701244878818007, guid: 559d475e50ab33f4eb9fe11850b90c8c, type: 3}
+  - {fileID: 6686669193105196451, guid: 4dba18d75589631438323cb25d70c011, type: 3}
+  - {fileID: 4039918998744568833, guid: 9741a13ccc5ac6543af2fabb152423c2, type: 3}
+  - {fileID: 1520722384851417255, guid: fb4f8442053dccd40bb4b3cf3b4be1e1, type: 3}
+  - {fileID: 8853989557834181728, guid: 969f7e702cf2bfe4daf673d6527307b5, type: 3}
+  car: {fileID: 0}
+  spawnOffset: {x: -0.5, y: -0.3, z: 0}
+  randseed: 0

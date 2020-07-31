@@ -462,6 +462,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3253478736941926868}
   - component: {fileID: 3253478736932316756}
+  - component: {fileID: -3959315540136982763}
   m_Layer: 0
   m_Name: soccerMom
   m_TagString: Untagged
@@ -504,7 +505,7 @@ Animator:
   m_GameObject: {fileID: 3253478736941700148}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 908e9701fa8e4944c9cd3e2b1339cab1, type: 3}
-  m_Controller: {fileID: 9100000, guid: 40e2f8f296ef23c4a8f9fdf093f408bb, type: 2}
+  m_Controller: {fileID: 9100000, guid: 487a6526ab586c1468c77d701a0fe785, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -513,6 +514,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-3959315540136982763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3253478736941700148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5391d23b75d11a4786291649895148d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nf: {fileID: 0}
+  speed: 0
+  speedCoeff: 12
+  catchup: 0.5
 --- !u!1 &3253478736941700150
 GameObject:
   m_ObjectHideFlags: 0
@@ -829,7 +846,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100008, guid: 3f71e85c7fd086447901951e6401eb40, type: 3}
+  - {fileID: 2100000, guid: aa4ad169a024f19459ab1a7b00ceeabc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1379,7 +1396,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100006, guid: 3f71e85c7fd086447901951e6401eb40, type: 3}
+  - {fileID: 2100000, guid: b854c01c0da4b774ab2c2fe1ae539c2e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

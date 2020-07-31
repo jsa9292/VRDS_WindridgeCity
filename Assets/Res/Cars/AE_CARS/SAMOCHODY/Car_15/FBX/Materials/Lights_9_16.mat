@@ -8,9 +8,9 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Lights_9_16
-  m_Shader: {fileID: 4, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
+  m_Shader: {fileID: 4800000, guid: 8999c991fa4b5304cb29203e6b36b3a2, type: 3}
+  m_ShaderKeywords: _FLICKER0_ON _TOGGLESWITCH0_ON
+  m_LightmapFlags: 0
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -23,12 +23,40 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Cars_18_Taillights_D:
+        m_Texture: {fileID: 2800000, guid: 1a6cf488c6bbf114eb02abecbaee33fb, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: 1a6cf488c6bbf114eb02abecbaee33fb, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _texcoord:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Floats:
+    - _Bias: 0.73
+    - _BothOn: 1
+    - _BrakeOnOff: 1
+    - _Flicker0: 1
+    - _Flicker1: 0
+    - _Fuzzy: 0.26
+    - _GBbalance: 1
+    - _GBmag: 47.3
+    - _Intensity0: 8.67
+    - _Intensity1: 5.3
+    - _LR: -0.01
+    - _Orange: -1.85
+    - _OrangeMax: 1.13
+    - _Red: 9.33
+    - _RedMax: 0.65
+    - _Sensitivity: 0.73
     - _Shininess: 0.078125
+    - _ToggleSwitch0: 1
+    - __dirty: 0
     m_Colors:
     - _Color: {r: 0.8, g: 0.8, b: 0.8, a: 1}
+    - _Color0: {r: 1, g: 0.5639591, b: 0, a: 0}
+    - _Color1: {r: 1, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}

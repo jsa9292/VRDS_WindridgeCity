@@ -2116,6 +2116,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4928855959523730670}
   - component: {fileID: 3093079728889661844}
+  - component: {fileID: 8406763462138129844}
   m_Layer: 0
   m_Name: genericFemale
   m_TagString: Untagged
@@ -2155,7 +2156,7 @@ Animator:
   m_GameObject: {fileID: 8231887123308631805}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 908e9701fa8e4944c9cd3e2b1339cab1, type: 3}
-  m_Controller: {fileID: 9100000, guid: 40e2f8f296ef23c4a8f9fdf093f408bb, type: 2}
+  m_Controller: {fileID: 9100000, guid: 487a6526ab586c1468c77d701a0fe785, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2164,6 +2165,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8406763462138129844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8231887123308631805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5391d23b75d11a4786291649895148d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nf: {fileID: 0}
+  speed: 0
+  speedCoeff: 12
+  catchup: 0.5
 --- !u!1 &8608102727978874823
 GameObject:
   m_ObjectHideFlags: 0
