@@ -159,7 +159,7 @@ public class Node : MonoBehaviour
             for (int i = 0; i < roadMovePositions.Count - 1; i++)
             {
                 Gizmos.DrawLine(roadMovePositions[i], roadMovePositions[i + 1]);
-                Gizmos.DrawLine(roadMovePositions[i], roadMovePositions[i + 1] + Vector3.up * .5f);// + Vector3.up * 1.5f * i / roadMovePositions.Count);
+                Gizmos.DrawLine(roadMovePositions[i+1], roadMovePositions[i] + Vector3.up * .5f);// + Vector3.up * 1.5f * i / roadMovePositions.Count);
             }
         }
         if (showCurves && (roadMovePositions == null || roadMovePositions.Count==0)) {

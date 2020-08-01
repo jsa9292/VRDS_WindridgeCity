@@ -19,6 +19,7 @@ public class CarAI : MonoBehaviour
 	public Rigidbody rb;
 	public float dirDiff;
 	public float dirWeight;
+	[Range(0.0f,1.0f)]
 	public float speedAutoCorr;
 	//Graphics
     public Renderer carBody;
@@ -43,11 +44,12 @@ public class CarAI : MonoBehaviour
         //while ((nf.transform.position - transform.position).magnitude<=stopDist) {
         //    nf.UpdateNF(); 
         //}
-		dirDiff = Mathf.Pow(Vector3.Dot(transform.forward,-nf.targetDir.normalized),dirWeight);
-		speedFinal =   (nf.signalStop ? 0:1 * speed *(1f-speedAutoCorr) + speedFinal *speedAutoCorr) * dirDiff;
+		dirDiff = Mathf.Pow(Vector3.Dot(transform.forward,nf.targetDir.normalized),dirWeight);
+		steering = 1f-dirDiff;
+		speedFinal =   (nf.signalStop ? 0:1 * speed *(1f-speedAutoCorr)* dirDiff + speedFinal *speedAutoCorr) ;
         if (speedFinal > 0f)
         {
-			lookingAt = Vector3.RotateTowards(transform.forward, -nf.targetDir, steering/dirDiff, 0.0f);//nfT.forward
+			lookingAt = Vector3.RotateTowards(transform.forward, nf.targetDir, steering, 0.0f);//nfT.forward
             transform.rotation = Quaternion.LookRotation(lookingAt);
 			transform.position += transform.forward * speedFinal* Time.smoothDeltaTime;
             //Vector3.MoveTowards(transform.position, nfT.position, (distance - stopDist) * speed);// nfT.position + transform.forward * posOffSet.x + transform.up*posOffSet.y;

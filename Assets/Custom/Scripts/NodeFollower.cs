@@ -118,7 +118,7 @@ public class NodeFollower : MonoBehaviour
 		}
         //get the distance
         targetPos = followedBy.transform.position;
-        targetDir = targetPos - transform.position;
+		targetDir = transform.position -targetPos;
         dist2node = targetDir.magnitude; 
 
   //      if (dist2node > stopDist)
