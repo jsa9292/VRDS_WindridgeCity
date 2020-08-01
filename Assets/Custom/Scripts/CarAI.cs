@@ -17,10 +17,10 @@ public class CarAI : MonoBehaviour
     public Transform[] wheelGraphics; // wheel graphics objects
     public Transform[] wheelParents;
 	public Rigidbody rb;
-    private Vector3 targetPos; //final position for car to follow;
-	private Vector3 targetDir;
-    private float distance; // distance to targetPos
-
+	public float dirDiff;
+	public float dirWeight;
+	public float speedAutoCorr;
+	//Graphics
     public Renderer carBody;
     public Renderer tailLight;
     public VolumetricLightBeam Lsignal;
@@ -43,13 +43,13 @@ public class CarAI : MonoBehaviour
         //while ((nf.transform.position - transform.position).magnitude<=stopDist) {
         //    nf.UpdateNF(); 
         //}
-        nf.UpdateNF();
-        speedFinal =  speed * 0.5f + speedFinal * 0.5f * Time.smoothDeltaTime;
+		dirDiff = Mathf.Pow(Vector3.Dot(transform.forward,-nf.targetDir.normalized),dirWeight);
+		speedFinal =   (nf.signalStop ? 0:1 * speed *(1f-speedAutoCorr) + speedFinal *speedAutoCorr) * dirDiff;
         if (speedFinal > 0f)
         {
-            lookingAt = Vector3.RotateTowards(transform.forward, nfT.forward, steering/ speedFinal * distance, 0.0f);//nfT.forward
+			lookingAt = Vector3.RotateTowards(transform.forward, -nf.targetDir, steering/dirDiff, 0.0f);//nfT.forward
             transform.rotation = Quaternion.LookRotation(lookingAt);
-            transform.position += transform.forward * speedFinal;
+			transform.position += transform.forward * speedFinal* Time.smoothDeltaTime;
             //Vector3.MoveTowards(transform.position, nfT.position, (distance - stopDist) * speed);// nfT.position + transform.forward * posOffSet.x + transform.up*posOffSet.y;
             //targetDir
             //transform.LookAt(targetPos);

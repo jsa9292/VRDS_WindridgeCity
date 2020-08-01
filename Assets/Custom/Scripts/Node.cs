@@ -95,7 +95,7 @@ public class Node : MonoBehaviour
         roadMovePositions.Add(nodeB.position); 
         for (int i = 0; i <= roadMovePositions.Count - 1; i++)
         {
-            if (Physics.Raycast(roadMovePositions[i]+Vector3.up*heightTo, -Vector3.up, out hit, heightTo * 3f))
+            if (Physics.Raycast(roadMovePositions[i]+Vector3.up*3f, -Vector3.up, out hit, 5f))
             {
                 roadMovePositions[i] = new Vector3(roadMovePositions[i].x, hit.point.y + heightTo, roadMovePositions[i].z);
             }

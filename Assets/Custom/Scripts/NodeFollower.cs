@@ -68,7 +68,7 @@ public class NodeFollower : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, 0.5f);
     }
     // Update is called once per frame
-    public void UpdateNF()
+    public void Update()
     {
         if (followedBy == null)
         {
@@ -76,7 +76,7 @@ public class NodeFollower : MonoBehaviour
         }
         signalLeft = false;
         signalRight = false;
-        signalStop = movement <0.01f;
+        signalStop = false;
 		if(node == null) return;
 		if ((node.stop && posI<maxRPI/2) || waiting)
         {
@@ -116,7 +116,6 @@ public class NodeFollower : MonoBehaviour
 			}
 
 		}
-
         //get the distance
         targetPos = followedBy.transform.position;
         targetDir = targetPos - transform.position;
@@ -165,10 +164,8 @@ public class NodeFollower : MonoBehaviour
 
 
             }
-            //targetPos = node.roadMovePositions[posI];
-            
-            transform.LookAt(targetPos);
-            transform.position = node.roadMovePositions[posI];
+			transform.position = node.roadMovePositions[posI];
+			transform.LookAt(node.roadMovePositions[posI+1]);
 
         }
 		if(node.isIntersectionNode){

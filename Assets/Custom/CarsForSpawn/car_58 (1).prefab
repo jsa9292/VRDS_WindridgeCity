@@ -2018,10 +2018,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nf: {fileID: 0}
-  speed: 0.5
-  steering: 0.1
+  speed: 5
+  steering: 0.01
   stopDist: 1
-  Offset: {x: 0, y: -0.3, z: 0}
+  Offset: {x: 0, y: -0.5, z: 0}
   wheelConst: 90
   wheelGraphics:
   - {fileID: 6786556922926437884}
@@ -2032,6 +2032,9 @@ MonoBehaviour:
   - {fileID: 1786159847003194903}
   - {fileID: 4374955319640889447}
   rb: {fileID: 3523407546292305941}
+  dirDiff: 0
+  dirWeight: 5
+  speedAutoCorr: 0.99
   carBody: {fileID: 4972393872091078063}
   tailLight: {fileID: 8989865897999011386}
   Lsignal: {fileID: 5263189014703834189}
@@ -3849,11 +3852,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2307044882847913636}
     m_Modifications:
-    - target: {fileID: 8372592054257008470, guid: ffe6f783c7c709f4e99cc44562963704,
-        type: 3}
-      propertyPath: m_Name
-      value: Ch36_nonPBR@Driving Variant
-      objectReference: {fileID: 0}
     - target: {fileID: 4785696678095736133, guid: ffe6f783c7c709f4e99cc44562963704,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3923,6 +3921,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.88888884
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372592054257008470, guid: ffe6f783c7c709f4e99cc44562963704,
+        type: 3}
+      propertyPath: m_Name
+      value: Ch36_nonPBR@Driving Variant
       objectReference: {fileID: 0}
     - target: {fileID: 1407097759253621419, guid: ffe6f783c7c709f4e99cc44562963704,
         type: 3}
