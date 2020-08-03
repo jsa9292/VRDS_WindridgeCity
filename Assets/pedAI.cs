@@ -21,6 +21,7 @@ public class pedAI : MonoBehaviour
     void LateUpdate()
     {
         if (nf == null) return;
+		if (nf.followedBy == null) nf.followedBy = transform.gameObject;
         if (nf.waiting) {
             anim.SetBool("Waiting", true);
             return;

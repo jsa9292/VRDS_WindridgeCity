@@ -18,10 +18,12 @@ public class CarSpawner : MonoBehaviour
     {
         int carNum = 0;
         car = cars[Random.Range(0, cars.Count)];
-		car = Transform.Instantiate(car,transform.position,transform.rotation,spawneeParent);
+		car = Transform.Instantiate(car,transform.position + transform.forward*-1f,transform.rotation,spawneeParent);
+
         carAI = car.GetComponent<CarAI>();
         carAI.nf = transform.GetComponent<NodeFollower>();
-        //carAI.speed = tm.CarSpeeds[carNum];
+		carAI.transform.LookAt(carAI.nf.transform);
+		//carAI.speed = tm.CarSpeeds[carNum];
         //carAI.steering = tm.CarSteers[carNum];
         //carAI.stopDist = tm.CarStopDists[carNum];
     }

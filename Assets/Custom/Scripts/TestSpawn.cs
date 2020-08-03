@@ -26,6 +26,7 @@ public class TestSpawn : MonoBehaviour
         GameObject spawnee;
         NodeFollower nf;
 		CarSpawner cs;
+		PedSpawner ps;
         for (int i = 0; i < transform.childCount; i++)
         {
 			if(rand.NextDouble() > spawnThreshold) continue; 
@@ -37,6 +38,9 @@ public class TestSpawn : MonoBehaviour
             }
 			if (cs = spawnee.GetComponent<CarSpawner>()){
 				cs.Spawn(spawnParent);
+			}
+			else if (ps = spawnee.GetComponent<PedSpawner>()){
+				ps.Spawn(spawnParent);
 			}
         }
     }

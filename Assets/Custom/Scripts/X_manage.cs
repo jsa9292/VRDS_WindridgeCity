@@ -14,6 +14,7 @@ public class X_manage : MonoBehaviour
         foreach (Node n in intersection) {
             n.isIntersectionNode = true;
         }
+
     }
     void OnDrawGizmos()
     {
@@ -38,7 +39,6 @@ public class X_manage : MonoBehaviour
                 if ((n = i.transform.parent.GetComponent<Node>()) && cond2 && cond1) enters.Add(n);
             }
             foreach (Node n in enters) {
-                n.exitOn = true;
                 n.detectNodes = true;
             }
             foreach (Node n in intersection) {
@@ -82,6 +82,7 @@ public class X_manage : MonoBehaviour
 				m.stop = n.occupied> 0;
 			}
 		}
+
         //if(Time.realtimeSinceStartup >)
         if (state != prev_state)
         {
@@ -126,11 +127,15 @@ public class X_manage : MonoBehaviour
                         {
                             m.Switch(true);
                         }
-                    }
+					}
                     prev_state = 2;
                     break;
                 /* all stop*/
-                case 3:
+				case 3:
+					for (int i = 0; i < enters.Count; i++)
+					{
+						enters[i].exitOn = false;
+					}
                     if (trafficLight)
                     {
                         foreach (MaterialChanger m in LightGroup3)
@@ -138,24 +143,14 @@ public class X_manage : MonoBehaviour
                             m.Switch(true);
                         }
                     }
-					for (int i = 0; i < enters.Count; i++)
-					{
-						enters[i].exitOn = false;
-					}
                     prev_state = 3;
                     return;
                 /* one car in the intersection at a time */
                 default:
-					for (int i = 0; i < enters.Count; i++)
-					{
-						enters[i].exitOn = false;
-					}
+					enters[xI].exitOn = numCars == 0;
+			        xI++;
+			        if (xI >= enters.Count) xI = 0;
 					prev_state = 3;
-					if(numCars == 0){
-				        enters[xI].exitOn = true;
-				        xI++;
-				        if (xI >= enters.Count) xI = 0;
-					}
 					return;
             }
         }

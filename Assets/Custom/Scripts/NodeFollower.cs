@@ -12,32 +12,30 @@ public class NodeFollower : MonoBehaviour
     public GameObject followedBy;
     public int posI;
     public int maxRPI;
+	public int stopBefore;
     public Vector3 targetPos;
     public Vector3 targetDir;
     public float dist2node;
-    public float speed;
-	public float minspeed;
-    public float maxspeed;
     public float safeDist;
     public float waitTime;
     public bool waiting = false;
     private float waitStart = -1f;
     public float steering;
     public float stopDist;
-    public float movement;
-    private Vector3 prev_pos;
     public bool signalStop;
     public bool signalLeft;
     public bool signalRight;
 	private Camera mainCam;
 	public int randseed = 0;
 	public System.Random rand;
+	public int lm;
     // Start is called before the first frame update
     void Awake()
     {
         //Destroy(transform.GetComponent<Collider>());
 		mainCam = Camera.main;
 		rand = new System.Random(randseed);
+		lm = 1 << 1;
 //		int count = 0;
 //		while(count <1000){
 //			turns[count] = rand.Next(0,2);
@@ -80,15 +78,11 @@ public class NodeFollower : MonoBehaviour
 		if(node == null) return;
 		if ((node.stop && posI<maxRPI/2) || waiting)
         {
-            movement = 0f;
             signalStop = true;
-            return;
         }
 
         RaycastHit hit;
-        int lm;
-        lm = 1 << 8;
-		lm = ~lm;
+        
 		if (mainCam != null && (mainCam.transform.position - transform.position).magnitude < 5f ){
 			float radius = 1f;
 			if (Physics.SphereCast(transform.position,radius, transform.forward, out hit, safeDist-radius,lm))
@@ -96,7 +90,6 @@ public class NodeFollower : MonoBehaviour
 		        Debug.DrawLine(transform.position, hit.point, Color.red);
 				//StartCoroutine(Wait(waitTime));
 				signalStop = true;
-		        return;
 		    }
 		    else
 		    {
@@ -106,9 +99,8 @@ public class NodeFollower : MonoBehaviour
 			if (Physics.Raycast(transform.position,transform.forward, out hit, safeDist,lm))
 			{
 				Debug.DrawLine(transform.position, hit.point, Color.red);
-				StartCoroutine(Wait(waitTime));
+				//StartCoroutine(Wait(waitTime));
 				signalStop = true;
-				return;
 			}
 			else
 			{
@@ -116,6 +108,7 @@ public class NodeFollower : MonoBehaviour
 			}
 
 		}
+		if(posI>maxRPI-stopBefore && !node.exitOn) signalStop = true;
         //get the distance
         targetPos = followedBy.transform.position;
 		targetDir = transform.position -targetPos;

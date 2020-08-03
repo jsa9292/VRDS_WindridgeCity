@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using VLB;
 
-[ExecuteInEditMode]
 public class CarAI : MonoBehaviour
 {
     public NodeFollower nf; //nodefollower its following
@@ -19,16 +18,20 @@ public class CarAI : MonoBehaviour
 	public Rigidbody rb;
 	public float dirDiff;
 	public float dirWeight;
-	[Range(0.0f,1.0f)]
-	public float speedAutoCorr;
+	[Range(0.0f,5.0f)]
+	public float speedAutoCorrCoeff;
 	//Graphics
     public Renderer carBody;
     public Renderer tailLight;
     public VolumetricLightBeam Lsignal;
     public VolumetricLightBeam Rsignal;
     private MaterialPropertyBlock mpb;
-	private float speedFinal;
+	public float speedFinal;
 
+	public bool debug;
+	private float speed_prev;
+	private float Force;
+	private float Momentum;
     // Update is called once per frame
     void Update()
     {
@@ -44,12 +47,18 @@ public class CarAI : MonoBehaviour
         //while ((nf.transform.position - transform.position).magnitude<=stopDist) {
         //    nf.UpdateNF(); 
         //}
-		dirDiff = Mathf.Pow(Vector3.Dot(transform.forward,nf.targetDir.normalized),dirWeight);
-		steering = 1f-dirDiff;
-		speedFinal =   (nf.signalStop ? 0:1 * speed *(1f-speedAutoCorr)* dirDiff + speedFinal *speedAutoCorr) ;
-        if (speedFinal > 0f)
+		dirDiff = Vector3.Dot(transform.forward,nf.targetDir.normalized);
+		if(debug)Debug.Log(dirDiff);
+		dirDiff = Mathf.Pow(dirDiff,dirWeight);
+		Force = nf.signalStop ? 0:1 * speed *(Time.smoothDeltaTime*speedAutoCorrCoeff)* dirDiff;
+		Momentum = speed_prev *(1f-Time.smoothDeltaTime*speedAutoCorrCoeff);
+		speedFinal =  Force  + Momentum;
+		speed_prev = speedFinal;
+		//if(debug)Debug.Log(Force + " + " + Momentum + " = " + speedFinal);
+
+		if (speedFinal > 0f && nf.dist2node >.1f)
         {
-			lookingAt = Vector3.RotateTowards(transform.forward, nf.targetDir, steering, 0.0f);//nfT.forward
+			lookingAt = Vector3.RotateTowards(transform.forward, nf.targetDir, steering *(1f-dirDiff), 0.0f);//nfT.forward
             transform.rotation = Quaternion.LookRotation(lookingAt);
 			transform.position += transform.forward * speedFinal* Time.smoothDeltaTime;
             //Vector3.MoveTowards(transform.position, nfT.position, (distance - stopDist) * speed);// nfT.position + transform.forward * posOffSet.x + transform.up*posOffSet.y;
@@ -68,7 +77,7 @@ public class CarAI : MonoBehaviour
         foreach (Transform t in wheelGraphics)
         {
 
-            t.localRotation *= Quaternion.Euler(speedFinal * wheelConst, 0f, 0f);
+            t.localRotation *= Quaternion.Euler(speedFinal * wheelConst*Time.smoothDeltaTime, 0f, 0f);
 
         }
         if (mpb == null)
