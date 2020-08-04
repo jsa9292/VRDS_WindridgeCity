@@ -27,8 +27,6 @@ public class experimentCtrl : MonoBehaviour
 		#endif
 		SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(0));
     }
-	void Start(){
-	}
 	void Update(){
 		if (Input.GetKeyDown(KeyCode.End)){
 			resetTransform();

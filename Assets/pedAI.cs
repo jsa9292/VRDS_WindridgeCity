@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[ExecuteInEditMode]
 public class pedAI : MonoBehaviour
 {
     public NodeFollower nf;
@@ -10,14 +11,19 @@ public class pedAI : MonoBehaviour
     private Animator anim;
     public float speed;
     public float speedCoeff;
-    public float catchup;
+	public bool onPhone;
     // Update is called once per frame
     private void Start()
     {
         if (nf != null) nfT = nf.transform;
         anim = transform.GetComponent<Animator>();
         anim.SetFloat("Speed", 0);
+		if(onPhone){
+			anim.SetBool("OnPhone",onPhone);
+		}
     }
+	private float dirDiff;
+	private Vector3 lookingAt;
     void LateUpdate()
     {
         if (nf == null) return;
@@ -26,11 +32,12 @@ public class pedAI : MonoBehaviour
             anim.SetBool("Waiting", true);
             return;
         }
-        transform.LookAt(nf.transform);
-        speed = (transform.position - nfT.position).magnitude * Time.smoothDeltaTime;
-        anim.SetFloat("Speed", speed * speedCoeff);
+		dirDiff = Vector3.Dot(transform.forward,nf.targetDir.normalized);
+		lookingAt = Vector3.RotateTowards(transform.forward, nf.targetDir, (1f-dirDiff), 0.0f);//nfT.forward
+		transform.rotation = Quaternion.LookRotation(lookingAt);
+		 anim.SetFloat("Speed", speed * speedCoeff);
         if (speed == 0f) return;
-        transform.position += transform.forward * speed * catchup ;
+		transform.position += transform.forward * speed* Time.smoothDeltaTime ;
 
     }
 }
