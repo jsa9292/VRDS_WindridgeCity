@@ -17,7 +17,7 @@ public class PedSpawner : MonoBehaviour
 	}
 	void OnDrawGizmosSelected(){
 		if(spawn&&spawnThis!=null) {
-			ped = spawnThis;
+			ped = spawnThis;	
 			Spawn(transform.parent);
 			spawn=false;
 		}
