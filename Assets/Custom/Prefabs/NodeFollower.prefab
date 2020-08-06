@@ -108,22 +108,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   node: {fileID: 0}
   nextNode: {fileID: 0}
+  followedBy: {fileID: 0}
   posI: 0
+  maxRPI: 0
+  stopBefore: 0
   targetPos: {x: 0, y: 0, z: 0}
   targetDir: {x: 0, y: 0, z: 0}
   dist2node: 0
-  speedSlow: 0
-  speedFast: 0
   safeDist: 0
   waitTime: 0
   waiting: 0
   steering: 0.01
-  stopDist: 0
-  movement: 0
+  stopDist: 2
   signalStop: 0
   signalLeft: 0
   signalRight: 0
   randseed: 0
+  lm:
+    serializedVersion: 2
+    m_Bits: 0
+  targetPoses: []
+  memory: 1
+  raycast: 0
 --- !u!114 &7390704188426102844
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,5 +143,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cars: []
-  spawnOffset: {x: 0, y: 0, z: 0}
+  car: {fileID: 0}
   randseed: 0

@@ -16,6 +16,7 @@ public class NodeFollower : MonoBehaviour
     public Vector3 targetPos;
     public Vector3 targetDir;
     public float dist2node;
+	public float dist2car;
     public float safeDist;
     public float waitTime;
     public bool waiting = false;
@@ -28,14 +29,17 @@ public class NodeFollower : MonoBehaviour
 	private Camera mainCam;
 	public int randseed = 0;
 	public System.Random rand;
-	public int lm;
+	public LayerMask lm;
+	public List<Vector3> targetPoses;
+	public int memory;
     // Start is called before the first frame update
     void Awake()
     {
         //Destroy(transform.GetComponent<Collider>());
 		mainCam = Camera.main;
 		rand = new System.Random(randseed);
-		lm = 1 << 1;
+		targetPoses = new List<Vector3>();
+		targetPoses.Add(transform.position);
 //		int count = 0;
 //		while(count <1000){
 //			turns[count] = rand.Next(0,2);
@@ -63,57 +67,63 @@ public class NodeFollower : MonoBehaviour
         //Debug.Log(targetDir);
     }
     void OnDrawGizmos() {
-        Gizmos.DrawWireSphere(transform.position, 0.5f);
+		Gizmos.color = signalStop ? Color.red:Color.white;
+        Gizmos.DrawWireSphere(transform.position, safeDist);
     }
     // Update is called once per frame
+	private RaycastHit hit;
+	public bool raycast;
     public void Update()
     {
+		//Debug.Log("Nf update");
         if (followedBy == null)
         {
+			Debug.Log("FollowedBy is Null");
             return;
         }
         signalLeft = false;
         signalRight = false;
         signalStop = false;
-		if(node == null) return;
+		if(node == null) {
+			Debug.Log("Node is Null");
+			return;
+		}
 		if ((node.stop && posI<maxRPI/2) || waiting)
         {
             signalStop = true;
         }
 
-        RaycastHit hit;
-        
-		if (mainCam != null && (mainCam.transform.position - transform.position).magnitude < 5f ){
-			float radius = 1f;
-			if (Physics.SphereCast(transform.position,radius, transform.forward, out hit, safeDist-radius,lm))
-		    {
-		        Debug.DrawLine(transform.position, hit.point, Color.red);
-				//StartCoroutine(Wait(waitTime));
-				signalStop = true;
-		    }
-		    else
-		    {
-		        Debug.DrawRay(transform.position, transform.forward * safeDist, Color.blue);
-		    }
-		}else{
-			if (Physics.Raycast(transform.position,transform.forward, out hit, safeDist,lm))
+		Debug.DrawRay(targetPos,Vector3.up*2f,Color.white);
+		if(raycast){
+			Collider[] hitCols = Physics.OverlapSphere(transform.position,safeDist,lm);
+			if (hitCols.Length >0)
 			{
-				Debug.DrawLine(transform.position, hit.point, Color.red);
-				//StartCoroutine(Wait(waitTime));
-				signalStop = true;
+				foreach (Collider c in hitCols){
+					if(c.transform.parent.parent != followedBy.transform){
+						signalStop = true;
+						Wait(waitTime);
+						return;
+					}
+				}
 			}
-			else
-			{
-				Debug.DrawRay(transform.position, transform.forward * safeDist, Color.blue);
-			}
-
+//			if (Physics.Raycast(transform.position+transform.up*.5f,transform.forward, out hit, safeDist,lm))
+//			{
+//				Debug.DrawLine(transform.position+transform.up*.5f, hit.point, Color.red);
+//				//StartCoroutine(Wait(waitTime));
+//				signalStop = true;
+//				if((transform.position - hit.point).magnitude < stopDist) return;
+//			}
+//			else
+//			{
+//				Debug.DrawRay(transform.position+transform.up*.5f, transform.forward * safeDist, Color.blue);
+//			}
 		}
 		if(posI>maxRPI-stopBefore && !node.exitOn) signalStop = true;
         //get the distance
-        targetPos = followedBy.transform.position;
-		targetDir = transform.position -targetPos;
+        targetPos = targetPoses[0];
+		targetDir =  targetPos - followedBy.transform.position;
         dist2node = targetDir.magnitude; 
-
+		//Debug.Log("targetPosed");
   //      if (dist2node > stopDist)
   //      {
   //          //rotate
@@ -128,10 +138,13 @@ public class NodeFollower : MonoBehaviour
   //      movement = Vector3.Distance(transform.position, prev_pos);
   //      prev_pos = transform.position;
 		//}
-        //get the next node
-        if (dist2node <= stopDist)
+		//get the next node
+		dist2car = (transform.position - followedBy.transform.position).magnitude;
+		if (dist2car <= stopDist)
         {
-            if (posI < maxRPI - 1) posI++;
+			if (posI < maxRPI - 1) {
+				posI++;
+			}
             if (posI >= maxRPI - 1)
             {
                 if (nextNode == null)
@@ -157,6 +170,8 @@ public class NodeFollower : MonoBehaviour
 
 
             }
+			targetPoses.Add(transform.position);
+			if(targetPoses.Count>memory)targetPoses.RemoveAt(0);
 			transform.position = node.roadMovePositions[posI];
 			transform.LookAt(node.roadMovePositions[posI+1]);
 

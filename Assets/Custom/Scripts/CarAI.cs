@@ -50,18 +50,21 @@ public class CarAI : MonoBehaviour
 		dirDiff = Vector3.Dot(transform.forward,nf.targetDir.normalized);
 		if(debug)Debug.Log(dirDiff);
 		dirDiff = Mathf.Pow(dirDiff,dirWeight);
-		Force = nf.signalStop ? 0:1 * speed *(Time.smoothDeltaTime*speedAutoCorrCoeff)* dirDiff;
-		Momentum = speed_prev *(1f-Time.smoothDeltaTime*speedAutoCorrCoeff);
+		Force = nf.signalStop ? 0:1 * speed *(Time.deltaTime*speedAutoCorrCoeff)* dirDiff;
+		Momentum = speed_prev *(1f-Time.deltaTime*speedAutoCorrCoeff);
 		speedFinal =  Force  + Momentum;
 		speed_prev = speedFinal;
 		//if(debug)Debug.Log(Force + " + " + Momentum + " = " + speedFinal);
+		lookingAt = Vector3.RotateTowards(transform.forward, nf.targetDir, steering *(1f-dirDiff), 0.0f);//nfT.forward
+		transform.rotation = Quaternion.LookRotation(lookingAt);
+		if((nf.targetPos-transform.position).magnitude >.1f){
+			if(nf.signalStop && nf.targetPoses.Count>1)nf.targetPoses.RemoveAt(0);
+		}else return;
+		transform.position += transform.forward * speedFinal* Time.smoothDeltaTime;
 
-		if (speedFinal > 0f && nf.dist2node >.1f)
+		if (speedFinal > 0f)
         {
-			lookingAt = Vector3.RotateTowards(transform.forward, nf.targetDir, steering *(1f-dirDiff), 0.0f);//nfT.forward
-            transform.rotation = Quaternion.LookRotation(lookingAt);
-			transform.position += transform.forward * speedFinal* Time.smoothDeltaTime;
-            //Vector3.MoveTowards(transform.position, nfT.position, (distance - stopDist) * speed);// nfT.position + transform.forward * posOffSet.x + transform.up*posOffSet.y;
+			//Vector3.MoveTowards(transform.position, nfT.position, (distance - stopDist) * speed);// nfT.position + transform.forward * posOffSet.x + transform.up*posOffSet.y;
             //targetDir
             //transform.LookAt(targetPos);
 
@@ -107,31 +110,31 @@ public class CarAI : MonoBehaviour
         tailLight.SetPropertyBlock(mpb);
 
     }
-    private bool makeWheelParents = false;
-    //This was meant to format and setup the vehicle prefab because all four wheels were under "Prefab"
-    //The front two wheels need to have parents for y axis rotation, hence the function creates and setup the rest of the scripts.
-    //must be ran in prefab stage as the editor window will not allow prefab will change in scene window.
-    //make it public to use it;
-    void MakeWheelParent()
-    {
-        for (int i = 0; i < 2; i++)
-        {
-            GameObject gn = new GameObject("wheelParent");
-            GameObject g = GameObject.Instantiate(gn,wheelGraphics[i].parent);
-            g.transform.position = wheelGraphics[i].position;
-            wheelGraphics[i].parent = g.transform;
-            wheelParents[i] = g.transform;
-        }
-
-    }
-    private void OnDrawGizmosSelected()
-    {
-        if (makeWheelParents)
-        {
-            makeWheelParents = false;
-            MakeWheelParent();
-        }
-    }
+//    private bool makeWheelParents = false;
+//    //This was meant to format and setup the vehicle prefab because all four wheels were under "Prefab"
+//    //The front two wheels need to have parents for y axis rotation, hence the function creates and setup the rest of the scripts.
+//    //must be ran in prefab stage as the editor window will not allow prefab will change in scene window.
+//    //make it public to use it;
+//    void MakeWheelParent()
+//    {
+//        for (int i = 0; i < 2; i++)
+//        {
+//            GameObject gn = new GameObject("wheelParent");
+//            GameObject g = GameObject.Instantiate(gn,wheelGraphics[i].parent);
+//            g.transform.position = wheelGraphics[i].position;
+//            wheelGraphics[i].parent = g.transform;
+//            wheelParents[i] = g.transform;
+//        }
+//
+//    }
+//    private void OnDrawGizmosSelected()
+//    {
+//        if (makeWheelParents)
+//        {
+//            makeWheelParents = false;
+//            MakeWheelParent();
+//        }
+//    }
 //	void OnCollisionEnter(Collision c){
 //		rb.isKinematic = false;
 //		rb.useGravity = true;

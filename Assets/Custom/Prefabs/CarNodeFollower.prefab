@@ -90,7 +90,7 @@ BoxCollider:
   m_GameObject: {fileID: 2435569061045753531}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -111,19 +111,26 @@ MonoBehaviour:
   followedBy: {fileID: 0}
   posI: 0
   maxRPI: 0
-  stopBefore: 10
+  stopBefore: 3
   targetPos: {x: 0, y: 0, z: 0}
   targetDir: {x: 0, y: 0, z: 0}
   dist2node: 0
-  safeDist: 5
+  dist2car: 0
+  safeDist: 1
   waitTime: 1
   waiting: 0
   steering: 0.003
-  stopDist: 3
+  stopDist: 7
   signalStop: 0
   signalLeft: 0
   signalRight: 0
   randseed: 0
+  lm:
+    serializedVersion: 2
+    m_Bits: 1025
+  targetPoses: []
+  memory: 10
+  raycast: 1
 --- !u!114 &7390704188426102844
 MonoBehaviour:
   m_ObjectHideFlags: 0

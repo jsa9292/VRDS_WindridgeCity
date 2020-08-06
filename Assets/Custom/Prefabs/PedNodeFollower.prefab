@@ -95,24 +95,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   node: {fileID: 0}
   nextNode: {fileID: 0}
+  followedBy: {fileID: 0}
   posI: 0
   maxRPI: 0
+  stopBefore: 0
   targetPos: {x: 0, y: 0, z: 0}
   targetDir: {x: 0, y: 0, z: 0}
   dist2node: 0
-  speed: 0
-  minspeed: 2
-  maxspeed: 10
   safeDist: 0
   waitTime: 0
   waiting: 0
   steering: 0.003
-  stopDist: 0.1
-  movement: 0
+  stopDist: 1
   signalStop: 0
   signalLeft: 0
   signalRight: 0
   randseed: 0
+  lm:
+    serializedVersion: 2
+    m_Bits: 0
+  targetPoses: []
+  memory: 0
+  raycast: 0
 --- !u!114 &2530465547510102621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,6 +150,8 @@ MonoBehaviour:
   - {fileID: 2395954702229067045, guid: ec9ba5344560f294286d9122716f2347, type: 3}
   - {fileID: 6002735229869956334, guid: 69ac61d140e6e2f40b90fcf04b92b0d5, type: 3}
   randseed: 2
+  spawn: 0
+  spawnThis: {fileID: 0}
 --- !u!136 &6131911207582731857
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -155,7 +161,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 2435569061045753531}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.5
   m_Height: 1
   m_Direction: 1

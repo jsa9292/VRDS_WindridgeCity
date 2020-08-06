@@ -17,14 +17,20 @@ public class DataSave : MonoBehaviour {
 	public bool write = false;
 	private bool newfile= true;
 	private int entryIndex;
+	public int enter = 0;
+	public int left = 0;
+	public int right = 0;
 	// Use this for initialization
 	void Awake(){
+		#if UNITY_STANDALONE
 		filename=DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".txt";
 		entryIndex = 0;
+		#endif
 	}
 
 	// Update is called once per frame
 	void LateUpdate () {
+		#if UNITY_STANDALONE
 		if (write) {
 			if (newfile) {
 				w = new StreamWriter (filepath+filename);
@@ -52,9 +58,12 @@ public class DataSave : MonoBehaviour {
 				Car.transform.localEulerAngles.x.ToString ("0.0000") + "," +
 				Car.transform.localEulerAngles.y.ToString ("0.0000") + "," +
 				Car.transform.localEulerAngles.z.ToString ("0.0000") + "," +//8
-				Time.time.ToString ("0.0000") + "," +							//11
-				ud.EnterTrigger.ToString() + "," + ud.LeftTrigger.ToString() + "," + ud.RightTrigger.ToString() + "," + 
-				lsw.neutral.ToString() + "," + lsw.reverse.ToString() + "," +
+				Time.deltaTime.ToString ("0.0000") + "," +							//11
+				enter.ToString() + "," + 
+				left.ToString() + "," + 
+				right.ToString() + "," + 
+				lsw.neutral.ToString() + "," +
+				lsw.reverse.ToString() + "," +
 				entryIndex
 
 			);
@@ -63,6 +72,7 @@ public class DataSave : MonoBehaviour {
 		}
 		if (end)
 			w.Close ();
+		#endif
 	}
 
 }

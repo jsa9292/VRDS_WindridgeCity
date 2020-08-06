@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1583516377
 Transform:
   m_ObjectHideFlags: 0
@@ -63,7 +63,7 @@ Camera:
   m_Depth: 1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 261
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -126,14 +126,14 @@ ReflectionProbe:
   m_Type: 0
   m_Mode: 1
   m_RefreshMode: 1
-  m_TimeSlicingMode: 0
+  m_TimeSlicingMode: 2
   m_Resolution: 512
   m_UpdateFrequency: 0
   m_BoxSize: {x: 10, y: 10, z: 10}
   m_BoxOffset: {x: 0, y: 0, z: 0}
   m_NearClip: 0.01
   m_FarClip: 50
-  m_ShadowDistance: 100
+  m_ShadowDistance: 50
   m_ClearFlags: 2
   m_BackGroundColor: {r: 0.87887174, g: 0.90199995, b: 0.90199995, a: 1}
   m_CullingMask:
@@ -195,7 +195,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &127597024840343182
 Transform:
   m_ObjectHideFlags: 0
@@ -247,7 +247,7 @@ Camera:
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
-  m_AllowMSAA: 0
+  m_AllowMSAA: 1
   m_AllowDynamicResolution: 1
   m_ForceIntoRT: 0
   m_OcclusionCulling: 0
@@ -564,21 +564,21 @@ MonoBehaviour:
     m_NumAlphaKeys: 2
   intensityFromLight: 0
   intensityModeAdvanced: 1
-  intensityInside: 1
-  intensityOutside: 0.45
+  intensityInside: 0.2
+  intensityOutside: 0.1
   blendingMode: 0
   spotAngleFromLight: 0
-  spotAngle: 65
+  spotAngle: 166.51
   coneRadiusStart: 0.1
   geomMeshType: 0
   geomCustomSides: 18
   geomCustomSegments: 5
   geomCap: 0
-  fallOffEndFromLight: 1
+  fallOffEndFromLight: 0
   attenuationEquation: 1
   attenuationCustomBlending: 0.5
   fallOffStart: 0
-  fallOffEnd: 28.77
+  fallOffEnd: 1
   depthBlendDistance: 2
   cameraClippingDistance: 0.5
   glareFrontal: 0
@@ -7459,21 +7459,21 @@ MonoBehaviour:
     m_NumAlphaKeys: 2
   intensityFromLight: 0
   intensityModeAdvanced: 1
-  intensityInside: 1
-  intensityOutside: 0.45
+  intensityInside: 0.2
+  intensityOutside: 0.1
   blendingMode: 0
   spotAngleFromLight: 0
-  spotAngle: 65
+  spotAngle: 166.51
   coneRadiusStart: 0.1
   geomMeshType: 0
   geomCustomSides: 18
   geomCustomSegments: 5
   geomCap: 0
-  fallOffEndFromLight: 1
+  fallOffEndFromLight: 0
   attenuationEquation: 1
   attenuationCustomBlending: 0.5
   fallOffStart: 0
-  fallOffEnd: 28.77
+  fallOffEnd: 1
   depthBlendDistance: 2
   cameraClippingDistance: 0.5
   glareFrontal: 0
@@ -7502,13 +7502,16 @@ GameObject:
   m_Component:
   - component: {fileID: 7467474970489535979}
   - component: {fileID: 2596957253608783411}
+  - component: {fileID: 877522928}
+  - component: {fileID: 877522929}
+  - component: {fileID: 877522930}
   m_Layer: 10
   m_Name: Camera (2)
-  m_TagString: Player
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7467474970489535979
 Transform:
   m_ObjectHideFlags: 0
@@ -7554,7 +7557,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4294967295
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -7566,6 +7569,91 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &877522928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2421697839414230411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeTrigger: {fileID: 7467474970489535979}
+  volumeLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  stopNaNPropagation: 1
+  finalBlitToCameraTarget: 0
+  antialiasingMode: 1
+  temporalAntialiasing:
+    jitterSpread: 0.75
+    sharpness: 0.25
+    stationaryBlending: 0.95
+    motionBlending: 0.85
+  subpixelMorphologicalAntialiasing:
+    quality: 2
+  fastApproximateAntialiasing:
+    fastMode: 1
+    keepAlpha: 0
+  fog:
+    enabled: 1
+    excludeSkybox: 1
+  debugLayer:
+    lightMeter:
+      width: 512
+      height: 256
+      showCurves: 1
+    histogram:
+      width: 512
+      height: 256
+      channel: 3
+    waveform:
+      exposure: 0.12
+      height: 256
+    vectorscope:
+      size: 256
+      exposure: 0.12
+    overlaySettings:
+      linearDepth: 0
+      motionColorIntensity: 4
+      motionGridSize: 64
+      colorBlindnessType: 0
+      colorBlindnessStrength: 1
+  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
+  m_ShowToolkit: 1
+  m_ShowCustomSorter: 1
+  breakBeforeColorGrading: 0
+  m_BeforeTransparentBundles: []
+  m_BeforeStackBundles: []
+  m_AfterStackBundles: []
+--- !u!114 &877522929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2421697839414230411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sharedProfile: {fileID: 11400000, guid: 8399b74d46546c24680ec0c4d8bfec5d, type: 2}
+  isGlobal: 1
+  blendDistance: 0
+  weight: 1
+  priority: 0
+--- !u!81 &877522930
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2421697839414230411}
+  m_Enabled: 1
 --- !u!1 &2562942594049837810
 GameObject:
   m_ObjectHideFlags: 0
@@ -7909,6 +7997,7 @@ GameObject:
   - component: {fileID: 1990434125698876232}
   - component: {fileID: 1986615673940716036}
   - component: {fileID: 1986796361825406770}
+  - component: {fileID: 515465183194772479}
   m_Layer: 10
   m_Name: Participant
   m_TagString: Player
@@ -7972,7 +8061,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7973692954124090274}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a37df85597ab6ec4fb4f4af87b2c4197, type: 3}
   m_Name: 
@@ -7980,11 +8069,14 @@ MonoBehaviour:
   lsw: {fileID: 1986360366025959820}
   ud: {fileID: 1986796361825406770}
   hmd: {fileID: 127597024840343182}
-  filepath: D:\
+  filepath: E:\Data\
   filename: 
   Car: {fileID: 1928784844077608382}
   end: 0
   write: 1
+  enter: 0
+  left: 0
+  right: 0
 --- !u!114 &49951516441954395
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8001,12 +8093,13 @@ MonoBehaviour:
   path: E:\Suburb2018\
   fname: 20200711_1243.txt
   lsw: {fileID: 1986360366025959820}
-  Trolley: 1
+  Finished: 0
   LoadedInput: []
   Auto: {fileID: 5050788091837697323}
   Error: {fileID: 5007991308484118197}
   targetPos: {x: 0, y: 0, z: 0}
   targetEuler: {x: 0, y: 0, z: 0}
+  timeStep: 0
 --- !u!114 &7294036880985940658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8144,6 +8237,7 @@ MonoBehaviour:
   Logitech: {fileID: 1986360366025959820}
   Car: {fileID: 1928784844077608382}
   driverPos: {fileID: 8860050460865772875}
+  fd: {fileID: 49951516441954395}
   applyScale: 1
   brakeScale: 1
   pitch_const: 300
@@ -8195,6 +8289,7 @@ MonoBehaviour:
   - 0
   - 0
   - 0
+  timeStep: 0
   speedDisplay: {fileID: 1986178567074261132}
   steerWheel: {fileID: 1874536463484180478}
   Speedometer: {fileID: 1874211993412199998}
@@ -8212,9 +8307,27 @@ MonoBehaviour:
   pitch_result: 0
   roll_result: 0
   yaw_result: 0
-  EnterTrigger: 0
-  LeftTrigger: 0
-  RightTrigger: 0
+--- !u!114 &515465183194772479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7973692954124090274}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3aca7340d743e144ca4e18879b03e566, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fd: {fileID: 49951516441954395}
+  ds: {fileID: 1986534892556461704}
+  lsw: {fileID: 1986360366025959820}
+  nf: {fileID: 0}
+  enter: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
+  end: {fileID: 0}
+  layertest: 0
 --- !u!1001 &2195179416865583066
 PrefabInstance:
   m_ObjectHideFlags: 0

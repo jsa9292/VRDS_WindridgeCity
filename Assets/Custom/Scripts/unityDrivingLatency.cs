@@ -15,7 +15,7 @@ public class unityDrivingLatency : MonoBehaviour {
 	public LogitechSteeringWheel Logitech;
 	public Rigidbody Car;
 	public Transform driverPos;
-
+	public FollowData fd;
 
 	[Header("Simulator Inputs")]
 	public float applyScale;
@@ -80,7 +80,7 @@ public class unityDrivingLatency : MonoBehaviour {
 	private long startTick;
 	private List<long> renderTicks = new List<long>();
 	private List<long> simTicks = new List<long>();
-	private float timeStep;
+	public float timeStep;
 
 	void Awake(){
 		Physics.autoSimulation = false;
@@ -94,6 +94,8 @@ public class unityDrivingLatency : MonoBehaviour {
 	}
 	void Update()
 	{
+		if(fd.enabled) timeStep = fd.timeStep;
+		else timeStep = Time.deltaTime;
 		//process input
 		Logitech.springMagnitude = 60 + (int)CurrentSpeed_z * 10;
 		reverse = Logitech.reverse ? -1f : 1f;
@@ -229,7 +231,7 @@ public class unityDrivingLatency : MonoBehaviour {
 	public IEnumerator UpdateTelemetry(){
 		
 			yield return new WaitForEndOfFrame();
-		//the columns for the data packet is keep changing after update...
+		//the columns for the data packet is keep changing after middleware updates...
 			SimRacingStudio.SimRacingStudio_SendTelemetry(apiMode.ToCharArray()
 															, apiVersion
 															, game.ToCharArray()
@@ -260,19 +262,6 @@ public class unityDrivingLatency : MonoBehaviour {
 
 	}
 
-	[Header("Triggers")]
-	public int EnterTrigger;
-	public int LeftTrigger;
-	public int RightTrigger;
-	void OnTriggerEnter(Collider c){
-		EnterTrigger = String.Compare(c.name,"EnterTrigger");
-		LeftTrigger = String.Compare(c.name,"LeftTrigger");
-		RightTrigger = String.Compare(c.name,"RightTrigger");
-		if(String.Compare(c.name,"EndTrigger")==1){
-			Time.timeScale = 0;
-		}
-
-	}
 	//Second order washout filters
 	float LowPassFilter (float s, float w, float z) {
 		float gain = Mathf.Pow(w,2f) / (Mathf.Pow(s, 2f) + 2f * w * z + Mathf.Pow(w, 2f));
