@@ -22,15 +22,13 @@ public class DataSave : MonoBehaviour {
 	public int right = 0;
 	// Use this for initialization
 	void Awake(){
-		#if UNITY_STANDALONE
 		filename=DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".txt";
 		entryIndex = 0;
-		#endif
+
 	}
 
 	// Update is called once per frame
 	void LateUpdate () {
-		#if UNITY_STANDALONE
 		if (write) {
 			if (newfile) {
 				w = new StreamWriter (filepath+filename);
@@ -72,7 +70,6 @@ public class DataSave : MonoBehaviour {
 		}
 		if (end)
 			w.Close ();
-		#endif
 	}
 
 }

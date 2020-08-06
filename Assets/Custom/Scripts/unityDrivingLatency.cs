@@ -91,6 +91,8 @@ public class unityDrivingLatency : MonoBehaviour {
 		foreach (WheelCollider w in carControl.m_WheelColliders) {
 			w.ConfigureVehicleSubsteps(10, 10, 10);
 		}
+
+		UnityEngine.XR.InputTracking.Recenter();
 	}
 	void Update()
 	{

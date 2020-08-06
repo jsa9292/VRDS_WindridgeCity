@@ -84,9 +84,10 @@ public class NodeFollower : MonoBehaviour
         signalLeft = false;
         signalRight = false;
 		signalStop = false;
-		if (nextNode == null) return;
+		if (nextNode != null){ 
 		signalLeft = node.leftTurn ||(nextNode.leftTurn&&((maxRPI-posI)<10));
 		signalRight = node.rightTurn||(nextNode.rightTurn&&((maxRPI-posI)<10));
+		}
 		if(node == null) {
 			Debug.Log("Node is Null");
 			return;

@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Lights_9_16
   m_Shader: {fileID: 4800000, guid: 8999c991fa4b5304cb29203e6b36b3a2, type: 3}
-  m_ShaderKeywords: _FLICKER0_ON _TOGGLESWITCH0_ON
+  m_ShaderKeywords: _FLICKER1_ON _TOGGLESWITCH0_ON
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -39,13 +39,13 @@ Material:
     - _Bias: 0.73
     - _BothOn: 1
     - _BrakeOnOff: 1
-    - _Flicker0: 1
-    - _Flicker1: 0
+    - _Flicker0: 0
+    - _Flicker1: 1
     - _Fuzzy: 0.26
-    - _GBbalance: 1
+    - _GBbalance: 6.34
     - _GBmag: 47.3
-    - _Intensity0: 8.67
-    - _Intensity1: 5.3
+    - _Intensity0: 1.1
+    - _Intensity1: 7.47
     - _LR: -0.01
     - _Orange: -1.85
     - _OrangeMax: 1.13
@@ -57,6 +57,6 @@ Material:
     - __dirty: 0
     m_Colors:
     - _Color: {r: 0.8, g: 0.8, b: 0.8, a: 1}
-    - _Color0: {r: 1, g: 0.5639591, b: 0, a: 0}
-    - _Color1: {r: 1, g: 0, b: 0, a: 0}
+    - _Color0: {r: 1, g: 0, b: 0, a: 0}
+    - _Color1: {r: 1, g: 0.69584817, b: 0, a: 0}
     - _SpecColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
