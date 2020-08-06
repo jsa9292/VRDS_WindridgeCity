@@ -26,7 +26,6 @@ public class trolleyProblem : MonoBehaviour
     void Update()
     {
 		if(fd.Finished) {
-			nf.waiting = false;
 			lsw.accel = 1;
 			lsw.brake = 0;
 			lsw.neutral = false;
@@ -41,6 +40,7 @@ public class trolleyProblem : MonoBehaviour
 	void OnTriggerEnter(Collider c){
 		if(c == enter) {
 			ds.enter = 1;
+			nf.waiting = false;
 			Debug.Log("entered");
 		}
 		if(c == left){
@@ -56,5 +56,5 @@ public class trolleyProblem : MonoBehaviour
 			ds.enabled = false;
 			Debug.Log("ended");
 		}
-	}
+	}    
 }
