@@ -381,12 +381,13 @@ MonoBehaviour:
   rb: {fileID: 3036911243423150511}
   dirDiff: 0
   dirWeight: 5
-  speedAutoCorrCoeff: 2.14
+  speedAutoCorrCoeff: 1
   carBody: {fileID: 3036911243619451960}
   tailLight: {fileID: 3036911245108439650}
   Lsignal: {fileID: 8089524139350378769}
   Rsignal: {fileID: 8572427796840465016}
   speedFinal: 0
+  stopDur: 0.2
   debug: 0
 --- !u!54 &3036911243423150511
 Rigidbody:
@@ -927,7 +928,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 84156cd1f9025714c8e53c75871bb560, type: 2}
+  - {fileID: 2100000, guid: 9a789d7fe34ef704098bac8ea485329e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1713,7 +1714,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 84156cd1f9025714c8e53c75871bb560, type: 2}
+  - {fileID: 2100000, guid: 9a789d7fe34ef704098bac8ea485329e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -83,7 +83,10 @@ public class NodeFollower : MonoBehaviour
         }
         signalLeft = false;
         signalRight = false;
-        signalStop = false;
+		signalStop = false;
+		if (nextNode == null) return;
+		signalLeft = node.leftTurn ||(nextNode.leftTurn&&((maxRPI-posI)<10));
+		signalRight = node.rightTurn||(nextNode.rightTurn&&((maxRPI-posI)<10));
 		if(node == null) {
 			Debug.Log("Node is Null");
 			return;
@@ -175,16 +178,16 @@ public class NodeFollower : MonoBehaviour
 			transform.position = node.roadMovePositions[posI];
 			transform.LookAt(node.roadMovePositions[posI+1]);
 
-        }
-		if(node.isIntersectionNode){
-			
-			if (nextNode == null) return;
-			signalLeft = nextNode.leftTurn;
-			signalRight = nextNode.rightTurn;
-		}else{
-			signalLeft = node.leftTurn;
-			signalRight = node.rightTurn;
 		}
+//		if(node.isIntersectionNode){
+//			
+//			if (nextNode == null) return;
+//			signalLeft = nextNode.leftTurn;
+//			signalRight = nextNode.rightTurn;
+//		}else{
+//			signalLeft = node.leftTurn;
+//			signalRight = node.rightTurn;
+//		}
 
     }
     IEnumerator Wait(float seconds){

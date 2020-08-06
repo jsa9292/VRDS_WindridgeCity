@@ -27,7 +27,8 @@ public class CarAI : MonoBehaviour
     public VolumetricLightBeam Rsignal;
     private MaterialPropertyBlock mpb;
 	public float speedFinal;
-
+	public float stopDur;
+	private float stopGauge;
 	public bool debug;
 	private float speed_prev;
 	private float Force;
@@ -47,10 +48,12 @@ public class CarAI : MonoBehaviour
         //while ((nf.transform.position - transform.position).magnitude<=stopDist) {
         //    nf.UpdateNF(); 
         //}
+		if(nf.signalStop) stopGauge = stopDur;
+		if(stopGauge >0) stopGauge -= Time.deltaTime;
 		dirDiff = Vector3.Dot(transform.forward,nf.targetDir.normalized);
 		if(debug)Debug.Log(dirDiff);
 		dirDiff = Mathf.Pow(dirDiff,dirWeight);
-		Force = nf.signalStop ? 0:1 * speed *(Time.deltaTime*speedAutoCorrCoeff)* dirDiff;
+		Force = stopGauge>0f ? 0f:1f * speed *(Time.deltaTime*speedAutoCorrCoeff)* dirDiff;
 		Momentum = speed_prev *(1f-Time.deltaTime*speedAutoCorrCoeff);
 		speedFinal =  Force  + Momentum;
 		speed_prev = speedFinal;
@@ -59,7 +62,7 @@ public class CarAI : MonoBehaviour
 		transform.rotation = Quaternion.LookRotation(lookingAt);
 		if((nf.targetPos-transform.position).magnitude >.1f){
 			if(nf.signalStop && nf.targetPoses.Count>1)nf.targetPoses.RemoveAt(0);
-		}else return;
+		}
 		transform.position += transform.forward * speedFinal* Time.smoothDeltaTime;
 
 		if (speedFinal > 0f)
@@ -95,7 +98,7 @@ public class CarAI : MonoBehaviour
         mpb.SetFloat("_LR", 0f);
         Lsignal.intensityGlobal = 0f;
         Rsignal.intensityGlobal = 0f;
-        float flickerStrength = (Mathf.Sin(Time.time) + 1) * 8f;
+        float flickerStrength = (Mathf.Sin(Time.time*6f) + 1) * 8f;
         if (nf.signalRight) 
         {
             mpb.SetFloat("_LR", 1f);
@@ -106,7 +109,7 @@ public class CarAI : MonoBehaviour
             mpb.SetFloat("_LR", -1f);
             Lsignal.intensityGlobal = flickerStrength;
         }
-        mpb.SetFloat("_BrakeOnOff", nf.signalStop ? 1f:0f);
+		mpb.SetFloat("_BrakeOnOff", stopGauge>0 ? 1f:0f);
         tailLight.SetPropertyBlock(mpb);
 
     }
