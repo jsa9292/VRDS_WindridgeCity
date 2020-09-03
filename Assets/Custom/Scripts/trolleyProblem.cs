@@ -18,7 +18,6 @@ public class trolleyProblem : MonoBehaviour
     void Start()
     {
 
-
     }
 
 	public int layertest;
@@ -31,10 +30,12 @@ public class trolleyProblem : MonoBehaviour
 			lsw.neutral = false;
 			lsw.reverse = false;
 		}
-//		int lm = layertest << 1;
-//		//lm = ~lm;
-//		lmsk = lm;
-//		Debug.Log(LayerMask.LayerToName(lmsk));
+		if (ds.enter == 1) RenderSettings.fogDensity -= Time.deltaTime*0.01f;
+
+		//		int lm = layertest << 1;
+		//		//lm = ~lm;
+		//		lmsk = lm;
+		//		Debug.Log(LayerMask.LayerToName(lmsk));
 		return;
     }
 	void OnTriggerEnter(Collider c){
@@ -56,5 +57,5 @@ public class trolleyProblem : MonoBehaviour
 			ds.enabled = false;
 			Debug.Log("ended");
 		}
-	}    
+	}
 }
