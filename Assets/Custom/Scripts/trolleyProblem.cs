@@ -7,17 +7,18 @@ public class trolleyProblem : MonoBehaviour
 	public FollowData fd;
 	public DataSave ds;
 	public LogitechSteeringWheel lsw;
+	public GameObject parent;
 	public NodeFollower nf;
 	public Collider enter;
 	public Collider left;
 	public Collider right;
 	public Collider end;
-
+	
 	private LayerMask lmsk;
     // Start is called before the first frame update
     void Start()
     {
-
+		if (this.enabled) parent.SetActive(true);
     }
 
 	public int layertest;
