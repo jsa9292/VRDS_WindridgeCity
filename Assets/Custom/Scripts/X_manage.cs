@@ -48,9 +48,9 @@ public class X_manage : MonoBehaviour
         }
         if (detectLights)
         {
-            LightGroup1 = LightGroupParents[0].GetComponentsInChildren<MaterialChanger>();
-            LightGroup2 = LightGroupParents[1].GetComponentsInChildren<MaterialChanger>();
-            LightGroup3 = LightGroupParents[2].GetComponentsInChildren<MaterialChanger>();
+            LightGroup1 = LightGroupParents[0].GetComponentsInChildren<MaterialChangerJP>();
+            LightGroup2 = LightGroupParents[1].GetComponentsInChildren<MaterialChangerJP>();
+            LightGroup3 = LightGroupParents[2].GetComponentsInChildren<MaterialChangerJP>();
             //LightGroup4 = LightGroupParents[3].GetComponentsInChildren<MaterialChanger>();
         }
     }
@@ -67,9 +67,9 @@ public class X_manage : MonoBehaviour
     public float signalDur;
     public float pauseDur;
     public List<GameObject> LightGroupParents;//gameobject parents for lights
-    public MaterialChanger[] LightGroup1;
-    public MaterialChanger[] LightGroup2;
-    public MaterialChanger[] LightGroup3; //this is yellow light group
+    public MaterialChangerJP[] LightGroup1;
+    public MaterialChangerJP[] LightGroup2;
+    public MaterialChangerJP[] LightGroup3; //this is yellow light group
 
 	private float TimeforSim;
     void Update()
@@ -86,15 +86,15 @@ public class X_manage : MonoBehaviour
         //if(Time.realtimeSinceStartup >)
         if (state != prev_state)
         {
-            foreach (MaterialChanger m in LightGroup1)
+            foreach (MaterialChangerJP m in LightGroup1)
             {
                 m.Switch(false);
             }
-            foreach (MaterialChanger m in LightGroup2)
+            foreach (MaterialChangerJP m in LightGroup2)
             {
                 m.Switch(false);
             }
-            foreach (MaterialChanger m in LightGroup3)
+            foreach (MaterialChangerJP m in LightGroup3)
             {
                 m.Switch(false);
             }
@@ -108,7 +108,7 @@ public class X_manage : MonoBehaviour
                     }
                     if (trafficLight)
                     {
-                        foreach (MaterialChanger m in LightGroup1)
+                        foreach (MaterialChangerJP m in LightGroup1)
                         {
                             m.Switch(true);
                         }
@@ -123,7 +123,7 @@ public class X_manage : MonoBehaviour
                     }
                     if (trafficLight)
                     {
-                        foreach (MaterialChanger m in LightGroup2)
+                        foreach (MaterialChangerJP m in LightGroup2)
                         {
                             m.Switch(true);
                         }
@@ -138,7 +138,7 @@ public class X_manage : MonoBehaviour
 					}
                     if (trafficLight)
                     {
-                        foreach (MaterialChanger m in LightGroup3)
+                        foreach (MaterialChangerJP m in LightGroup3)
                         {
                             m.Switch(true);
                         }
